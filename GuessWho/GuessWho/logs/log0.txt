@@ -1,0 +1,25 @@
+Begin Logging
+Participant Start Time: 2.047
+Trial Start Time: 2.047
+Trial Number: 0
+----------------------------------------
+Event: Mouse Clicked
+Time: 2.762
+Cursor Location: (1135, 471)
+Object Clicked: fred
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 4.458
+Cursor Location: (1096, 234)
+Object Clicked: eric
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------

@@ -1,0 +1,6 @@
+Begin Logging
+
+Participant Start Time: 2.083
+Trial Start Time: 949.980
+Trial Number: 4
+-------------------------

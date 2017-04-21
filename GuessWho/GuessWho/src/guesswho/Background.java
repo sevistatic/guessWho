@@ -1,105 +1,104 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package guesswho;
 
 import java.awt.*;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.ListSelectionModel;
-import javax.swing.JLayeredPane;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.io.*;
-import java.util.Scanner;
-import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
 
 /**
- *
  * @author Spencer
  */
-public class Background extends JLayeredPane {
-    MouseTrap mLKing;
-    InstructionButton instructions;
-    FinalGuessButton finalGuess;
-    AskButton ask;
-    GiveUpButton giveUp;
-    JPanel payoutBar;
-    JPanel optionsBar;
-    JPanel buttonBar1;
-    JPanel buttonBar;
-    JPanel featuresBar;
-    Image image;
-    File file;
-    Scanner reader;
+class Background extends JLayeredPane {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private static MouseHandler mHandler;
+    private InstructionButton instructions;
+    private FinalGuessButton finalGuess;
+    private AskButton ask;
+    private GiveUpButton giveUp;
+    private JPanel payoutBar;
+    private JPanel optionsBar;
+    private JPanel buttonBar;
+    private JPanel featuresBar;
     private final int CARDS_PER_ROW = 6;
     private final int CARDS_PER_COLUMN = 3;
-    ArrayList<Feature> featuresSet;
-    
+    private final int BORDER_SIZE = 2;
+    private final int NUM_OF_OPTIONS_BUTTONS_DOWN = 3;
+    private final int NUM_OF_OPTIONS_BUTTONS_ACROSS = 2;
+    private static final int NUMBER_OF_STARTING_GUESSES = 6;
+    private final Color FOREGROUND_TEXT_COLOR = new Color(0,150,0);   
+    private ArrayList<Feature> featuresSet;
     private static JLabel totalPayoutLabel;
     private static JLabel trialPayoutLabel;
     private static JPanel playArea;
-    private static int totalPoints;
-    private static int trialPoints;
+    private static int points;
+    private static int guesses;
     private static int trialNumber;
-    public static ArrayList<Card> deck;
-    public static JLabel answer;
-    public static ArrayList<JList> jListList;
-    public static Card target;
-    public static Card selected;
-    public static PrintWriter outFile;
-    public static InfoButton info;
-    public int height;
-    public int width;
+    static ArrayList<Card> deck;
+    private static JLabel answer;
+    static ArrayList<JList> jListList;
+    static Card target;
+    static Card selected;
+    static PrintWriter outFile;
+    static InfoButton info;
+    private int height;
+    private int width;
     public static MersenneTwister mt;
+    public static FileWriter fw;
+    public static final String LOG_FOLDER = "logs";
+    public static ArrayList<String> boyNames;
+    public static ArrayList<String> girlNames;
 
-    public Background(int h, int w) throws IOException{
+    public Background(int h, int w) throws IOException {
+    	boyNames = populateBoyNames();
+    	girlNames = populateGirlNames();
         height = h;
         width = w;
-        outFile = new PrintWriter(new FileWriter("log.txt"));
         trialNumber = 0;
-        totalPoints = 0;
-        trialPoints = 50;
-        mLKing = new MouseTrap();
+        fw = new FileWriter(LOG_FOLDER + "/log" + getTrialNum() + ".txt");
+        outFile = new PrintWriter(fw);
+        points = 0;
+        guesses = NUMBER_OF_STARTING_GUESSES;
+        mHandler = new MouseHandler();
         deck = new ArrayList<Card>();
         featuresBar = new JPanel();
         optionsBar = new JPanel();
         playArea = new JPanel();
         featuresSet = new ArrayList<Feature>();
         jListList = new ArrayList<JList>();
-        file = new File("characterFeatures.txt");
         mt = new MersenneTwister();
     } //end constructor
 
-    public static void deductTrialPoints(int points){
-        if ((trialPoints-= points) >=0 ){
-        trialPayoutLabel.setText(String.format("%d Current", trialPoints));
+    public static void deductTrialPoints(int points) {
+        if ((guesses -= points) >= 0) {
+            trialPayoutLabel.setText(String.format("%d Guesses", guesses));
         } else {
-            trialPoints = 0;
-            trialPayoutLabel.setText(String.format("%d Current", trialPoints));
+            guesses = 0;
+            trialPayoutLabel.setText(String.format("%d Current", guesses));
         }
     }
-    
-    public static int getTrialPoints(){
-        return trialPoints;
+
+    public static int getTrialPoints() {
+        return guesses;
     }
-    
-    public static int getTrialNum(){
+
+    public static int getTrialNum() {
         return trialNumber;
     }
-    
-    public static int getTotalPoints(){
-        return totalPoints;
+
+    public static int getTotalPoints() {
+        return points;
     }
-    
-    public static void increaseTotalPoints(double points){
-        totalPoints += points;
-        totalPayoutLabel.setText(String.format("%d Total", totalPoints));
+
+    public static void increaseTotalPoints(double pts) {
+        points += pts;
+        totalPayoutLabel.setText(String.format("%d Points", points));
     }
-    
+
     public void init() {
         initPlayArea();
         buildFeatures();
@@ -107,28 +106,37 @@ public class Background extends JLayeredPane {
     }//end method init
 
     public void buildFeatures() {
-        featuresSet.add(new Feature("Sex", new String[]{"male", "female"}));
-        featuresSet.add(new Feature("Eyewear", new String[]{"glasses", "no glasses"}));
-        featuresSet.add(new Feature("Mouth", new String[]{"smile", "no smile"}));
+    	featuresSet.add(new Feature("Skin Color", new String[]{"light skin", "dark skin"}));
+    	featuresSet.add(new Feature("Eye Color", new String[]{"blue eyes", "black eyes", "brown eyes", "green eyes", "grey eyes"}));
+        featuresSet.add(new Feature("Sex", new String[]{"boy", "girl"}));
+        featuresSet.add(new Feature("Mouth", new String[]{"smiling", "frowning"}));
+        featuresSet.add(new Feature("Lips", new String[]{"big lips", "thin lips"}));
+        featuresSet.add(new Feature("Hair", new String[]{"blonde hair", "black hair", "brown hair", "red hair", "grey hair", "bald"}));
+        featuresSet.add(new Feature("Beard", new String[]{"beard", "no beard"}));
+        featuresSet.add(new Feature("Mustache", new String[]{"mustache", "no mustache"}));
+        featuresSet.add(new Feature("Nose", new String[]{"big nose", "short nose", "thin nose"}));
+        featuresSet.add(new Feature("Shirt", new String[]{"blue shirt", "black shirt", "red shirt", "green shirt", "orange shirt", 
+    								"yellow shirt", "purple shirt"/*, "white shirt", "leopard shirt", "warning shirt"*/}));
         featuresSet.add(new Feature("Headwear", new String[]{"hat", "no hat"}));
-        featuresSet.add(new Feature("Skin Color", new String[]{"white skin", "dark skin"}));
-        featuresSet.add(new Feature("Hair", new String[]{"black hair", "brown hair", "blonde hair", "bald"}));
-        featuresSet.add(new Feature("Eye Color", new String[]{"blue eyes", "green eyes", "brown eyes"}));
-        featuresSet.add(new Feature("Facial Hair", new String[]{"facial hair", "no facial hair"}));
+        //featuresSet.add(new Feature("Headwear Style", new String[]{"baseball cap", "cowboy hat", "beret", "hat - none"}));
+        featuresSet.add(new Feature("Eyewear", new String[]{"glasses", "no glasses"}));
+        //featuresSet.add(new Feature("Eyewear Style", new String[]{"thin glasses", "thick glasses", "eyepatch", "monocle", "glasses - none"}));
+        
+        
     }
 
     public void initOptionsBar() {
         info = new InfoButton("Card Info", null);
-        info.addMouseListener(mLKing);
+        info.addMouseListener(mHandler);
         instructions = new InstructionButton("Instructions");
-        instructions.addMouseListener(mLKing);
+        instructions.addMouseListener(mHandler);
         ask = new AskButton("Ask", jListList);
-        ask.addMouseListener(mLKing);
+        ask.addMouseListener(mHandler);
         finalGuess = new FinalGuessButton("Final Guess", target.getCharacter());
-        finalGuess.addMouseListener(mLKing);
+        finalGuess.addMouseListener(mHandler);
         giveUp = new GiveUpButton("Give Up?");
-        giveUp.addMouseListener(mLKing);
-        
+        giveUp.addMouseListener(mHandler);
+
         optionsBar.setLayout(new BorderLayout());
         optionsBar.setPreferredSize(new Dimension(width / 3, height));
         optionsBar.setBorder(new LineBorder(Color.black, 3));
@@ -144,179 +152,236 @@ public class Background extends JLayeredPane {
         initButtons();
         this.add(optionsBar, BorderLayout.WEST);
     }
-    
-    public void set(){
-        newTarget();
+
+    public void set() {
         playArea.removeAll();
         shuffle(deck);
-        for (int i = 0; i < deck.size(); i++){
+        newTarget();
+        for (int i = 0; i < deck.size(); i++) {
+        	deck.get(i).addMouseListener(mHandler);
             playArea.add(deck.get(i));
         }
     }
-    
-    public static void reset(){
+
+    public static void reset() {
         trialNumber++;
-        newTarget();
+        outFile.close();
+        try{
+        fw = new FileWriter(LOG_FOLDER + "/log" + getTrialNum() + ".txt");
+        } catch (Exception e){
+        	System.out.println(e.getMessage());
+        }
+        outFile = new PrintWriter(fw);
+        Background.outFile.println("Begin Logging\n");
+        Background.outFile.printf("Participant Start Time: %.3f", GuessWho.startTime);
+        Background.outFile.println();
+        Background.outFile.printf("Trial Start Time: %.3f", currentTime());
+        Background.outFile.println();
+        Background.outFile.println("Trial Number: " + Background.getTrialNum());
+        //Background.outFile.println();
+        Background.outFile.flush();
         selected = null;
         playArea.removeAll();
+        girlNames = populateGirlNames();
+        boyNames = populateBoyNames();
         shuffle(deck);
-        
+        newTarget();
+        for (int i = 0; i < deck.size(); i++){
+        	deck.get(i).addMouseListener(mHandler);
+        }
+
         Background.setAnswer(-1);
         Background.deductTrialPoints(0);
-        for (int i = 0; i < deck.size(); i++){
+        for (int i = 0; i < deck.size(); i++) {
             playArea.add(deck.get(i));
         }
-        trialPoints = 50;
-        trialPayoutLabel.setText(String.format("%d Current", trialPoints));
-        for (int j = 0; j < jListList.size(); j++){
+        guesses = NUMBER_OF_STARTING_GUESSES;
+        trialPayoutLabel.setText(String.format("%d Guesses", guesses));
+        for (int j = 0; j < jListList.size(); j++) {
             jListList.get(j).setSelectedIndex(0);
         }
         for (int i = 0; i < Background.jListList.size(); i++) {
             Background.jListList.get(i).clearSelection();
         }
     }
-    
-    public static void setAnswer(int i){
+
+    public static void setAnswer(int i) {
         answer.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-        if (i == 1){
-        answer.setForeground(new Color(0, 100, 0));
-        answer.setText("Yes");
-        } else if (i == 0){    
-        answer.setForeground(new Color(100, 0, 0));
-        answer.setText("No");
+        if (i == 1) {
+            answer.setForeground(new Color(0, 100, 0));
+            answer.setText("Yes");
+        } else if (i == 0) {
+            answer.setForeground(new Color(100, 0, 0));
+            answer.setText("No");
         } else {
             answer.setText("");
         }
     }
-    
-    public static void shuffle(ArrayList<Card> d){
+
+    public static void shuffle(ArrayList<Card> d) {
         ArrayList<Card> newDeck = new ArrayList<Card>();
-        while (!d.isEmpty()){
+        int sz = d.size();
+        while (!d.isEmpty()) {
+        	/*
             Card c = d.remove(mt.nextInt(d.size()));
-           // Card c = d.remove((int)(Math.random() * d.size()));
             c.unflip();
             c.unmark();
             c.unfade();
             newDeck.add(c);
+            */
+        	d.remove(0);
+        }
+        for (int i = 0; i < sz; i++){
+        	newDeck.add(new Card());
         }
         deck = newDeck;
     }
-    
-    public static void newTarget(){
-        //int r = (int) (Math.random() * deck.size());
+
+    public static void newTarget() {
         int r = mt.nextInt(deck.size());
-            target = deck.get(r);
+        target = deck.get(r);
     }
-    
+
     public void initTotalPayoutLabel() {
         totalPayoutLabel = new JLabel();
-        totalPayoutLabel.setBorder(new LineBorder(Color.black, 2));
+        totalPayoutLabel.setBorder(new LineBorder(Color.black, BORDER_SIZE));
         totalPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
         totalPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 40));
-        totalPayoutLabel.setForeground(new Color(0, 100, 0));
-        totalPayoutLabel.setText(String.format("%d Total", totalPoints));
+        totalPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
+        totalPayoutLabel.setText(String.format("%d Points", points));
     }
-    
+
     public void initTrialPayoutLabel() {
         trialPayoutLabel = new JLabel();
         trialPayoutLabel.setBorder(new LineBorder(Color.black, 2));
         trialPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
         trialPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-        trialPayoutLabel.setForeground(new Color(0, 100, 0));
-        trialPayoutLabel.setText(String.format("%d Current", trialPoints));
+        trialPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
+        trialPayoutLabel.setText(String.format("%d Guesses", guesses));
     }
 
+    private static ArrayList<String> populateBoyNames(){
+    	ArrayList<String> names = new ArrayList<String>();
+    	names.add("george");
+    	names.add("tomas");
+    	names.add("samuel");
+    	names.add("adam");
+    	names.add("spencer");
+    	names.add("scott");
+    	names.add("mark");
+    	names.add("mike");
+    	names.add("matt");
+    	names.add("chris");
+    	names.add("preston");
+    	names.add("doug");
+    	names.add("peter");
+    	names.add("lucas");
+    	names.add("bob loblaw");
+    	names.add("david");
+    	names.add("ronald");
+    	names.add("kevin");
+    	names.add("kenny");
+    	names.add("eric");
+    	names.add("kyle");
+    	names.add("stan");
+    	names.add("fred");
+    	names.add("curtis");
+    	names.add("bruce");
+    	
+    	return names;
+    }
+    
+    public static String randomBoyName(){
+    	int r = mt.nextInt(boyNames.size());
+    	return boyNames.remove(r);
+    }
+    
+    public static String randomGirlName(){
+    	int r = mt.nextInt(girlNames.size());
+    	return girlNames.remove(r);
+    }
+    
+    private static ArrayList<String> populateGirlNames(){
+    	ArrayList<String> names = new ArrayList<String>();
+    	names.add("martha");
+    	names.add("sally");
+    	names.add("abigail");
+    	names.add("jennifer");
+    	names.add("katie");
+    	names.add("cassie");
+    	names.add("julie");
+    	names.add("hanna");
+    	names.add("anne");
+    	names.add("rachel");
+    	names.add("linda");
+    	names.add("melissa");
+    	names.add("stephanie");
+    	names.add("leah");
+    	names.add("melanie");
+    	names.add("veronica");
+    	names.add("heather");
+    	names.add("izabelle");
+    	names.add("lindsey");
+    	names.add("diana");
+    	names.add("barbara");
+    	names.add("joyce");
+    	names.add("kaylee");
+    	names.add("gabriella");
+    	names.add("nancy");
+
+return names;
+    }
+    
     public void initFeaturesBar() {
         answer = new JLabel("");
-        answer.setBorder(new LineBorder(Color.BLACK, 2));
+        answer.setBorder(new LineBorder(Color.BLACK, BORDER_SIZE));
         featuresBar.setLayout(new GridLayout(4, 2));
-        featuresBar.setBorder(new LineBorder(Color.black, 2));
+        featuresBar.setBorder(new LineBorder(Color.black, BORDER_SIZE));
         for (int i = 0; i < featuresSet.size(); i++) {
             JPanel j = new JPanel();
             j.setLayout(new GridLayout(1, 1));
             String[] data = featuresSet.get(i).getOptions();
-            GuessList a = new GuessList(data);
+            GuessList a = new GuessList(data, featuresSet.get(i).getName());
             a.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             jListList.add(a);
-            a.addMouseListener(mLKing);
+            a.addMouseListener(mHandler);
             j.add(jListList.get(i));
             featuresBar.add(j);
         }
         answer.setHorizontalAlignment(SwingConstants.CENTER);
         answer.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-        answer.setForeground(new Color(0, 100, 0));
+        answer.setForeground(FOREGROUND_TEXT_COLOR);
         optionsBar.add(featuresBar, BorderLayout.CENTER);
     }
 
     public void initButtons() {
         buttonBar = new JPanel();
-        buttonBar.setBorder(new LineBorder(Color.black, 2));
-        buttonBar.setLayout(new GridLayout(3, 2));
-        buttonBar.add(answer);
-        buttonBar.add(info);
-        buttonBar.add(instructions);
+        buttonBar.setBorder(new LineBorder(Color.black, BORDER_SIZE));
+        buttonBar.setLayout(new GridLayout(NUM_OF_OPTIONS_BUTTONS_DOWN, NUM_OF_OPTIONS_BUTTONS_ACROSS));
         buttonBar.add(ask);
+        buttonBar.add(answer);
         buttonBar.add(finalGuess);
+        buttonBar.add(info);
         buttonBar.add(giveUp);
+        buttonBar.add(instructions);
         optionsBar.add(buttonBar, BorderLayout.SOUTH);
     }
 
     public void initPlayArea() {
-        GridLayout grid = new GridLayout(3, 6);
+        GridLayout grid = new GridLayout(CARDS_PER_COLUMN, CARDS_PER_ROW);
         playArea.setLayout(grid);
         this.add(playArea, BorderLayout.CENTER);
-        try {
-            reader = new Scanner(file);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        while (reader.hasNextLine()) {
+        //prints CARDS_PER ROW cards in a single row * CARDS_PER_COLUMN columns
             for (int a = 0; a < CARDS_PER_ROW; a++) {
                 for (int b = 0; b < CARDS_PER_COLUMN; b++) {
-                    int index = (a * CARDS_PER_COLUMN) + b;
-                    createCharacterCard(a, b, index);
+                    deck.add(new Card());
                 }
             }
-        }
         set();
     }
-    
+
     public static double currentTime() {
         return (System.currentTimeMillis() / 1000.0) - GuessWho.systemStartTime;
     }
 
-    public void createCharacterCard(int r, int c, int index) {
-        ArrayList<String> feat = new ArrayList<String>();
-        String name = reader.nextLine();
-        String fn = reader.nextLine();
-        String male = reader.nextLine();
-        feat.add(male);
-        String glasses = reader.nextLine();
-        feat.add(glasses);
-        String smiling = reader.nextLine();
-        feat.add(smiling);
-        String hat = reader.nextLine();
-        feat.add(hat);
-        String whiteSkin = reader.nextLine();
-        feat.add(whiteSkin);
-        String hairColor = reader.nextLine();
-        feat.add(hairColor);
-        String eyeColor = reader.nextLine();
-        feat.add(eyeColor);
-        String facialHair = reader.nextLine();
-        feat.add(facialHair);
-        deck.add(new Card(r, c, new Character(r, c, name, fn, feat)));
-        reader.nextLine();
-        deck.get(index).addMouseListener(mLKing);
-    }
-
-    @Override
-    public void paintComponent(Graphics g) {
-    } // end method paintComponent
 }//end class Background
-
-/*
- * ***change to % of screen size
- * 
- * automatic flipdown on yes *****not doing it
- */

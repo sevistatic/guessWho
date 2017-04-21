@@ -11,15 +11,15 @@ import javax.swing.ListSelectionModel;
  */
 public class GuessList extends JList implements GuessObject{
     private int selectedIndex;
-    GuessList(){
+    GuessList<Object>(){
         super();
         selectedIndex = 10;
     }
-    GuessList(String[] s){
+    GuessList<Object>(String[] s){
         super(s);
     }
-    
-    public void doStuff(int x, int y, int button){ 
+
+    public void doStuff(int x, int y, int button){
         if (button == 3){
         if (this.getSelectedIndex() == selectedIndex){
            clearSelection();
@@ -27,6 +27,6 @@ public class GuessList extends JList implements GuessObject{
             selectedIndex = this.getSelectedIndex();
         }
         }
-            
+
     }
 }

@@ -1,13 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package guesswho;
 /**
- *
+ * 
  * @author Spencer
+ *Used entirely to describe the features used in the JLists found in Background.java.
+ *An example of a feature is sex.  It has a parity of 2, because there can be a boy or a girl.
+ *boy and  girl would be the options in this case.
  */
-public class Feature {
+class Feature {
 
 //name: beard
 //parity: 2

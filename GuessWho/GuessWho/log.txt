@@ -1,8 +1,8 @@
 Begin Logging
 Event: Mouse Clicked
-Time: 4.714
-Cursor Location: (381, 389)
-Object Clicked: Kathy
+Time: 15.332
+Cursor Location: (171, 507)
+Object Clicked: guesswho.GuessList[,0,0,145x165,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=com.apple.laf.AquaImageFactory$SystemColorProxy[r=9,g=80,b=208],selectionForeground=com.apple.laf.AquaImageFactory$SystemColorProxy[r=255,g=255,b=255],visibleRowCount=8,layoutOrientation=0]
 Button Used: 1
 Current Trial: 0
 Current Trial Score: 50
@@ -10,159 +10,8 @@ Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 6.324
-Cursor Location: (229, 689)
-Object Clicked: Button: Info
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
-Request Info, Character: Kathy
--------------------------
-Event: Mouse Clicked
-Time: 12.364
-Cursor Location: (509, 351)
-Object Clicked: Heidi
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 13.598
-Cursor Location: (674, 337)
-Object Clicked: Tamsin
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 14.732
-Cursor Location: (387, 332)
-Object Clicked: Kathy
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 15.912
-Cursor Location: (391, 204)
-Object Clicked: Giselle
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 16.542
-Cursor Location: (394, 339)
-Object Clicked: Kathy
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 17.370
-Cursor Location: (394, 339)
-Object Clicked: Kathy
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 18.382
-Cursor Location: (394, 339)
-Object Clicked: Kathy
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 19.723
-Cursor Location: (673, 584)
-Object Clicked: David
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 27.793
-Cursor Location: (348, 315)
-Object Clicked: Kathy
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 28.353
-Cursor Location: (514, 343)
-Object Clicked: Heidi
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 28.908
-Cursor Location: (660, 355)
-Object Clicked: Tamsin
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 30.568
-Cursor Location: (672, 594)
-Object Clicked: David
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 31.772
-Cursor Location: (366, 181)
-Object Clicked: Giselle
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 33.735
-Cursor Location: (30, 139)
-Object Clicked: guesswho.GuessList[,0,0,123x136,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 35.512
-Cursor Location: (155, 715)
+Time: 16.465
+Cursor Location: (208, 846)
 Object Clicked: Button: Query
 Button Used: 1
 Current Trial: 0
@@ -170,13 +19,13 @@ Current Trial Score: 50
 Current Total Score: 0
 Event Type: Single Click
 Query submitted:
-Match for male
+Match for blonde hair
 Selected Characteristics Match
 -------------------------
 Event: Mouse Clicked
-Time: 37.604
-Cursor Location: (314, 163)
-Object Clicked: Giselle
+Time: 18.215
+Cursor Location: (570, 461)
+Object Clicked: Frank
 Button Used: 3
 Current Trial: 0
 Current Trial Score: 40
@@ -184,128 +33,8 @@ Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 38.278
-Cursor Location: (335, 356)
-Object Clicked: Kathy
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 38.852
-Cursor Location: (532, 366)
-Object Clicked: Heidi
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 39.718
-Cursor Location: (360, 575)
-Object Clicked: Sophia
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 40.792
-Cursor Location: (651, 411)
-Object Clicked: Tamsin
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 42.407
-Cursor Location: (1092, 415)
-Object Clicked: Charlie
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 44.461
-Cursor Location: (1094, 620)
-Object Clicked: Yvette
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 46.132
-Cursor Location: (1126, 406)
-Object Clicked: Charlie
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 47.520
-Cursor Location: (944, 385)
-Object Clicked: Denise
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 48.278
-Cursor Location: (673, 368)
-Object Clicked: Tamsin
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 48.916
-Cursor Location: (674, 368)
-Object Clicked: Tamsin
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 49.720
-Cursor Location: (529, 367)
-Object Clicked: Heidi
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 50.280
-Cursor Location: (529, 367)
-Object Clicked: Heidi
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 51.728
-Cursor Location: (854, 154)
+Time: 19.033
+Cursor Location: (779, 460)
 Object Clicked: Petra
 Button Used: 3
 Current Trial: 0
@@ -314,529 +43,218 @@ Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 52.604
-Cursor Location: (1027, 155)
-Object Clicked: Brenda
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 55.760
-Cursor Location: (180, 401)
-Object Clicked: guesswho.GuessList[,0,0,123x133,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 59.797
-Cursor Location: (184, 709)
-Object Clicked: Button: Query
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
-Query submitted:
-Match for black hair
-Selected Characteristics Match
--------------------------
-Event: Mouse Clicked
-Time: 63.885
-Cursor Location: (1221, 604)
-Object Clicked: Steven
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 65.070
-Cursor Location: (1220, 414)
-Object Clicked: Adam
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 65.876
-Cursor Location: (1070, 354)
-Object Clicked: Charlie
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 68.168
-Cursor Location: (711, 181)
-Object Clicked: Frank
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 72.306
-Cursor Location: (1239, 126)
-Object Clicked: Kevin
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 74.183
-Cursor Location: (551, 544)
-Object Clicked: Raymond
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 81.584
-Cursor Location: (47, 419)
-Object Clicked: guesswho.GuessList[,0,0,123x133,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 83.208
-Cursor Location: (180, 706)
-Object Clicked: Button: Query
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
-Query submitted:
-Match for dark skin
-Selected Characteristics Match
--------------------------
-Event: Mouse Clicked
-Time: 88.006
-Cursor Location: (51, 408)
-Object Clicked: guesswho.GuessList[,0,0,123x133,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 20
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 89.078
-Cursor Location: (197, 710)
-Object Clicked: Button: Query
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 20
-Current Total Score: 0
-Event Type: Single Click
-Query submitted:
-No Match for white skin
--------------------------
-Event: Mouse Clicked
-Time: 92.259
-Cursor Location: (876, 635)
-Object Clicked: Lucas
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 10
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 98.812
-Cursor Location: (50, 572)
-Object Clicked: guesswho.GuessList[,0,0,123x133,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 10
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 100.138
-Cursor Location: (178, 708)
-Object Clicked: Button: Query
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 10
-Current Total Score: 0
-Event Type: Single Click
-Query submitted:
-No Match for brown eyes
--------------------------
-Event: Mouse Clicked
-Time: 102.506
-Cursor Location: (678, 610)
-Object Clicked: David
-Button Used: 3
-Current Trial: 0
-Current Trial Score: 0
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 103.594
-Cursor Location: (497, 157)
-Object Clicked: Matthew
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 0
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 105.331
-Cursor Location: (83, 736)
-Object Clicked: Button: Final Guess
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 0
-Current Total Score: 0
-Event Type: Single Click
-Final Guess, Player Answer: Matthew
-Correct Answer: Matthew
--------------------------
-Event: Mouse Clicked
-Time: 124.373
-Cursor Location: (39, 405)
-Object Clicked: guesswho.GuessList[,0,0,123x136,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 125.331
-Cursor Location: (40, 156)
-Object Clicked: guesswho.GuessList[,0,0,123x136,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 126.650
-Cursor Location: (179, 712)
-Object Clicked: Button: Query
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 50
-Current Total Score: 0
-Event Type: Single Click
-Query submitted:
-No Match for female
--------------------------
-Event: Mouse Clicked
-Time: 129.507
-Cursor Location: (40, 137)
-Object Clicked: guesswho.GuessList[,0,0,123x133,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 130.825
-Cursor Location: (55, 398)
-Object Clicked: guesswho.GuessList[,0,0,123x133,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 132.305
-Cursor Location: (192, 708)
-Object Clicked: Button: Query
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 40
-Current Total Score: 0
-Event Type: Single Click
-Query submitted:
-Match for male
-Match for white skin
-Selected Characteristics Match
--------------------------
-Event: Mouse Clicked
-Time: 135.691
-Cursor Location: (351, 194)
-Object Clicked: Frank
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 136.581
-Cursor Location: (494, 183)
-Object Clicked: Kathy
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 137.331
-Cursor Location: (361, 416)
-Object Clicked: Giselle
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 139.997
-Cursor Location: (333, 615)
-Object Clicked: Tamsin
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 140.871
-Cursor Location: (500, 612)
-Object Clicked: Brenda
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 142.173
-Cursor Location: (698, 618)
-Object Clicked: Matthew
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 143.201
-Cursor Location: (698, 401)
-Object Clicked: Sophia
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 144.725
-Cursor Location: (1041, 385)
+Time: 19.721
+Cursor Location: (946, 444)
 Object Clicked: Heidi
 Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
+Current Trial: 0
+Current Trial Score: 40
 Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 145.499
-Cursor Location: (1044, 632)
+Time: 20.415
+Cursor Location: (1120, 423)
+Object Clicked: Kathy
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 40
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 21.291
+Cursor Location: (1285, 421)
 Object Clicked: Denise
 Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
+Current Trial: 0
+Current Trial Score: 40
 Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 146.205
-Cursor Location: (1263, 599)
+Time: 22.459
+Cursor Location: (1323, 684)
 Object Clicked: David
 Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
+Current Trial: 0
+Current Trial Score: 40
 Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 146.977
-Cursor Location: (1243, 338)
+Time: 23.309
+Cursor Location: (1160, 713)
+Object Clicked: Matthew
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 40
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 24.311
+Cursor Location: (806, 722)
 Object Clicked: Yvette
 Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
+Current Trial: 0
+Current Trial Score: 40
 Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 147.959
-Cursor Location: (1081, 179)
-Object Clicked: Petra
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 156.779
-Cursor Location: (153, 267)
-Object Clicked: guesswho.GuessList[,0,0,123x133,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 162.723
-Cursor Location: (161, 437)
-Object Clicked: guesswho.GuessList[,0,0,123x133,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 165.221
-Cursor Location: (214, 707)
-Object Clicked: Button: Query
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 30
-Current Total Score: 0
-Event Type: Single Click
-Query submitted:
-Match for hat
-No Match for blonde hair
--------------------------
-Event: Mouse Clicked
-Time: 168.019
-Cursor Location: (729, 165)
-Object Clicked: Steven
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 20
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 169.757
-Cursor Location: (144, 271)
-Object Clicked: guesswho.GuessList[,0,0,123x133,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 20
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 172.547
-Cursor Location: (174, 403)
-Object Clicked: guesswho.GuessList[,0,0,123x133,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],selectionForeground=sun.swing.PrintColorUIResource[r=51,g=51,b=51],visibleRowCount=8,layoutOrientation=0]
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 20
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 173.465
-Cursor Location: (182, 709)
-Object Clicked: Button: Query
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 20
-Current Total Score: 0
-Event Type: Single Click
-Query submitted:
-Match for hat
-Match for black hair
-Selected Characteristics Match
--------------------------
-Event: Mouse Clicked
-Time: 175.741
-Cursor Location: (532, 363)
-Object Clicked: Raymond
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 10
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 176.492
-Cursor Location: (915, 576)
-Object Clicked: Adam
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 10
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 177.511
-Cursor Location: (895, 149)
-Object Clicked: Charlie
-Button Used: 3
-Current Trial: 1
-Current Trial Score: 10
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 178.477
-Cursor Location: (1183, 153)
+Time: 25.421
+Cursor Location: (404, 680)
 Object Clicked: Kevin
 Button Used: 3
-Current Trial: 1
-Current Trial Score: 10
+Current Trial: 0
+Current Trial Score: 40
 Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 179.481
-Cursor Location: (920, 358)
+Time: 27.046
+Cursor Location: (420, 239)
 Object Clicked: Lucas
-Button Used: 1
-Current Trial: 1
-Current Trial Score: 10
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 40
 Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 181.525
-Cursor Location: (93, 739)
+Time: 28.016
+Cursor Location: (767, 237)
+Object Clicked: Adam
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 40
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 29.090
+Cursor Location: (957, 215)
+Object Clicked: Raymond
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 40
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 30.032
+Cursor Location: (1298, 216)
+Object Clicked: Brenda
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 40
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 59.963
+Cursor Location: (166, 164)
+Object Clicked: guesswho.GuessList[,0,0,145x165,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=com.apple.laf.AquaImageFactory$SystemColorProxy[r=9,g=80,b=208],selectionForeground=com.apple.laf.AquaImageFactory$SystemColorProxy[r=255,g=255,b=255],visibleRowCount=8,layoutOrientation=0]
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 40
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 61.175
+Cursor Location: (231, 842)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 40
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for no glasses
+-------------------------
+Event: Mouse Clicked
+Time: 67.467
+Cursor Location: (980, 748)
+Object Clicked: Steven
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 30
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 68.789
+Cursor Location: (545, 205)
+Object Clicked: Sophia
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 30
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 69.823
+Cursor Location: (404, 424)
+Object Clicked: Tamsin
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 30
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 72.821
+Cursor Location: (202, 643)
+Object Clicked: guesswho.GuessList[,0,0,145x165,alignmentX=0.0,alignmentY=0.0,border=,flags=50331944,maximumSize=,minimumSize=,preferredSize=,fixedCellHeight=-1,fixedCellWidth=-1,horizontalScrollIncrement=-1,selectionBackground=com.apple.laf.AquaImageFactory$SystemColorProxy[r=9,g=80,b=208],selectionForeground=com.apple.laf.AquaImageFactory$SystemColorProxy[r=255,g=255,b=255],visibleRowCount=8,layoutOrientation=0]
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 30
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 73.946
+Cursor Location: (217, 847)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 30
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for facial hair
+-------------------------
+Event: Mouse Clicked
+Time: 75.982
+Cursor Location: (546, 730)
+Object Clicked: Charlie
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 20
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 77.972
+Cursor Location: (1122, 239)
+Object Clicked: Giselle
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 20
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 80.090
+Cursor Location: (125, 871)
 Object Clicked: Button: Final Guess
 Button Used: 1
-Current Trial: 1
-Current Trial Score: 10
+Current Trial: 0
+Current Trial Score: 20
 Current Total Score: 0
 Event Type: Single Click
-Final Guess, Player Answer: Lucas
-Correct Answer: Lucas
+Final Guess, Player Answer: Giselle
+Correct Answer: Giselle
 -------------------------
