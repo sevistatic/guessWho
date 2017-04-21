@@ -20,10 +20,10 @@ public class FeaturesComboBox extends JComboBox implements GuessObject {
     int index;
     boolean correct;
     private String correctAnswer;
-    MouseTrap ml;
+    MouseHandler ml;
     RadioPanel panel;
 
-    FeaturesComboBox(Feature f, int ind, MouseTrap m) {
+    FeaturesComboBox(Feature f, int ind, MouseHandler m) {
         super();
         ml = m;
         panel = null;

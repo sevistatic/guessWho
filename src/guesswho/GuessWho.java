@@ -6,17 +6,19 @@ import javax.swing.*;
  * @author Spencer Bryant
  */
 public class GuessWho {
-static final int START_TIME = 99;
-static int systemStartTime;
 static String startInfo;
 static final boolean PARTIAL_INFO = false;
-static double startTime;
+
+public static Logger logger;
+public static Trial trial;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         JFrame gameFrame = new JFrame("Spencer's Guess Who Game");
+        trial = new Trial();
+        logger = new Logger();
 
         //Set up game window
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,9 +34,6 @@ static double startTime;
         background.init();
         gameFrame.add(background);
         gameFrame.setVisible(true);
-
-        //set start time for logging
-        systemStartTime = (int)(System.currentTimeMillis() / 1000);
 
         //exit flag
         boolean b = false;
@@ -54,19 +53,7 @@ static double startTime;
                 + "\nClick the \"CARD INFO\" button to learn which features a certain character has."
                 + "\nLeft-click to select a character and right-click to turn them over."
                 );
-
-                //begin logging trials
-                Background.outFile.println("Begin Logging");
-                startTime = Background.currentTime();
-                Background.outFile.printf("Participant Start Time: %.3f", startTime);
-                Background.outFile.println();
-                Background.outFile.printf("Trial Start Time: %.3f", startTime);
-                Background.outFile.println();
-                Background.outFile.println("Trial Number: " + Background.getTrialNum());
-                Background.outFile.println("----------------------------------------");
-                Background.outFile.flush();
                 b = true;
-                Background.outFile.flush();
             }
         } while(b);//exit flag
         } catch (Exception e){

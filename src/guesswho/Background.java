@@ -14,27 +14,21 @@ class Background extends JLayeredPane {
 
 	private static MouseHandler mHandler;
 
-  private InstructionButton instructions;
-  private FinalGuessButton finalGuess;
-  private AskButton ask;
-  private GiveUpButton giveUp;
-  static InfoButton info;
-
   private JPanel payoutBar;
   private JPanel optionsBar;
-  private JPanel buttonBar;
+
+  public ButtonBar buttonBar;
+
   private JPanel featuresBar;
-  private static JPanel playArea;
-	private static JLabel totalPayoutLabel;
-  private static JLabel trialPayoutLabel;
-  private static JLabel answer;
+  private JPanel playArea;
+	public JLabel totalPayoutLabel;
+  public JLabel trialPayoutLabel;
 
   private final int CARDS_PER_ROW = 6;
   private final int CARDS_PER_COLUMN = 3;
   private final int BORDER_SIZE = 2;
   private final int NUM_OF_OPTIONS_BUTTONS_DOWN = 3;
   private final int NUM_OF_OPTIONS_BUTTONS_ACROSS = 2;
-  private static final int NUMBER_OF_STARTING_GUESSES = 6;
 
   private ArrayList<Feature> featuresSet;
   static ArrayList<Card> deck;
@@ -42,64 +36,33 @@ class Background extends JLayeredPane {
 
 	private final Color FOREGROUND_TEXT_COLOR = new Color(0,150,0);
 
-  private static int points;
-  private static int guesses;
-  private static int trialNumber;
-
   static Card target;
   static Card selected;
 
   private int height;
   private int width;
 
-  static PrintWriter outFile;
   public static MersenneTwister mt;
-  public static FileWriter fw;
-  public static final String LOG_FOLDER = "logs";
 
   public Background(int h, int w) throws IOException {
     height = h;
     width = w;
-    trialNumber = 0;
-    fw = new FileWriter(LOG_FOLDER + "/log" + getTrialNum() + ".txt");
-    outFile = new PrintWriter(fw);
-    points = 0;
-    guesses = NUMBER_OF_STARTING_GUESSES;
     mHandler = new MouseHandler();
     deck = new ArrayList<Card>();
     featuresBar = new JPanel();
     optionsBar = new JPanel();
     playArea = new JPanel();
+		buttonBar = new ButtonBar(this);
+		buttonBar.addMouseListener(mHandler);
     featuresSet = new ArrayList<Feature>();
     jListList = new ArrayList<JList>();
     mt = new MersenneTwister();
   }
 
-  public static void deductTrialPoints(int points) {
-  	if ((guesses -= points) >= 0) {
-    	trialPayoutLabel.setText(String.format("%d Guesses", guesses));
-    } else {
-    guesses = 0;
-      trialPayoutLabel.setText(String.format("%d Current", guesses));
-    }
-  }
-
-  public static int getTrialPoints() {
-    return guesses;
-  }
-
-  public static int getTrialNum() {
-    return trialNumber;
-  }
-
-  public static int getTotalPoints() {
-    return points;
-  }
-
-  public static void increaseTotalPoints(double pts) {
-    points += pts;
-    totalPayoutLabel.setText(String.format("%d Points", points));
-  }
+	public void resetPointsLabel(){
+		int trialPoints = GuessWho.trial.getTrialPoints();
+		trialPayoutLabel.setText(String.format("%d Guesses", trialPoints));
+	}
 
   public void init() {
     initPlayArea();
@@ -124,17 +87,6 @@ class Background extends JLayeredPane {
   }
 
   public void initOptionsBar() {
-    info = new InfoButton("Card Info", null);
-    info.addMouseListener(mHandler);
-    instructions = new InstructionButton("Instructions");
-    instructions.addMouseListener(mHandler);
-    ask = new AskButton("Ask", jListList);
-    ask.addMouseListener(mHandler);
-    finalGuess = new FinalGuessButton("Final Guess", target.getCharacter());
-    finalGuess.addMouseListener(mHandler);
-    giveUp = new GiveUpButton("Give Up?");
-    giveUp.addMouseListener(mHandler);
-
     optionsBar.setLayout(new BorderLayout());
     optionsBar.setPreferredSize(new Dimension(width / 3, height));
     optionsBar.setBorder(new LineBorder(Color.black, 3));
@@ -147,7 +99,7 @@ class Background extends JLayeredPane {
     payoutBar.add(trialPayoutLabel, BorderLayout.SOUTH);
     optionsBar.add(payoutBar, BorderLayout.NORTH);
     initFeaturesBar();
-    initButtons();
+    optionsBar.add(buttonBar, BorderLayout.SOUTH);
     this.add(optionsBar, BorderLayout.WEST);
   }
 
@@ -161,23 +113,10 @@ class Background extends JLayeredPane {
     }
   }
 
-  public static void reset() {
-    trialNumber++;
-    outFile.close();
-    try{
-    	fw = new FileWriter(LOG_FOLDER + "/log" + getTrialNum() + ".txt");
-    } catch (Exception e){
-    	System.out.println(e.getMessage());
-    }
-    outFile = new PrintWriter(fw);
-    Background.outFile.println("Begin Logging\n");
-    Background.outFile.printf("Participant Start Time: %.3f", GuessWho.startTime);
-    Background.outFile.println();
-    Background.outFile.printf("Trial Start Time: %.3f", currentTime());
-    Background.outFile.println();
-    Background.outFile.println("Trial Number: " + Background.getTrialNum());
-    //Background.outFile.println();
-    Background.outFile.flush();
+  public void reset() {
+    GuessWho.trial.newTrial();
+		GuessWho.logger.newTrial();
+
     selected = null;
     playArea.removeAll();
     shuffle(deck);
@@ -186,31 +125,19 @@ class Background extends JLayeredPane {
     	deck.get(i).addMouseListener(mHandler);
     }
 
-    Background.setAnswer(-1);
-    Background.deductTrialPoints(0);
+    buttonBar.setAnswer(-1);
+  //  GuessWho.trial.resetTrialPoints();
+		resetPointsLabel();
     for (int i = 0; i < deck.size(); i++) {
       playArea.add(deck.get(i));
     }
-    guesses = NUMBER_OF_STARTING_GUESSES;
-    trialPayoutLabel.setText(String.format("%d Guesses", guesses));
+    GuessWho.trial.resetTrialPoints();
+    trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
     for (int j = 0; j < jListList.size(); j++) {
       jListList.get(j).setSelectedIndex(0);
     }
-    for (int i = 0; i < Background.jListList.size(); i++) {
-      Background.jListList.get(i).clearSelection();
-    }
-  }
-
-  public static void setAnswer(int i) {
-    answer.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-    if (i == 1) {
-      answer.setForeground(new Color(0, 100, 0));
-      answer.setText("Yes");
-    } else if (i == 0) {
-      answer.setForeground(new Color(100, 0, 0));
-      answer.setText("No");
-    } else {
-      answer.setText("");
+    for (int i = 0; i < jListList.size(); i++) {
+      jListList.get(i).clearSelection();
     }
   }
 
@@ -237,7 +164,7 @@ class Background extends JLayeredPane {
     totalPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
     totalPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 40));
     totalPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
-    totalPayoutLabel.setText(String.format("%d Points", points));
+    totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
   }
 
   public void initTrialPayoutLabel() {
@@ -246,74 +173,10 @@ class Background extends JLayeredPane {
     trialPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
     trialPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
     trialPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
-    trialPayoutLabel.setText(String.format("%d Guesses", guesses));
-  }
-
-  private static ArrayList<String> populateBoyNames(){
-  	ArrayList<String> names = new ArrayList<String>();
-  	names.add("george");
-  	names.add("tomas");
-  	names.add("samuel");
-  	names.add("adam");
-  	names.add("spencer");
-  	names.add("scott");
-  	names.add("mark");
-  	names.add("mike");
-  	names.add("matt");
-  	names.add("chris");
-  	names.add("preston");
-  	names.add("doug");
-  	names.add("peter");
-  	names.add("lucas");
-  	names.add("bob loblaw");
-  	names.add("david");
-  	names.add("ronald");
-  	names.add("kevin");
-  	names.add("kenny");
-  	names.add("eric");
-  	names.add("kyle");
-  	names.add("stan");
-  	names.add("fred");
-  	names.add("curtis");
-  	names.add("bruce");
-
-  	return names;
-  }
-
-  private static ArrayList<String> populateGirlNames(){
-  	ArrayList<String> names = new ArrayList<String>();
-  	names.add("martha");
-  	names.add("sally");
-  	names.add("abigail");
-  	names.add("jennifer");
-  	names.add("katie");
-  	names.add("cassie");
-  	names.add("julie");
-  	names.add("hanna");
-  	names.add("anne");
-  	names.add("rachel");
-  	names.add("linda");
-  	names.add("melissa");
-  	names.add("stephanie");
-  	names.add("leah");
-  	names.add("melanie");
-  	names.add("veronica");
-  	names.add("heather");
-  	names.add("izabelle");
-  	names.add("lindsey");
-  	names.add("diana");
-  	names.add("barbara");
-  	names.add("joyce");
-  	names.add("kaylee");
-  	names.add("gabriella");
-  	names.add("nancy");
-
-		return names;
+    trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
   }
 
   public void initFeaturesBar() {
-    answer = new JLabel("");
-    answer.setBorder(new LineBorder(Color.BLACK, BORDER_SIZE));
     featuresBar.setLayout(new GridLayout(4, 2));
     featuresBar.setBorder(new LineBorder(Color.black, BORDER_SIZE));
     for (int i = 0; i < featuresSet.size(); i++) {
@@ -327,23 +190,7 @@ class Background extends JLayeredPane {
       j.add(jListList.get(i));
       featuresBar.add(j);
     }
-    answer.setHorizontalAlignment(SwingConstants.CENTER);
-    answer.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-    answer.setForeground(FOREGROUND_TEXT_COLOR);
     optionsBar.add(featuresBar, BorderLayout.CENTER);
-  }
-
-  public void initButtons() {
-    buttonBar = new JPanel();
-    buttonBar.setBorder(new LineBorder(Color.black, BORDER_SIZE));
-    buttonBar.setLayout(new GridLayout(NUM_OF_OPTIONS_BUTTONS_DOWN, NUM_OF_OPTIONS_BUTTONS_ACROSS));
-    buttonBar.add(ask);
-    buttonBar.add(answer);
-    buttonBar.add(finalGuess);
-    buttonBar.add(info);
-    buttonBar.add(giveUp);
-    buttonBar.add(instructions);
-    optionsBar.add(buttonBar, BorderLayout.SOUTH);
   }
 
   public void initPlayArea() {
@@ -357,10 +204,6 @@ class Background extends JLayeredPane {
       }
     }
     set();
-  }
-
-  public static double currentTime() {
-    return (System.currentTimeMillis() / 1000.0) - GuessWho.systemStartTime;
   }
 }//end class Background
 

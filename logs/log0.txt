@@ -1,0 +1,14 @@
+Begin Logging
+Participant Start Time: 0.966
+Trial Start Time: 0.966
+Trial Number: 0
+----------------------------------------
+Event: Mouse Clicked
+Time: 11.099
+Cursor Location: (232, 868)
+Object Clicked: Button: Give Up - Answer: Mark
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
