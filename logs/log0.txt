@@ -1,14 +1,16 @@
 Begin Logging
-Participant Start Time: 0.966
-Trial Start Time: 0.966
+Participant Start Time: 0.111
+Trial Start Time: 0.111
 Trial Number: 0
 ----------------------------------------
 Event: Mouse Clicked
-Time: 11.099
-Cursor Location: (232, 868)
-Object Clicked: Button: Give Up - Answer: Mark
+Time: 11.328
+Cursor Location: (49, 879)
+Object Clicked: Button: Final Guess
 Button Used: 1
 Current Trial: 0
 Current Trial Score: 6
 Current Total Score: 0
 Event Type: Single Click
+Final Guess, Player Answer: None Selected
+Correct Answer: Bruce
