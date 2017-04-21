@@ -1,0 +1,198 @@
+Adam
+Adam.jpg
+male
+no glasses
+smile
+hat
+white skin
+brown hair
+blue eyes
+no facial hair
+#
+Brenda
+Brenda.jpg
+female
+glasses
+no smile
+no hat
+white skin
+black hair
+green eyes
+facial hair
+#
+Charlie
+Charlie.jpg
+male
+glasses
+smile
+no hat
+white skin
+blonde hair
+blue eyes
+facial hair
+#
+David
+David.jpg
+male
+no glasses
+smile
+no hat
+dark skin
+black hair
+brown eyes
+facial hair
+#
+Denise
+Denise.jpg
+female
+glasses
+no smile
+no hat
+white skin
+brown hair
+blue eyes
+no facial hair
+#
+Frank
+Frank.jpg
+male
+no glasses
+smile
+no hat
+dark skin
+bald
+brown eyes
+no facial hair
+#
+Giselle
+Giselle.jpg
+female
+glasses
+no smile
+no hat
+white skin
+blonde hair
+blue eyes
+no facial hair
+#
+Heidi
+Heidi.jpg
+female
+glasses
+smile
+hat
+white skin
+brown hair
+brown eyes
+no facial hair
+#
+Kathy
+Kathy.jpg
+female
+no glasses
+no smile
+no hat
+white skin
+brown hair
+brown eyes
+no facial hair
+#
+Kevin
+Kevin.jpg
+male
+glasses
+smile
+no hat
+white skin
+bald
+brown eyes
+no facial hair
+#
+Lucas
+Lucas.jpg
+male
+no glasses
+smile
+hat
+white skin
+black hair
+brown eyes
+no facial hair
+#
+Matthew
+Matthew.jpg
+male
+no glasses
+smile
+no hat
+dark skin
+black hair
+green eyes
+no facial hair
+#
+Petra
+Petra.jpg
+female
+no glasses
+no smile
+hat
+white skin
+black hair
+blue eyes
+no facial hair
+#
+Raymond
+Raymond.jpg
+male
+glasses
+smile
+no hat
+white skin
+bald
+green eyes
+facial hair
+#
+Sophia
+Sophia.jpg
+female
+no glasses
+no smile
+hat
+white skin
+blonde hair
+blue eyes
+no facial hair
+#
+Steven
+Steven.jpg
+male
+no glasses
+smile
+hat
+white skin
+blonde hair
+green eyes
+no facial hair
+#
+Tamsin
+Tamsin.jpg
+female
+no glasses
+no smile
+no hat
+white skin
+blonde hair
+green eyes
+no facial hair
+#
+Yvette
+Yvette.jpg
+female
+no glasses
+no smile
+no hat
+dark skin
+brown hair
+brown eyes
+no facial hair
+<EOF>
