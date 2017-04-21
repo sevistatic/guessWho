@@ -1,12 +1,22 @@
 Begin Logging
-Participant Start Time: 2.047
-Trial Start Time: 2.047
+Participant Start Time: 1.856
+Trial Start Time: 1.856
 Trial Number: 0
 ----------------------------------------
 Event: Mouse Clicked
-Time: 2.762
-Cursor Location: (1135, 471)
-Object Clicked: fred
+Time: 3.108
+Cursor Location: (1325, 472)
+Object Clicked: kenny
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 3.902
+Cursor Location: (1325, 472)
+Object Clicked: kenny
 Button Used: 3
 Current Trial: 0
 Current Trial Score: 6
@@ -14,12 +24,35 @@ Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 4.458
-Cursor Location: (1096, 234)
-Object Clicked: eric
-Button Used: 3
+Time: 6.032
+Cursor Location: (104, 647)
+Object Clicked: Headwear - hat
+Button Used: 1
 Current Trial: 0
 Current Trial Score: 6
 Current Total Score: 0
 Event Type: Single Click
 -------------------------
+Event: Mouse Clicked
+Time: 6.769
+Cursor Location: (79, 828)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for hat
+-------------------------
+Event: Mouse Clicked
+Time: 8.847
+Cursor Location: (124, 853)
+Object Clicked: Button: Final Guess
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+Final Guess, Player Answer: kenny
+Correct Answer: preston
