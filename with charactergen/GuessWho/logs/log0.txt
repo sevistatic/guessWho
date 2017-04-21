@@ -1,5 +1,0 @@
-Begin Logging
-Participant Start Time: 4.335
-Trial Start Time: 4.335
-Trial Number: 0
-----------------------------------------
