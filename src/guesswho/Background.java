@@ -39,8 +39,6 @@ class Background extends JLayeredPane {
   private ArrayList<Feature> featuresSet;
   static ArrayList<Card> deck;
   static ArrayList<JList> jListList;
-	public static ArrayList<String> boyNames;
-  public static ArrayList<String> girlNames;
 
 	private final Color FOREGROUND_TEXT_COLOR = new Color(0,150,0);
 
@@ -60,8 +58,6 @@ class Background extends JLayeredPane {
   public static final String LOG_FOLDER = "logs";
 
   public Background(int h, int w) throws IOException {
-  	boyNames = populateBoyNames();
-  	girlNames = populateGirlNames();
     height = h;
     width = w;
     trialNumber = 0;
@@ -184,8 +180,6 @@ class Background extends JLayeredPane {
     Background.outFile.flush();
     selected = null;
     playArea.removeAll();
-    girlNames = populateGirlNames();
-    boyNames = populateBoyNames();
     shuffle(deck);
     newTarget();
     for (int i = 0; i < deck.size(); i++){
@@ -284,16 +278,6 @@ class Background extends JLayeredPane {
   	names.add("bruce");
 
   	return names;
-  }
-
-  public static String randomBoyName(){
-  	int r = mt.nextInt(boyNames.size());
-  	return boyNames.remove(r);
-  }
-
-  public static String randomGirlName(){
-  	int r = mt.nextInt(girlNames.size());
-  	return girlNames.remove(r);
   }
 
   private static ArrayList<String> populateGirlNames(){

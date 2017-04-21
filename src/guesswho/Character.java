@@ -1,6 +1,7 @@
 package guesswho;
 
 import javax.swing.ImageIcon;
+import names.Names;
 
 /**
  *
@@ -11,20 +12,20 @@ class Character {
     private int[] features;
     RandomPortrait rp;
     ImageIcon[] iArray;
-    
+
     Character() {
         features = newFeatures();
         if (features[2] == 1){
-        	name = Background.randomBoyName();
+        	name = Names.randomMaleName();
         } else {
-        	name = Background.randomGirlName();
+        	name = Names.randomFemaleName();
         }
         //name = randomName(features[2]);//gives male or female name, needs sex info
         rp = new RandomPortrait(features);
         iArray = rp.getImages();
-        
+
     }
-    
+
     public String[] getFeatures() {
         return rp.describeFeatures(features);
     }
@@ -32,16 +33,16 @@ class Character {
     public String getName() {
         return name;
     }
-    
+
     /**
-     * an ordered set of semi-transparent images.  
+     * an ordered set of semi-transparent images.
      * when displayed in this order will form a coherent portrait.
      * @return an ordered set of semi-transparent images.
      */
     public ImageIcon[] getPortrait(){
     	return iArray;
     }
-    
+
     /**
      * creates a new set of features from scratch based upon commonly found features in the real world.
      * For instance, girls are rarely bald, and rarely have beards or mustaches.
@@ -62,7 +63,7 @@ class Character {
             randF[5] = Background.mt.nextInt(5) + 1;//not usually bald
         	randF[6] = 2;
         	randF[7] = 2;
-            
+
         }
         randF[8] = Background.mt.nextInt(3) + 1;
         randF[9] = Background.mt.nextInt(/*10*/6) + 1;
@@ -81,4 +82,3 @@ class Character {
     }
 
 }
-   
