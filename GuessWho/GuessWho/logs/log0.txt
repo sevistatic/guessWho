@@ -1,22 +1,12 @@
 Begin Logging
-Participant Start Time: 1.856
-Trial Start Time: 1.856
+Participant Start Time: 3.255
+Trial Start Time: 3.255
 Trial Number: 0
 ----------------------------------------
 Event: Mouse Clicked
-Time: 3.108
-Cursor Location: (1325, 472)
-Object Clicked: kenny
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 6
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 3.902
-Cursor Location: (1325, 472)
-Object Clicked: kenny
+Time: 4.030
+Cursor Location: (1157, 487)
+Object Clicked: bruce
 Button Used: 3
 Current Trial: 0
 Current Trial Score: 6
@@ -24,9 +14,9 @@ Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 6.032
-Cursor Location: (104, 647)
-Object Clicked: Headwear - hat
+Time: 10.212
+Cursor Location: (236, 315)
+Object Clicked: Hair - blonde hair
 Button Used: 1
 Current Trial: 0
 Current Trial Score: 6
@@ -34,8 +24,18 @@ Current Total Score: 0
 Event Type: Single Click
 -------------------------
 Event: Mouse Clicked
-Time: 6.769
-Cursor Location: (79, 828)
+Time: 13.393
+Cursor Location: (1101, 483)
+Object Clicked: bruce
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 15.336
+Cursor Location: (101, 823)
 Object Clicked: Button: Query
 Button Used: 1
 Current Trial: 0
@@ -43,16 +43,297 @@ Current Trial Score: 6
 Current Total Score: 0
 Event Type: Single Click
 Query submitted:
-No Match for hat
+No Match for blonde hair
 -------------------------
 Event: Mouse Clicked
-Time: 8.847
-Cursor Location: (124, 853)
-Object Clicked: Button: Final Guess
+Time: 17.033
+Cursor Location: (371, 534)
+Object Clicked: chris
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 18.151
+Cursor Location: (745, 715)
+Object Clicked: kaylee
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 20.811
+Cursor Location: (795, 155)
+Object Clicked: heather
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 25.035
+Cursor Location: (229, 326)
+Object Clicked: Hair - black hair
 Button Used: 1
 Current Trial: 0
 Current Trial Score: 5
 Current Total Score: 0
 Event Type: Single Click
-Final Guess, Player Answer: kenny
-Correct Answer: preston
+-------------------------
+Event: Mouse Clicked
+Time: 26.523
+Cursor Location: (93, 815)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for black hair
+-------------------------
+Event: Mouse Clicked
+Time: 28.705
+Cursor Location: (556, 740)
+Object Clicked: bob loblaw
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 29.889
+Cursor Location: (788, 476)
+Object Clicked: joyce
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 31.081
+Cursor Location: (1358, 491)
+Object Clicked: jennifer
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 32.138
+Cursor Location: (1123, 168)
+Object Clicked: melissa
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 33.685
+Cursor Location: (234, 348)
+Object Clicked: Hair - brown hair
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 34.829
+Cursor Location: (94, 821)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for brown hair
+-------------------------
+Event: Mouse Clicked
+Time: 36.944
+Cursor Location: (393, 194)
+Object Clicked: veronica
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 38.130
+Cursor Location: (390, 677)
+Object Clicked: leah
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 39.479
+Cursor Location: (957, 700)
+Object Clicked: david
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 43.279
+Cursor Location: (232, 362)
+Object Clicked: Hair - red hair
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 44.588
+Cursor Location: (114, 819)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for red hair
+-------------------------
+Event: Mouse Clicked
+Time: 46.618
+Cursor Location: (1378, 104)
+Object Clicked: gabriella
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 48.997
+Cursor Location: (235, 376)
+Object Clicked: Hair - grey hair
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 50.393
+Cursor Location: (57, 817)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for grey hair
+-------------------------
+Event: Mouse Clicked
+Time: 53.846
+Cursor Location: (580, 439)
+Object Clicked: tomas
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 56.318
+Cursor Location: (595, 158)
+Object Clicked: scott
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 63.776
+Cursor Location: (972, 185)
+Object Clicked: stan
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 65.093
+Cursor Location: (959, 389)
+Object Clicked: abigail
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 67.481
+Cursor Location: (1309, 675)
+Object Clicked: anne
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 71.881
+Cursor Location: (118, 201)
+Object Clicked: Eye Color - green eyes
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 73.207
+Cursor Location: (93, 815)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+Match for green eyes
+Selected Characteristics Match
+-------------------------
+Event: Mouse Clicked
+Time: 75.246
+Cursor Location: (1129, 481)
+Object Clicked: bruce
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 77.097
+Cursor Location: (112, 850)
+Object Clicked: Button: Final Guess
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+Final Guess, Player Answer: bruce
+Correct Answer: bruce
