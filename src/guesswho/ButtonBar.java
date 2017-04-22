@@ -28,7 +28,7 @@ class ButtonBar extends JPanel{
 
     ask = new AskButton("Ask", background);
     answer = new JLabel("");
-    info = new InfoButton("Card Info");
+    info = new InfoButton("Card Info", background);
     instructions = new InstructionButton("Instructions");
     finalGuess = new FinalGuessButton("Final Guess", background);
     giveUp = new GiveUpButton("Give Up?", background);

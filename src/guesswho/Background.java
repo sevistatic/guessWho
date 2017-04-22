@@ -26,8 +26,6 @@ class Background extends JLayeredPane {
 
 	private final Color FOREGROUND_TEXT_COLOR = new Color(0,150,0);
 
-  static Card selected;
-
   public static MersenneTwister mt;
 
   public Background(int h, int w) throws IOException {
@@ -35,7 +33,7 @@ class Background extends JLayeredPane {
     mHandler = new MouseHandler();
     optionsBar = new OptionsBar(h, w, this);
 		optionsBar.addMouseListener(mHandler);
-    playArea = new PlayArea(mt);
+    playArea = new PlayArea(mt, this);
 		optionsBar.buttonBar.addMouseListener(mHandler);
   }
 
@@ -49,7 +47,7 @@ class Background extends JLayeredPane {
 
   public void set() {
     playArea.removeAll();
-    shuffle(playArea.deck);
+    playArea.shuffle(playArea.deck);
     playArea.newTarget();
     for (int i = 0; i < playArea.deck.size(); i++) {
     	playArea.deck.get(i).addMouseListener(mHandler);
@@ -61,9 +59,9 @@ class Background extends JLayeredPane {
     GuessWho.trial.newTrial();
 		GuessWho.logger.newTrial();
 
-    selected = null;
+    playArea.selected = null;
     playArea.removeAll();
-    shuffle(playArea.deck);
+    playArea.shuffle(playArea.deck);
     playArea.newTarget();
     for (int i = 0; i < playArea.deck.size(); i++){
     	playArea.deck.get(i).addMouseListener(mHandler);
@@ -83,18 +81,6 @@ class Background extends JLayeredPane {
     for (int i = 0; i < optionsBar.jListList.size(); i++) {
       optionsBar.jListList.get(i).clearSelection();
     }
-  }
-
-  public void shuffle(ArrayList<Card> d) {
-    ArrayList<Card> newDeck = new ArrayList<Card>();
-    int sz = d.size();
-    while (!d.isEmpty()) {
-    	d.remove(0);
-    }
-    for (int i = 0; i < sz; i++){
-    	newDeck.add(new Card(this));
-    }
-    playArea.deck = newDeck;
   }
 
   public void initPlayArea() {
