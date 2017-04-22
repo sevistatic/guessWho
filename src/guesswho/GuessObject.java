@@ -224,6 +224,8 @@ class Card extends JLabel implements GuessObject {
     private boolean faded;
     private String folderName;
 
+    public Background background;
+
     public Character getCharacter() {
         return character;
     }
@@ -256,8 +258,9 @@ class Card extends JLabel implements GuessObject {
         return rectColor;
     }
 
-    Card() {
+    public Card(Background background) {
         super();
+        this.background = background;
         character = new Character();
 
         //portraitLabel = new JLabel(character.getName(), 20);
@@ -294,9 +297,9 @@ class Card extends JLabel implements GuessObject {
                 unmark();
                 break;
             case 1:
-                for (int i = 0; i < Background.deck.size(); i++) {//un-click others
-                    if (Background.deck.get(i) != this) {
-                            Background.deck.get(i).unfade();
+                for (int i = 0; i < background.playArea.deck.size(); i++) {//un-click others
+                    if (background.playArea.deck.get(i) != this) {
+                            background.playArea.deck.get(i).unfade();
                     }
                 }
                 fade();

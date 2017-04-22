@@ -6,7 +6,11 @@ import java.awt.*;
 import java.util.ArrayList;
 
 class PlayArea extends JPanel{
+
+  public static ArrayList<Card> deck;
+
 	public PlayArea(){
 		super();
+    deck = new ArrayList<Card>();
 	}
 }

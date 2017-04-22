@@ -16,15 +16,13 @@ class Background extends JLayeredPane {
 
   public OptionsBar optionsBar;
 
-  private PlayArea playArea;
+  public PlayArea playArea;
 
   private final int CARDS_PER_ROW = 6;
   private final int CARDS_PER_COLUMN = 3;
   private final int BORDER_SIZE = 2;
   private final int NUM_OF_OPTIONS_BUTTONS_DOWN = 3;
   private final int NUM_OF_OPTIONS_BUTTONS_ACROSS = 2;
-
-  static ArrayList<Card> deck;
 
 	private final Color FOREGROUND_TEXT_COLOR = new Color(0,150,0);
 
@@ -35,7 +33,6 @@ class Background extends JLayeredPane {
 
   public Background(int h, int w) throws IOException {
     mHandler = new MouseHandler();
-    deck = new ArrayList<Card>();
     optionsBar = new OptionsBar(h, w, this);
 		optionsBar.addMouseListener(mHandler);
     playArea = new PlayArea();
@@ -53,11 +50,11 @@ class Background extends JLayeredPane {
 
   public void set() {
     playArea.removeAll();
-    shuffle(deck);
+    shuffle(playArea.deck);
     newTarget();
-    for (int i = 0; i < deck.size(); i++) {
-    	deck.get(i).addMouseListener(mHandler);
-        playArea.add(deck.get(i));
+    for (int i = 0; i < playArea.deck.size(); i++) {
+    	playArea.deck.get(i).addMouseListener(mHandler);
+        playArea.add(playArea.deck.get(i));
     }
   }
 
@@ -67,17 +64,17 @@ class Background extends JLayeredPane {
 
     selected = null;
     playArea.removeAll();
-    shuffle(deck);
+    shuffle(playArea.deck);
     newTarget();
-    for (int i = 0; i < deck.size(); i++){
-    	deck.get(i).addMouseListener(mHandler);
+    for (int i = 0; i < playArea.deck.size(); i++){
+    	playArea.deck.get(i).addMouseListener(mHandler);
     }
 
     optionsBar.buttonBar.setAnswer(-1);
   //  GuessWho.trial.resetTrialPoints();
 		optionsBar.resetPointsLabel();
-    for (int i = 0; i < deck.size(); i++) {
-      playArea.add(deck.get(i));
+    for (int i = 0; i < playArea.deck.size(); i++) {
+      playArea.add(playArea.deck.get(i));
     }
     GuessWho.trial.resetTrialPoints();
     optionsBar.setTrialText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
@@ -89,21 +86,21 @@ class Background extends JLayeredPane {
     }
   }
 
-  public static void shuffle(ArrayList<Card> d) {
+  public void shuffle(ArrayList<Card> d) {
     ArrayList<Card> newDeck = new ArrayList<Card>();
     int sz = d.size();
     while (!d.isEmpty()) {
     	d.remove(0);
     }
     for (int i = 0; i < sz; i++){
-    	newDeck.add(new Card());
+    	newDeck.add(new Card(this));
     }
-    deck = newDeck;
+    playArea.deck = newDeck;
   }
 
-  public static void newTarget() {
-    int r = mt.nextInt(deck.size());
-    target = deck.get(r);
+  public void newTarget() {
+    int r = mt.nextInt(playArea.deck.size());
+    target = playArea.deck.get(r);
   }
 
   public void initPlayArea() {
@@ -113,7 +110,7 @@ class Background extends JLayeredPane {
     //prints CARDS_PER ROW cards in a single row * CARDS_PER_COLUMN columns
     for (int a = 0; a < CARDS_PER_ROW; a++) {
       for (int b = 0; b < CARDS_PER_COLUMN; b++) {
-        deck.add(new Card());
+        playArea.deck.add(new Card(this));
       }
     }
     set();

@@ -1,5 +1,349 @@
 Begin Logging
-Participant Start Time: 0.477
-Trial Start Time: 0.477
+Participant Start Time: 0.023
+Trial Start Time: 0.023
 Trial Number: 0
 ----------------------------------------
+Event: Mouse Clicked
+Time: 7.670
+Cursor Location: (981, 254)
+Object Clicked: David
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 9.106
+Cursor Location: (1122, 440)
+Object Clicked: Preston
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 10.473
+Cursor Location: (946, 205)
+Object Clicked: David
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 11.349
+Cursor Location: (981, 432)
+Object Clicked: Veronica
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 12.866
+Cursor Location: (960, 242)
+Object Clicked: David
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 15.729
+Cursor Location: (227, 495)
+Object Clicked: Nose - short nose
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 16.877
+Cursor Location: (70, 816)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for short nose
+-------------------------
+Event: Mouse Clicked
+Time: 19.258
+Cursor Location: (567, 734)
+Object Clicked: Veronica
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 21.482
+Cursor Location: (1275, 506)
+Object Clicked: Preston
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 22.356
+Cursor Location: (1140, 487)
+Object Clicked: Preston
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 23.794
+Cursor Location: (827, 457)
+Object Clicked: Samuel
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 25.280
+Cursor Location: (1294, 205)
+Object Clicked: Mike
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 27.816
+Cursor Location: (1097, 196)
+Object Clicked: Sally
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 36.389
+Cursor Location: (124, 640)
+Object Clicked: Headwear - hat
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 37.615
+Cursor Location: (106, 817)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+Match for hat
+Selected Characteristics Match
+-------------------------
+Event: Mouse Clicked
+Time: 40.601
+Cursor Location: (375, 193)
+Object Clicked: Sally
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 41.554
+Cursor Location: (562, 204)
+Object Clicked: Matt
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 42.581
+Cursor Location: (925, 383)
+Object Clicked: Veronica
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 47.619
+Cursor Location: (223, 641)
+Object Clicked: Eyewear - glasses
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 48.797
+Cursor Location: (91, 815)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+Match for glasses
+Selected Characteristics Match
+-------------------------
+Event: Mouse Clicked
+Time: 50.762
+Cursor Location: (343, 768)
+Object Clicked: George
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 51.749
+Cursor Location: (397, 476)
+Object Clicked: Bruce
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 52.597
+Cursor Location: (575, 483)
+Object Clicked: Hanna
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 53.687
+Cursor Location: (788, 182)
+Object Clicked: Doug
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 54.826
+Cursor Location: (792, 706)
+Object Clicked: Izabelle
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 56.195
+Cursor Location: (1138, 715)
+Object Clicked: Hanna
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 61.660
+Cursor Location: (28, 330)
+Object Clicked: Mouth - frowning
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 62.774
+Cursor Location: (109, 812)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+Match for frowning
+Selected Characteristics Match
+-------------------------
+Event: Mouse Clicked
+Time: 64.859
+Cursor Location: (916, 757)
+Object Clicked: Adam
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 70.905
+Cursor Location: (125, 314)
+Object Clicked: Lips - big lips
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 72.099
+Cursor Location: (82, 812)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for big lips
+-------------------------
+Event: Mouse Clicked
+Time: 74.382
+Cursor Location: (947, 166)
+Object Clicked: David
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 77.342
+Cursor Location: (89, 875)
+Object Clicked: Button: Final Guess
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+Final Guess, Player Answer: David
+Correct Answer: David
