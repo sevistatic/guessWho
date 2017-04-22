@@ -56,10 +56,7 @@ class Background extends JLayeredPane {
     mt = new MersenneTwister();
   }
 
-	public void resetPointsLabel(){
-		int trialPoints = GuessWho.trial.getTrialPoints();
-		optionsBar.trialPayoutLabel.setText(String.format("%d Guesses", trialPoints));
-	}
+
 
   public void init() {
     initPlayArea();
@@ -89,8 +86,6 @@ class Background extends JLayeredPane {
     optionsBar.setBorder(new LineBorder(Color.black, 3));
     optionsBar.payoutBar.setLayout(new BorderLayout());
     optionsBar.payoutBar.setBorder(new LineBorder(Color.black, 3));
-    initTotalPayoutLabel();
-    initTrialPayoutLabel();
     optionsBar.payoutBar.add(optionsBar.totalPayoutLabel, BorderLayout.NORTH);
     optionsBar.payoutBar.add(optionsBar.trialPayoutLabel, BorderLayout.SOUTH);
     optionsBar.add(optionsBar.payoutBar, BorderLayout.NORTH);
@@ -123,7 +118,7 @@ class Background extends JLayeredPane {
 
     buttonBar.setAnswer(-1);
   //  GuessWho.trial.resetTrialPoints();
-		resetPointsLabel();
+		optionsBar.resetPointsLabel();
     for (int i = 0; i < deck.size(); i++) {
       playArea.add(deck.get(i));
     }
@@ -152,24 +147,6 @@ class Background extends JLayeredPane {
   public static void newTarget() {
     int r = mt.nextInt(deck.size());
     target = deck.get(r);
-  }
-
-  public void initTotalPayoutLabel() {
-    optionsBar.totalPayoutLabel = new JLabel();
-    optionsBar.totalPayoutLabel.setBorder(new LineBorder(Color.black, BORDER_SIZE));
-    optionsBar.totalPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
-    optionsBar.totalPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 40));
-    optionsBar.totalPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
-    optionsBar.totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
-  }
-
-  public void initTrialPayoutLabel() {
-    optionsBar.trialPayoutLabel = new JLabel();
-    optionsBar.trialPayoutLabel.setBorder(new LineBorder(Color.black, 2));
-    optionsBar.trialPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
-    optionsBar.trialPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-    optionsBar.trialPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
-    optionsBar.trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
   }
 
   public void initFeaturesBar() {
