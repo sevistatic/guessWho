@@ -8,6 +8,7 @@ import java.util.ArrayList;
 class OptionsBar extends JPanel{
   public JPanel payoutBar;
 	public JLabel totalPayoutLabel;
+  public JLabel trialPayoutLabel;
 
 	public OptionsBar(){
 		super();

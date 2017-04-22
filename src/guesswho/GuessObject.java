@@ -385,7 +385,7 @@ class AskButton extends JButton implements GuessObject{
         } else {
             background.buttonBar.setAnswer(-1);
         }
-          background.trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
+          background.optionsBar.trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
         for (int i = 0; i < background.jListList.size(); i++) {
             background.jListList.get(i).clearSelection();
         }
