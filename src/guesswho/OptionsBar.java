@@ -29,28 +29,13 @@ class OptionsBar extends JPanel{
     setBorder(new LineBorder(Color.black, 3));
 
 		payoutBar = new PayoutBar();
+    add(payoutBar, BorderLayout.NORTH);
+
     featuresBar = new JPanel();
 		buttonBar = new ButtonBar(background);
 
     featuresSet = new ArrayList<Feature>();
     jListList = new ArrayList<JList>();
-
-    payoutBar.add(payoutBar.initTotalPayoutLabel(), BorderLayout.NORTH);
-    payoutBar.add(payoutBar.initTrialPayoutLabel(), BorderLayout.SOUTH);
-    add(payoutBar, BorderLayout.NORTH);
-	}
-
-  public void resetOptionsBar(){
-		buttonBar.setAnswer(-1);
-  //  GuessWho.trial.resetTrialPoints();
-		resetPointsLabel();
-		setTrialText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
-    for (int j = 0; j < jListList.size(); j++) {
-      jListList.get(j).setSelectedIndex(0);
-    }
-    for (int i = 0; i < jListList.size(); i++) {
-      jListList.get(i).clearSelection();
-    }
 	}
 
 	public void buildFeatures() {
@@ -67,10 +52,6 @@ class OptionsBar extends JPanel{
 									"yellow shirt", "purple shirt"/*, "white shirt", "leopard shirt", "warning shirt"*/}));
 		featuresSet.add(new Feature("Headwear", new String[]{"hat", "no hat"}));
 		featuresSet.add(new Feature("Eyewear", new String[]{"glasses", "no glasses"}));
-	}
-
-	public void setTrialText(String s){
-		payoutBar.trialPayoutLabel.setText(s);
 	}
 
 	public void initOptionsBar() {
@@ -101,8 +82,14 @@ class OptionsBar extends JPanel{
     buttonBar.addMouseListener(mHandler);
 	}
 
-	public void resetPointsLabel(){
-		int trialPoints = GuessWho.trial.getTrialPoints();
-		payoutBar.trialPayoutLabel.setText(String.format("%d Guesses", trialPoints));
+  public void resetOptionsBar(){
+		buttonBar.setAnswer(-1);
+		payoutBar.resetPointsLabel();
+    for (int j = 0; j < jListList.size(); j++) {
+      jListList.get(j).setSelectedIndex(0);
+    }
+    for (int i = 0; i < jListList.size(); i++) {
+      jListList.get(i).clearSelection();
+    }
 	}
 }

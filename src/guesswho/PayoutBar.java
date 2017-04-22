@@ -16,25 +16,34 @@ class PayoutBar extends JPanel{
 		super();
     setLayout(new BorderLayout());
     setBorder(new LineBorder(Color.black, 3));
+
+    totalPayoutLabel = new JLabel();
+    initTotalPayoutLabel();
+    add(totalPayoutLabel, BorderLayout.NORTH);
+
+    trialPayoutLabel = new JLabel();
+    initTrialPayoutLabel();
+    add(trialPayoutLabel, BorderLayout.SOUTH);
 	}
 
-  public JLabel initTotalPayoutLabel() {
-    totalPayoutLabel = new JLabel();
+  public void initTotalPayoutLabel() {
     totalPayoutLabel.setBorder(new LineBorder(Color.black, BORDER_SIZE));
     totalPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
     totalPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 40));
     totalPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
     totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
-    return totalPayoutLabel;
   }
 
-  public JLabel initTrialPayoutLabel() {
-    trialPayoutLabel = new JLabel();
+  public void resetPointsLabel(){
+    int trialPoints = GuessWho.trial.getTrialPoints();
+    trialPayoutLabel.setText(String.format("%d Guesses", trialPoints));
+  }
+
+  public void initTrialPayoutLabel() {
     trialPayoutLabel.setBorder(new LineBorder(Color.black, 2));
     trialPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
     trialPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
     trialPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
     trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
-    return trialPayoutLabel;
   }
 }
