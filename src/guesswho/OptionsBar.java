@@ -8,6 +8,8 @@ import java.util.ArrayList;
 class OptionsBar extends JPanel{
   public JPanel payoutBar;
 	public JPanel featuresBar;
+  public ButtonBar buttonBar;
+
 	public JLabel totalPayoutLabel;
   public JLabel trialPayoutLabel;
   public static ArrayList<JList> jListList;
@@ -19,13 +21,14 @@ class OptionsBar extends JPanel{
   private int height;
   private int width;
 
-	public OptionsBar(int h, int w){
+	public OptionsBar(int h, int w, Background background){
 		super();
 
     height = h;
     width = w;
 		payoutBar = new JPanel();
     featuresBar = new JPanel();
+		buttonBar = new ButtonBar(background);
     featuresSet = new ArrayList<Feature>();
 
     jListList = new ArrayList<JList>();

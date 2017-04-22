@@ -16,8 +16,6 @@ class Background extends JLayeredPane {
 
   public OptionsBar optionsBar;
 
-  public ButtonBar buttonBar;
-
   private JPanel playArea;
 
   private final int CARDS_PER_ROW = 6;
@@ -38,11 +36,10 @@ class Background extends JLayeredPane {
   public Background(int h, int w) throws IOException {
     mHandler = new MouseHandler();
     deck = new ArrayList<Card>();
-    optionsBar = new OptionsBar(h, w);
+    optionsBar = new OptionsBar(h, w, this);
 		optionsBar.addMouseListener(mHandler);
     playArea = new JPanel();
-		buttonBar = new ButtonBar(this);
-		buttonBar.addMouseListener(mHandler);
+		optionsBar.buttonBar.addMouseListener(mHandler);
     mt = new MersenneTwister();
   }
 
@@ -50,7 +47,7 @@ class Background extends JLayeredPane {
     initPlayArea();
     optionsBar.buildFeatures();
     optionsBar.initOptionsBar();
-		optionsBar.add(buttonBar, BorderLayout.SOUTH);
+		optionsBar.add(optionsBar.buttonBar, BorderLayout.SOUTH);
     this.add(optionsBar, BorderLayout.WEST);
   }
 
@@ -76,7 +73,7 @@ class Background extends JLayeredPane {
     	deck.get(i).addMouseListener(mHandler);
     }
 
-    buttonBar.setAnswer(-1);
+    optionsBar.buttonBar.setAnswer(-1);
   //  GuessWho.trial.resetTrialPoints();
 		optionsBar.resetPointsLabel();
     for (int i = 0; i < deck.size(); i++) {
