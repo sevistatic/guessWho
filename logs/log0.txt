@@ -1,26 +1,5 @@
 Begin Logging
-Participant Start Time: 0.773
-Trial Start Time: 0.773
+Participant Start Time: 0.477
+Trial Start Time: 0.477
 Trial Number: 0
 ----------------------------------------
-Event: Mouse Clicked
-Time: 9.618
-Cursor Location: (390, 736)
-Object Clicked: Joyce
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 6
-Current Total Score: 0
-Event Type: Single Click
--------------------------
-Event: Mouse Clicked
-Time: 10.398
-Cursor Location: (91, 851)
-Object Clicked: Button: Info
-Button Used: 1
-Current Trial: 0
-Current Trial Score: 6
-Current Total Score: 0
-Event Type: Single Click
-Request Info, Character: Joyce
--------------------------

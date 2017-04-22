@@ -16,7 +16,7 @@ class Background extends JLayeredPane {
 
   public OptionsBar optionsBar;
 
-  private JPanel playArea;
+  private PlayArea playArea;
 
   private final int CARDS_PER_ROW = 6;
   private final int CARDS_PER_COLUMN = 3;
@@ -38,7 +38,7 @@ class Background extends JLayeredPane {
     deck = new ArrayList<Card>();
     optionsBar = new OptionsBar(h, w, this);
 		optionsBar.addMouseListener(mHandler);
-    playArea = new JPanel();
+    playArea = new PlayArea();
 		optionsBar.buttonBar.addMouseListener(mHandler);
     mt = new MersenneTwister();
   }
