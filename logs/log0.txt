@@ -1,5 +1,277 @@
 Begin Logging
-Participant Start Time: 0.545
-Trial Start Time: 0.545
+Participant Start Time: 0.099
+Trial Start Time: 0.099
 Trial Number: 0
 ----------------------------------------
+Event: Mouse Clicked
+Time: 8.039
+Cursor Location: (220, 643)
+Object Clicked: Eyewear - glasses
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 8.928
+Cursor Location: (98, 820)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+Match for glasses
+Selected Characteristics Match
+-------------------------
+Event: Mouse Clicked
+Time: 11.736
+Cursor Location: (359, 729)
+Object Clicked: Rachel
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 12.539
+Cursor Location: (367, 513)
+Object Clicked: Fred
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 13.423
+Cursor Location: (552, 221)
+Object Clicked: Diana
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 14.409
+Cursor Location: (687, 210)
+Object Clicked: Julie
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 15.619
+Cursor Location: (725, 371)
+Object Clicked: Kevin
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 16.675
+Cursor Location: (959, 656)
+Object Clicked: George
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 17.503
+Cursor Location: (941, 480)
+Object Clicked: Adam
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 18.306
+Cursor Location: (939, 251)
+Object Clicked: Joyce
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 19.268
+Cursor Location: (1134, 238)
+Object Clicked: Ronald
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 20.331
+Cursor Location: (1289, 465)
+Object Clicked: Lindsay
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 21.430
+Cursor Location: (1334, 690)
+Object Clicked: Bruce
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 27.000
+Cursor Location: (205, 145)
+Object Clicked: Sex - boy
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 28.347
+Cursor Location: (101, 815)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+Match for boy
+Selected Characteristics Match
+-------------------------
+Event: Mouse Clicked
+Time: 29.622
+Cursor Location: (560, 481)
+Object Clicked: Veronica
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 30.681
+Cursor Location: (754, 740)
+Object Clicked: Anne
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 31.797
+Cursor Location: (1158, 721)
+Object Clicked: Rachel
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 33.028
+Cursor Location: (1325, 221)
+Object Clicked: Abigail
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 39.999
+Cursor Location: (226, 315)
+Object Clicked: Hair - blonde hair
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 41.077
+Cursor Location: (96, 816)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for blonde hair
+-------------------------
+Event: Mouse Clicked
+Time: 42.601
+Cursor Location: (585, 779)
+Object Clicked: Scott
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 46.728
+Cursor Location: (230, 377)
+Object Clicked: Hair - grey hair
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 47.871
+Cursor Location: (95, 813)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+Match for grey hair
+Selected Characteristics Match
+-------------------------
+Event: Mouse Clicked
+Time: 49.533
+Cursor Location: (373, 242)
+Object Clicked: Peter
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 50.945
+Cursor Location: (102, 879)
+Object Clicked: Button: Final Guess
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+Final Guess, Player Answer: Peter
+Correct Answer: Peter

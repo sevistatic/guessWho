@@ -26,9 +26,7 @@ class Background extends JLayeredPane {
   private final int NUM_OF_OPTIONS_BUTTONS_DOWN = 3;
   private final int NUM_OF_OPTIONS_BUTTONS_ACROSS = 2;
 
-  private ArrayList<Feature> featuresSet;
   static ArrayList<Card> deck;
-  static ArrayList<JList> jListList;
 
 	private final Color FOREGROUND_TEXT_COLOR = new Color(0,150,0);
 
@@ -41,39 +39,18 @@ class Background extends JLayeredPane {
     mHandler = new MouseHandler();
     deck = new ArrayList<Card>();
     optionsBar = new OptionsBar(h, w);
+		optionsBar.addMouseListener(mHandler);
     playArea = new JPanel();
 		buttonBar = new ButtonBar(this);
 		buttonBar.addMouseListener(mHandler);
-    featuresSet = new ArrayList<Feature>();
-    jListList = new ArrayList<JList>();
     mt = new MersenneTwister();
   }
 
   public void init() {
     initPlayArea();
-    buildFeatures();
-    initOptionsBar();
-  }
-
-  public void buildFeatures() {
-  	featuresSet.add(new Feature("Skin Color", new String[]{"light skin", "dark skin"}));
-  	featuresSet.add(new Feature("Eye Color", new String[]{"blue eyes", "black eyes", "brown eyes", "green eyes", "grey eyes"}));
-    featuresSet.add(new Feature("Sex", new String[]{"boy", "girl"}));
-    featuresSet.add(new Feature("Mouth", new String[]{"smiling", "frowning"}));
-    featuresSet.add(new Feature("Lips", new String[]{"big lips", "thin lips"}));
-    featuresSet.add(new Feature("Hair", new String[]{"blonde hair", "black hair", "brown hair", "red hair", "grey hair", "bald"}));
-    featuresSet.add(new Feature("Beard", new String[]{"beard", "no beard"}));
-    featuresSet.add(new Feature("Mustache", new String[]{"mustache", "no mustache"}));
-    featuresSet.add(new Feature("Nose", new String[]{"big nose", "short nose", "thin nose"}));
-    featuresSet.add(new Feature("Shirt", new String[]{"blue shirt", "black shirt", "red shirt", "green shirt", "orange shirt",
-  								"yellow shirt", "purple shirt"/*, "white shirt", "leopard shirt", "warning shirt"*/}));
-    featuresSet.add(new Feature("Headwear", new String[]{"hat", "no hat"}));
-    featuresSet.add(new Feature("Eyewear", new String[]{"glasses", "no glasses"}));
-  }
-
-  public void initOptionsBar() {
-    initFeaturesBar();
-    optionsBar.add(buttonBar, BorderLayout.SOUTH);
+    optionsBar.buildFeatures();
+    optionsBar.initOptionsBar();
+		optionsBar.add(buttonBar, BorderLayout.SOUTH);
     this.add(optionsBar, BorderLayout.WEST);
   }
 
@@ -107,11 +84,11 @@ class Background extends JLayeredPane {
     }
     GuessWho.trial.resetTrialPoints();
     optionsBar.setTrialText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
-    for (int j = 0; j < jListList.size(); j++) {
-      jListList.get(j).setSelectedIndex(0);
+    for (int j = 0; j < optionsBar.jListList.size(); j++) {
+      optionsBar.jListList.get(j).setSelectedIndex(0);
     }
-    for (int i = 0; i < jListList.size(); i++) {
-      jListList.get(i).clearSelection();
+    for (int i = 0; i < optionsBar.jListList.size(); i++) {
+      optionsBar.jListList.get(i).clearSelection();
     }
   }
 
@@ -130,23 +107,6 @@ class Background extends JLayeredPane {
   public static void newTarget() {
     int r = mt.nextInt(deck.size());
     target = deck.get(r);
-  }
-
-  public void initFeaturesBar() {
-    optionsBar.featuresBar.setLayout(new GridLayout(4, 2));
-    optionsBar.featuresBar.setBorder(new LineBorder(Color.black, BORDER_SIZE));
-    for (int i = 0; i < featuresSet.size(); i++) {
-    	JPanel j = new JPanel();
-    	j.setLayout(new GridLayout(1, 1));
-    	String[] data = featuresSet.get(i).getOptions();
-    	GuessList a = new GuessList(data, featuresSet.get(i).getName());
-    	a.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-    	jListList.add(a);
-    	a.addMouseListener(mHandler);
-      j.add(jListList.get(i));
-      optionsBar.featuresBar.add(j);
-    }
-    optionsBar.add(optionsBar.featuresBar, BorderLayout.CENTER);
   }
 
   public void initPlayArea() {

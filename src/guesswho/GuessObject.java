@@ -386,30 +386,30 @@ class AskButton extends JButton implements GuessObject{
             background.buttonBar.setAnswer(-1);
         }
           background.optionsBar.trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
-        for (int i = 0; i < background.jListList.size(); i++) {
-            background.jListList.get(i).clearSelection();
+        for (int i = 0; i < background.optionsBar.jListList.size(); i++) {
+            background.optionsBar.jListList.get(i).clearSelection();
         }
     }
 
     public int areAllCorrect() {
         int unchanged = 0;
-        for (int i = 0; i < Background.jListList.size(); i++) {
-            if (!Background.jListList.get(i).isSelectionEmpty()) {
+        for (int i = 0; i < background.optionsBar.jListList.size(); i++) {
+            if (!background.optionsBar.jListList.get(i).isSelectionEmpty()) {
                 //if it was changed
                 //if (!Background.jListList.get(i).getSelectedValue().toString().equals(Background.target.getCharacter().getFeatures()[i])) {
-                if (!Background.jListList.get(i).getSelectedValue().toString().equals(Background.target.getCharacter().getFeatures()[i])) {
+                if (!background.optionsBar.jListList.get(i).getSelectedValue().toString().equals(Background.target.getCharacter().getFeatures()[i])) {
                     //is it wrong?
-                    GuessWho.logger.log("No Match for " + Background.jListList.get(i).getSelectedValue().toString());
+                    GuessWho.logger.log("No Match for " + background.optionsBar.jListList.get(i).getSelectedValue().toString());
                     return 0;
                 } else {
                     //must be a match for this one feature at least
-                    GuessWho.logger.log("Match for " + Background.jListList.get(i).getSelectedValue().toString());
+                    GuessWho.logger.log("Match for " + background.optionsBar.jListList.get(i).getSelectedValue().toString());
                 }
             } else {
                 unchanged++;
             }
         }
-        if (unchanged == Background.jListList.size()) {
+        if (unchanged == background.optionsBar.jListList.size()) {
             GuessWho.logger.log("Nothing Selected");
             return -2;
         }
