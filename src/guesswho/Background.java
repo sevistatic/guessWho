@@ -83,7 +83,9 @@ class Background extends JLayeredPane {
         playArea.deck.add(new Card(this));
       }
     }
+
     playArea.set();
+
   }
 }//end class Background
 
