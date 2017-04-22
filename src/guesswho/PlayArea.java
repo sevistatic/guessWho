@@ -17,35 +17,27 @@ class PlayArea extends JPanel{
   private final int CARDS_PER_ROW = 6;
   private final int CARDS_PER_COLUMN = 3;
 
-	public PlayArea(MersenneTwister mt, MouseHandler mHandler, Background background){
+	public PlayArea(MersenneTwister mt, Background background){
 		super();
     this.mt = mt;
     this.background = background;
-    this.mHandler = mHandler;
     deck = new ArrayList<Card>();
+    selected = null;
 	}
 
-  public void resetPlayArea(){
-    selected = null;
-    removeAll();
-    shuffle(deck);
-    newTarget();
+  public void addMouseListener(MouseHandler mHandler){
+    this.mHandler = mHandler;
     for (int i = 0; i < deck.size(); i++){
       deck.get(i).addMouseListener(mHandler);
     }
-    for (int i = 0; i < deck.size(); i++) {
-      add(deck.get(i));
-    }
   }
 
-  public void set() {
-    removeAll();
-    shuffle(deck);
-    newTarget();
-    for (int i = 0; i < deck.size(); i++) {
-      deck.get(i).addMouseListener(mHandler);
-        add(deck.get(i));
-    }
+  public void resetPlayArea(){
+      selected = null;
+      removeAll();
+      shuffle(deck);
+      newTarget();
+      addMouseListener(mHandler);
   }
 
   public void initPlayArea() {
@@ -57,7 +49,9 @@ class PlayArea extends JPanel{
         deck.add(new Card(background));
       }
     }
-    set();
+    removeAll();
+    shuffle(deck);
+    newTarget();
   }
 
   public void newTarget() {
@@ -69,11 +63,12 @@ class PlayArea extends JPanel{
     ArrayList<Card> newDeck = new ArrayList<Card>();
     int sz = d.size();
     while (!d.isEmpty()) {
-      d.remove(0);
+        d.remove(0);
     }
     for (int i = 0; i < sz; i++){
       newDeck.add(new Card(background));
+      add(newDeck.get(i));
     }
     deck = newDeck;
-  }
+    }
 }
