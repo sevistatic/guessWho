@@ -36,7 +36,6 @@ class Background extends JLayeredPane {
   static Card target;
   static Card selected;
 
-
   public static MersenneTwister mt;
 
   public Background(int h, int w) throws IOException {
@@ -51,8 +50,6 @@ class Background extends JLayeredPane {
     jListList = new ArrayList<JList>();
     mt = new MersenneTwister();
   }
-
-
 
   public void init() {
     initPlayArea();
@@ -111,7 +108,7 @@ class Background extends JLayeredPane {
       playArea.add(deck.get(i));
     }
     GuessWho.trial.resetTrialPoints();
-    optionsBar.trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
+    optionsBar.setTrialText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
     for (int j = 0; j < jListList.size(); j++) {
       jListList.get(j).setSelectedIndex(0);
     }

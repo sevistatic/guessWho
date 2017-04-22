@@ -34,6 +34,10 @@ class OptionsBar extends JPanel{
     add(payoutBar, BorderLayout.NORTH);
 	}
 
+	public void setTrialText(String s){
+		trialPayoutLabel.setText(s);
+	}
+
 	public void initTotalPayoutLabel() {
 		totalPayoutLabel = new JLabel();
 		totalPayoutLabel.setBorder(new LineBorder(Color.black, BORDER_SIZE));

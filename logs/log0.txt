@@ -1,5 +1,16 @@
 Begin Logging
-Participant Start Time: 0.984
-Trial Start Time: 0.984
+Participant Start Time: 0.363
+Trial Start Time: 0.363
 Trial Number: 0
 ----------------------------------------
+Event: Mouse Clicked
+Time: 6.290
+Cursor Location: (86, 876)
+Object Clicked: Button: Final Guess
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+Final Guess, Player Answer: None Selected
+Correct Answer: Kaylee
