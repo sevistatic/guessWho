@@ -45,6 +45,19 @@ class OptionsBar extends JPanel{
     add(payoutBar, BorderLayout.NORTH);
 	}
 
+  public void resetOptionsBar(){
+		buttonBar.setAnswer(-1);
+  //  GuessWho.trial.resetTrialPoints();
+		resetPointsLabel();
+		setTrialText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
+    for (int j = 0; j < jListList.size(); j++) {
+      jListList.get(j).setSelectedIndex(0);
+    }
+    for (int i = 0; i < jListList.size(); i++) {
+      jListList.get(i).clearSelection();
+    }
+	}
+
 	public void buildFeatures() {
 		featuresSet.add(new Feature("Skin Color", new String[]{"light skin", "dark skin"}));
 		featuresSet.add(new Feature("Eye Color", new String[]{"blue eyes", "black eyes", "brown eyes", "green eyes", "grey eyes"}));
@@ -66,7 +79,9 @@ class OptionsBar extends JPanel{
 	}
 
 	public void initOptionsBar() {
+    buildFeatures();
     initFeaturesBar();
+		add(buttonBar, BorderLayout.SOUTH);
   }
 
 	public void initFeaturesBar() {
@@ -88,6 +103,7 @@ class OptionsBar extends JPanel{
 
 	public void addMouseListener(MouseHandler mHandler){
 		this.mHandler = mHandler;
+    buttonBar.addMouseListener(mHandler);
 	}
 
 	public void initTotalPayoutLabel() {

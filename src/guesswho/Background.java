@@ -31,17 +31,16 @@ class Background extends JLayeredPane {
     mt = new MersenneTwister();
     mHandler = new MouseHandler();
     optionsBar = new OptionsBar(h, w, this);
-		optionsBar.addMouseListener(mHandler);
     playArea = new PlayArea(mt, mHandler, this);
-		optionsBar.buttonBar.addMouseListener(mHandler);
+
+		optionsBar.addMouseListener(mHandler);
   }
 
   public void init() {
     playArea.initPlayArea();
 		this.add(playArea, BorderLayout.CENTER);
-    optionsBar.buildFeatures();
+
     optionsBar.initOptionsBar();
-		optionsBar.add(optionsBar.buttonBar, BorderLayout.SOUTH);
     this.add(optionsBar, BorderLayout.WEST);
   }
 
@@ -49,23 +48,9 @@ class Background extends JLayeredPane {
     GuessWho.trial.newTrial();
     GuessWho.trial.resetTrialPoints();
 		playArea.resetPlayArea();
-		resetOptionsBar();
+		optionsBar.resetOptionsBar();
 		GuessWho.logger.newTrial();
   }
-
-
-	public void resetOptionsBar(){
-		optionsBar.buttonBar.setAnswer(-1);
-  //  GuessWho.trial.resetTrialPoints();
-		optionsBar.resetPointsLabel();
-		optionsBar.setTrialText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
-    for (int j = 0; j < optionsBar.jListList.size(); j++) {
-      optionsBar.jListList.get(j).setSelectedIndex(0);
-    }
-    for (int i = 0; i < optionsBar.jListList.size(); i++) {
-      optionsBar.jListList.get(i).clearSelection();
-    }
-	}
 
 }//end class Background
 
