@@ -110,13 +110,13 @@ class GiveUpButton extends JButton implements GuessObject{
 
     public void doStuff(int x, int y, int Button){
                 if (JOptionPane.showConfirmDialog(null, "Are you absolutely sure?") == JOptionPane.OK_OPTION){
-                JOptionPane.showMessageDialog(null, "The answer was " + Background.target.getCharacter().getName());
+                JOptionPane.showMessageDialog(null, "The answer was " + background.playArea.target.getCharacter().getName());
                 background.reset();
                 }
     }
 
     public String toString(){
-        return "Button: Give Up - Answer: " + Background.target.getCharacter().getName();
+        return "Button: Give Up - Answer: " + background.playArea.target.getCharacter().getName();
     }
 }
 
@@ -142,9 +142,9 @@ class FinalGuessButton extends JButton implements GuessObject {
                 //   System.out.println("selected = " + Background.selected.getCharacter().getName());
                 GuessWho.logger.log("Final Guess, Player Answer: " + background.selected.getCharacter().getName());
 
-                if (background.selected.getCharacter() == background.target.getCharacter()) {
-                    JOptionPane.showMessageDialog(null, "CORRECT!! The answer was " + background.target.getCharacter().getName());
-                    GuessWho.logger.log("Correct Answer: " + background.target.getCharacter().getName());
+                if (background.selected.getCharacter() == background.playArea.target.getCharacter()) {
+                    JOptionPane.showMessageDialog(null, "CORRECT!! The answer was " + background.playArea.target.getCharacter().getName());
+                    GuessWho.logger.log("Correct Answer: " + background.playArea.target.getCharacter().getName());
                     GuessWho.trial.increaseTotalPoints(GuessWho.trial.getTrialPoints());
 
                     if (GuessWho.trial.getTrialPoints() >= 2) {
@@ -152,14 +152,14 @@ class FinalGuessButton extends JButton implements GuessObject {
                     }
                     background.optionsBar.totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
                 } else {
-                    JOptionPane.showMessageDialog(null, "WRONG!! The answer was " + background.target.getCharacter().getName());
-                    GuessWho.logger.log("Correct Answer: " + background.target.getCharacter().getName());
+                    JOptionPane.showMessageDialog(null, "WRONG!! The answer was " + background.playArea.target.getCharacter().getName());
+                    GuessWho.logger.log("Correct Answer: " + background.playArea.target.getCharacter().getName());
                 }
             } else {
 
                 GuessWho.logger.log("Final Guess, Player Answer: None Selected");
-                JOptionPane.showMessageDialog(null, "WRONG!! The answer was " + background.target.getCharacter().getName());
-                GuessWho.logger.log("Correct Answer: " + background.target.getCharacter().getName());
+                JOptionPane.showMessageDialog(null, "WRONG!! The answer was " + background.playArea.target.getCharacter().getName());
+                GuessWho.logger.log("Correct Answer: " + background.playArea.target.getCharacter().getName());
             }
         }
         background.reset();
@@ -399,8 +399,8 @@ class AskButton extends JButton implements GuessObject{
         for (int i = 0; i < background.optionsBar.jListList.size(); i++) {
             if (!background.optionsBar.jListList.get(i).isSelectionEmpty()) {
                 //if it was changed
-                //if (!Background.jListList.get(i).getSelectedValue().toString().equals(Background.target.getCharacter().getFeatures()[i])) {
-                if (!background.optionsBar.jListList.get(i).getSelectedValue().toString().equals(Background.target.getCharacter().getFeatures()[i])) {
+                //if (!Background.jListList.get(i).getSelectedValue().toString().equals(background.playArea.target.getCharacter().getFeatures()[i])) {
+                if (!background.optionsBar.jListList.get(i).getSelectedValue().toString().equals(background.playArea.target.getCharacter().getFeatures()[i])) {
                     //is it wrong?
                     GuessWho.logger.log("No Match for " + background.optionsBar.jListList.get(i).getSelectedValue().toString());
                     return 0;

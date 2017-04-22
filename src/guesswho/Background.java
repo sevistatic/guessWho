@@ -26,18 +26,17 @@ class Background extends JLayeredPane {
 
 	private final Color FOREGROUND_TEXT_COLOR = new Color(0,150,0);
 
-  static Card target;
   static Card selected;
 
   public static MersenneTwister mt;
 
   public Background(int h, int w) throws IOException {
+    mt = new MersenneTwister();
     mHandler = new MouseHandler();
     optionsBar = new OptionsBar(h, w, this);
 		optionsBar.addMouseListener(mHandler);
-    playArea = new PlayArea();
+    playArea = new PlayArea(mt);
 		optionsBar.buttonBar.addMouseListener(mHandler);
-    mt = new MersenneTwister();
   }
 
   public void init() {
@@ -51,7 +50,7 @@ class Background extends JLayeredPane {
   public void set() {
     playArea.removeAll();
     shuffle(playArea.deck);
-    newTarget();
+    playArea.newTarget();
     for (int i = 0; i < playArea.deck.size(); i++) {
     	playArea.deck.get(i).addMouseListener(mHandler);
         playArea.add(playArea.deck.get(i));
@@ -65,7 +64,7 @@ class Background extends JLayeredPane {
     selected = null;
     playArea.removeAll();
     shuffle(playArea.deck);
-    newTarget();
+    playArea.newTarget();
     for (int i = 0; i < playArea.deck.size(); i++){
     	playArea.deck.get(i).addMouseListener(mHandler);
     }
@@ -96,11 +95,6 @@ class Background extends JLayeredPane {
     	newDeck.add(new Card(this));
     }
     playArea.deck = newDeck;
-  }
-
-  public void newTarget() {
-    int r = mt.nextInt(playArea.deck.size());
-    target = playArea.deck.get(r);
   }
 
   public void initPlayArea() {
