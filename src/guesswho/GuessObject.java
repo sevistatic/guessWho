@@ -152,7 +152,7 @@ class FinalGuessButton extends JButton implements GuessObject {
                     if (GuessWho.trial.getTrialPoints() >= 2) {
                         GuessWho.trial.increaseTotalPoints(GuessWho.trial.getTrialPoints());
                     }
-                    background.optionsBar.totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
+                    background.optionsBar.payoutBar.totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
                 } else {
                     JOptionPane.showMessageDialog(null, "WRONG!! The answer was " + background.playArea.target.getCharacter().getName());
                     GuessWho.logger.log("Correct Answer: " + background.playArea.target.getCharacter().getName());
@@ -390,7 +390,7 @@ class AskButton extends JButton implements GuessObject{
         } else {
             background.optionsBar.buttonBar.setAnswer(-1);
         }
-          background.optionsBar.trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
+          background.optionsBar.payoutBar.trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
         for (int i = 0; i < background.optionsBar.jListList.size(); i++) {
             background.optionsBar.jListList.get(i).clearSelection();
         }
