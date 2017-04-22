@@ -36,18 +36,14 @@ class Background extends JLayeredPane {
   static Card target;
   static Card selected;
 
-  private int height;
-  private int width;
 
   public static MersenneTwister mt;
 
   public Background(int h, int w) throws IOException {
-    height = h;
-    width = w;
     mHandler = new MouseHandler();
     deck = new ArrayList<Card>();
     featuresBar = new JPanel();
-    optionsBar = new OptionsBar();
+    optionsBar = new OptionsBar(h, w);
     playArea = new JPanel();
 		buttonBar = new ButtonBar(this);
 		buttonBar.addMouseListener(mHandler);
@@ -81,14 +77,6 @@ class Background extends JLayeredPane {
   }
 
   public void initOptionsBar() {
-    optionsBar.setLayout(new BorderLayout());
-    optionsBar.setPreferredSize(new Dimension(width / 3, height));
-    optionsBar.setBorder(new LineBorder(Color.black, 3));
-    optionsBar.payoutBar.setLayout(new BorderLayout());
-    optionsBar.payoutBar.setBorder(new LineBorder(Color.black, 3));
-    optionsBar.payoutBar.add(optionsBar.totalPayoutLabel, BorderLayout.NORTH);
-    optionsBar.payoutBar.add(optionsBar.trialPayoutLabel, BorderLayout.SOUTH);
-    optionsBar.add(optionsBar.payoutBar, BorderLayout.NORTH);
     initFeaturesBar();
     optionsBar.add(buttonBar, BorderLayout.SOUTH);
     this.add(optionsBar, BorderLayout.WEST);

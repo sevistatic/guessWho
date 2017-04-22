@@ -12,12 +12,26 @@ class OptionsBar extends JPanel{
 
   private final int BORDER_SIZE = 2;
 	private final Color FOREGROUND_TEXT_COLOR = new Color(0,150,0);
+  private int height;
+  private int width;
 
-	public OptionsBar(){
+	public OptionsBar(int h, int w){
 		super();
+
+    height = h;
+    width = w;
 		payoutBar = new JPanel();
     initTotalPayoutLabel();
     initTrialPayoutLabel();
+
+    payoutBar.setLayout(new BorderLayout());
+    payoutBar.setBorder(new LineBorder(Color.black, 3));
+    payoutBar.add(totalPayoutLabel, BorderLayout.NORTH);
+    payoutBar.add(trialPayoutLabel, BorderLayout.SOUTH);
+    setLayout(new BorderLayout());
+    setPreferredSize(new Dimension(width / 3, height));
+    setBorder(new LineBorder(Color.black, 3));
+    add(payoutBar, BorderLayout.NORTH);
 	}
 
 	public void initTotalPayoutLabel() {
