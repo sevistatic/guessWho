@@ -35,8 +35,8 @@ class OptionsBar extends JPanel{
     featuresSet = new ArrayList<Feature>();
     jListList = new ArrayList<JList>();
 
-    payoutBar.add(initTotalPayoutLabel(), BorderLayout.NORTH);
-    payoutBar.add(initTrialPayoutLabel(), BorderLayout.SOUTH);
+    payoutBar.add(payoutBar.initTotalPayoutLabel(), BorderLayout.NORTH);
+    payoutBar.add(payoutBar.initTrialPayoutLabel(), BorderLayout.SOUTH);
     add(payoutBar, BorderLayout.NORTH);
 	}
 
@@ -99,26 +99,6 @@ class OptionsBar extends JPanel{
 	public void addMouseListener(MouseHandler mHandler){
 		this.mHandler = mHandler;
     buttonBar.addMouseListener(mHandler);
-	}
-
-	public JLabel initTotalPayoutLabel() {
-		payoutBar.totalPayoutLabel = new JLabel();
-		payoutBar.totalPayoutLabel.setBorder(new LineBorder(Color.black, BORDER_SIZE));
-		payoutBar.totalPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		payoutBar.totalPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 40));
-		payoutBar.totalPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
-		payoutBar.totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
-    return payoutBar.totalPayoutLabel;
-	}
-
-	public JLabel initTrialPayoutLabel() {
-		payoutBar.trialPayoutLabel = new JLabel();
-		payoutBar.trialPayoutLabel.setBorder(new LineBorder(Color.black, 2));
-		payoutBar.trialPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		payoutBar.trialPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-		payoutBar.trialPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
-		payoutBar.trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
-    return payoutBar.trialPayoutLabel;
 	}
 
 	public void resetPointsLabel(){
