@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 class OptionsBar extends JPanel{
   public PayoutBar payoutBar;
-	public JPanel featuresBar;
+	public FeaturesBar featuresBar;
   public ButtonBar buttonBar;
 
   public static ArrayList<JList> jListList;
@@ -31,7 +31,7 @@ class OptionsBar extends JPanel{
 		payoutBar = new PayoutBar();
     add(payoutBar, BorderLayout.NORTH);
 
-    featuresBar = new JPanel();
+    featuresBar = new FeaturesBar();
 		buttonBar = new ButtonBar(background);
 
     featuresSet = new ArrayList<Feature>();
