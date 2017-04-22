@@ -12,13 +12,25 @@ class PlayArea extends JPanel{
   static Card selected;
   public MersenneTwister mt;
   public Background background;
+  public MouseHandler mHandler;
 
-	public PlayArea(MersenneTwister mt, Background background){
+	public PlayArea(MersenneTwister mt, MouseHandler mHandler, Background background){
 		super();
     this.mt = mt;
     this.background = background;
+    this.mHandler = mHandler;
     deck = new ArrayList<Card>();
 	}
+
+  public void set() {
+    removeAll();
+    shuffle(deck);
+    newTarget();
+    for (int i = 0; i < deck.size(); i++) {
+      deck.get(i).addMouseListener(mHandler);
+        add(deck.get(i));
+    }
+  }
 
   public void newTarget() {
     int r = mt.nextInt(deck.size());

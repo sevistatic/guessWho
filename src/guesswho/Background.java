@@ -33,7 +33,7 @@ class Background extends JLayeredPane {
     mHandler = new MouseHandler();
     optionsBar = new OptionsBar(h, w, this);
 		optionsBar.addMouseListener(mHandler);
-    playArea = new PlayArea(mt, this);
+    playArea = new PlayArea(mt, mHandler, this);
 		optionsBar.buttonBar.addMouseListener(mHandler);
   }
 
@@ -43,16 +43,6 @@ class Background extends JLayeredPane {
     optionsBar.initOptionsBar();
 		optionsBar.add(optionsBar.buttonBar, BorderLayout.SOUTH);
     this.add(optionsBar, BorderLayout.WEST);
-  }
-
-  public void set() {
-    playArea.removeAll();
-    playArea.shuffle(playArea.deck);
-    playArea.newTarget();
-    for (int i = 0; i < playArea.deck.size(); i++) {
-    	playArea.deck.get(i).addMouseListener(mHandler);
-        playArea.add(playArea.deck.get(i));
-    }
   }
 
   public void reset() {
@@ -93,7 +83,7 @@ class Background extends JLayeredPane {
         playArea.deck.add(new Card(this));
       }
     }
-    set();
+    playArea.set();
   }
 }//end class Background
 
