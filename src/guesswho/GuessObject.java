@@ -150,7 +150,7 @@ class FinalGuessButton extends JButton implements GuessObject {
                     if (GuessWho.trial.getTrialPoints() >= 2) {
                         GuessWho.trial.increaseTotalPoints(GuessWho.trial.getTrialPoints());
                     }
-                    background.totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
+                    background.optionsBar.totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
                 } else {
                     JOptionPane.showMessageDialog(null, "WRONG!! The answer was " + background.target.getCharacter().getName());
                     GuessWho.logger.log("Correct Answer: " + background.target.getCharacter().getName());

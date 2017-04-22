@@ -14,14 +14,12 @@ class Background extends JLayeredPane {
 
 	private static MouseHandler mHandler;
 
-  private JPanel payoutBar;
-  private OptionsBar optionsBar;
+  public OptionsBar optionsBar;
 
   public ButtonBar buttonBar;
 
   private JPanel featuresBar;
   private JPanel playArea;
-	public JLabel totalPayoutLabel;
   public JLabel trialPayoutLabel;
 
   private final int CARDS_PER_ROW = 6;
@@ -90,14 +88,13 @@ class Background extends JLayeredPane {
     optionsBar.setLayout(new BorderLayout());
     optionsBar.setPreferredSize(new Dimension(width / 3, height));
     optionsBar.setBorder(new LineBorder(Color.black, 3));
-    payoutBar = new JPanel();
-    payoutBar.setLayout(new BorderLayout());
-    payoutBar.setBorder(new LineBorder(Color.black, 3));
+    optionsBar.payoutBar.setLayout(new BorderLayout());
+    optionsBar.payoutBar.setBorder(new LineBorder(Color.black, 3));
     initTotalPayoutLabel();
     initTrialPayoutLabel();
-    payoutBar.add(totalPayoutLabel, BorderLayout.NORTH);
-    payoutBar.add(trialPayoutLabel, BorderLayout.SOUTH);
-    optionsBar.add(payoutBar, BorderLayout.NORTH);
+    optionsBar.payoutBar.add(optionsBar.totalPayoutLabel, BorderLayout.NORTH);
+    optionsBar.payoutBar.add(trialPayoutLabel, BorderLayout.SOUTH);
+    optionsBar.add(optionsBar.payoutBar, BorderLayout.NORTH);
     initFeaturesBar();
     optionsBar.add(buttonBar, BorderLayout.SOUTH);
     this.add(optionsBar, BorderLayout.WEST);
@@ -159,12 +156,12 @@ class Background extends JLayeredPane {
   }
 
   public void initTotalPayoutLabel() {
-    totalPayoutLabel = new JLabel();
-    totalPayoutLabel.setBorder(new LineBorder(Color.black, BORDER_SIZE));
-    totalPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
-    totalPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 40));
-    totalPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
-    totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
+    optionsBar.totalPayoutLabel = new JLabel();
+    optionsBar.totalPayoutLabel.setBorder(new LineBorder(Color.black, BORDER_SIZE));
+    optionsBar.totalPayoutLabel.setHorizontalAlignment(SwingConstants.CENTER);
+    optionsBar.totalPayoutLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 40));
+    optionsBar.totalPayoutLabel.setForeground(FOREGROUND_TEXT_COLOR);
+    optionsBar.totalPayoutLabel.setText("Points: " + GuessWho.trial.getTotalPoints());
   }
 
   public void initTrialPayoutLabel() {

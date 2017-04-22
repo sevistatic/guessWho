@@ -6,7 +6,11 @@ import java.awt.*;
 import java.util.ArrayList;
 
 class OptionsBar extends JPanel{
+  public JPanel payoutBar;
+	public JLabel totalPayoutLabel;
+
 	public OptionsBar(){
 		super();
+		payoutBar = new JPanel();
 	}
 }
