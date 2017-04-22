@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 class OptionsBar extends JPanel{
   public JPanel payoutBar;
+	public JPanel featuresBar;
 	public JLabel totalPayoutLabel;
   public JLabel trialPayoutLabel;
 
@@ -21,6 +22,7 @@ class OptionsBar extends JPanel{
     height = h;
     width = w;
 		payoutBar = new JPanel();
+    featuresBar = new JPanel();
     initTotalPayoutLabel();
     initTrialPayoutLabel();
 

@@ -18,7 +18,6 @@ class Background extends JLayeredPane {
 
   public ButtonBar buttonBar;
 
-  private JPanel featuresBar;
   private JPanel playArea;
 
   private final int CARDS_PER_ROW = 6;
@@ -41,7 +40,6 @@ class Background extends JLayeredPane {
   public Background(int h, int w) throws IOException {
     mHandler = new MouseHandler();
     deck = new ArrayList<Card>();
-    featuresBar = new JPanel();
     optionsBar = new OptionsBar(h, w);
     playArea = new JPanel();
 		buttonBar = new ButtonBar(this);
@@ -135,8 +133,8 @@ class Background extends JLayeredPane {
   }
 
   public void initFeaturesBar() {
-    featuresBar.setLayout(new GridLayout(4, 2));
-    featuresBar.setBorder(new LineBorder(Color.black, BORDER_SIZE));
+    optionsBar.featuresBar.setLayout(new GridLayout(4, 2));
+    optionsBar.featuresBar.setBorder(new LineBorder(Color.black, BORDER_SIZE));
     for (int i = 0; i < featuresSet.size(); i++) {
     	JPanel j = new JPanel();
     	j.setLayout(new GridLayout(1, 1));
@@ -146,9 +144,9 @@ class Background extends JLayeredPane {
     	jListList.add(a);
     	a.addMouseListener(mHandler);
       j.add(jListList.get(i));
-      featuresBar.add(j);
+      optionsBar.featuresBar.add(j);
     }
-    optionsBar.add(featuresBar, BorderLayout.CENTER);
+    optionsBar.add(optionsBar.featuresBar, BorderLayout.CENTER);
   }
 
   public void initPlayArea() {
