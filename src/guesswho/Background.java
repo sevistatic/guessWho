@@ -15,7 +15,7 @@ class Background extends JLayeredPane {
 	private static MouseHandler mHandler;
 
   private JPanel payoutBar;
-  private JPanel optionsBar;
+  private OptionsBar optionsBar;
 
   public ButtonBar buttonBar;
 
@@ -50,7 +50,7 @@ class Background extends JLayeredPane {
     mHandler = new MouseHandler();
     deck = new ArrayList<Card>();
     featuresBar = new JPanel();
-    optionsBar = new JPanel();
+    optionsBar = new OptionsBar();
     playArea = new JPanel();
 		buttonBar = new ButtonBar(this);
 		buttonBar.addMouseListener(mHandler);
