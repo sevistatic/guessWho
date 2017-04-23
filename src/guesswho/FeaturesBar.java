@@ -8,7 +8,7 @@ import java.util.ArrayList;
 class FeaturesBar extends JPanel{
 
   public ArrayList<Feature> featuresSet;
-  public static ArrayList<JList> jListList;
+  public static ArrayList<JList> selectorList;
   private final int BORDER_SIZE = 2;
   private final int NUM_OF_FEATURE_COLS = 3;
   private final int NUM_OF_FEATURE_ROWS = 4;
@@ -18,7 +18,7 @@ class FeaturesBar extends JPanel{
 	public FeaturesBar(){
 		super();
     featuresSet = new ArrayList<Feature>();
-		jListList = new ArrayList<JList>();
+		selectorList = new ArrayList<JList>();
 		buildFeatures();
 		setLayout(new GridLayout(NUM_OF_FEATURE_ROWS, NUM_OF_FEATURE_COLS));
 		setBorder(new LineBorder(Color.black, BORDER_SIZE));
@@ -46,26 +46,23 @@ class FeaturesBar extends JPanel{
 
 	public void initFeaturesBar() {
 		for (int feature = 0; feature < featuresSet.size(); feature++) {
-			JPanel featurePanel = new JPanel();
-			featurePanel.setLayout(new GridLayout(1, 1));
+			JPanel panel = new JPanel();
+			panel.setLayout(new GridLayout(1, 1));
 
-      Feature currentFeature = featuresSet.get(feature);
-			GuessList currentFeatureSelector = new GuessList(
-        currentFeature.getOptions(), currentFeature.getName()
-      );
-			currentFeatureSelector.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+			GuessList featureSelector = new GuessList(featuresSet.get(feature));
+			featureSelector.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-			jListList.add(currentFeatureSelector);
-			currentFeatureSelector.addMouseListener(mouseHandler);
-			featurePanel.add(currentFeatureSelector);
-			add(featurePanel);
+			selectorList.add(featureSelector);
+			featureSelector.addMouseListener(mouseHandler);
+			panel.add(featureSelector);
+			add(panel);
 		}
 	}
 
 	public void clearFeatures(){
-    for (int j = 0; j < jListList.size(); j++) {
-      jListList.get(j).setSelectedIndex(0);
-      jListList.get(j).clearSelection();
+    for (int selector = 0; selector < selectorList.size(); selector++) {
+      selectorList.get(selector).setSelectedIndex(0);
+      selectorList.get(selector).clearSelection();
     }
 	}
 }
