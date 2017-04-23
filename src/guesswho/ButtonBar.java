@@ -53,6 +53,7 @@ class ButtonBar extends JPanel{
   }
 
   public void setAnswer(String text) {
+    answer.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
     if (text == "Yes") {
       answer.setForeground(new Color(0, 100, 0));
     } else if (text == "No") {
