@@ -80,6 +80,9 @@ class Character {
         if (features[SEX] == MALE){
         	features[HAIR_COLOR]   =   randomNumInRange(1,6);//includes bald
         	features[BEARD]        =   randomNumInRange(1,2);
+          if (features[BEARD] == NO_BEARD){
+            features[MUSTACHE]   =   randomNumInRange(1,2);
+          }
         } else {
             features[HAIR_COLOR] =   randomNumInRange(1,5);//does not include bald
         	features[BEARD] = NO_BEARD;
@@ -103,5 +106,4 @@ class Character {
     public int randomNumInRange(int rangeBottom, int rangeTop){
       return Background.randomizer.nextInt(rangeTop) + rangeBottom;
     }
-
 }

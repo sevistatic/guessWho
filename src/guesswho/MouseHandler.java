@@ -10,7 +10,6 @@ class MouseHandler implements MouseListener {
 
     public MouseHandler() {
         super();
-
     }
 
     public void mouseClicked(MouseEvent e) {

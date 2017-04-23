@@ -32,32 +32,29 @@ public static Trial trial;
         trial = new Trial();
         logger = new Logger();
 
-        //Set up game window
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         int height = (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight();
         int width = (int)Toolkit.getDefaultToolkit().getScreenSize().getWidth();
         gameFrame.setSize(width, height);
 
         try{
-        //adds game objects to game window
         Background background = new Background(gameFrame.getWidth(), gameFrame.getHeight());
         gameFrame.add(background);
         gameFrame.setVisible(true);
 
         boolean dialogOpen = true;
-        //main game loop
         do{
-            pause(40);
-            background.repaint();
-            if (dialogOpen){
-                JOptionPane.showMessageDialog (null, startInfo);
-                dialogOpen = false;
-            }
+          pause(40);
+          background.repaint();
+          if (dialogOpen){
+            JOptionPane.showMessageDialog (null, startInfo);
+            dialogOpen = false;
+          }
         } while(true);//exit flag
         } catch (Exception e){
-            System.err.println(e.getMessage());
+          System.err.println(e.getMessage());
         }
-    }//end method main
+    }
 
     /**
      * Pauses the game for a specific amount of time (in ms)
@@ -69,5 +66,5 @@ public static Trial trial;
         } catch (Exception e) {
             e.printStackTrace ();
         }
-    } // end method pause
-}//end class Main
+    }
+}

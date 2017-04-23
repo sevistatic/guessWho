@@ -23,7 +23,6 @@ class Logger{
   }
 
   private void init(){
-    //set start time for logging
     systemStartTime = (int)(System.currentTimeMillis() / 1000);
 
     log("Begin Logging");
