@@ -6,8 +6,20 @@ import javax.swing.*;
  * @author Spencer Bryant
  */
 public class GuessWho {
-static String startInfo;
-static final boolean PARTIAL_INFO = false;
+private static final String startInfo = "Guess the character the computer chose by "
++ "\nasking questions about the character's features using the bar at the left "
++ "\nand the \"ASK\" button."
++ "\n"
++ "\nEach time you ask, one point will be deducted from your score and if you "
++ "\nguess the correct character, your current score will be added to a running total."
++ "\nYou get bonus points for using clever strategies to come up with the answer "
++ "\nin only a few guesses."
++ "\n"
++ "\nYou can ask about more than one feature at a time, but you will only be "
++ "\ngiven a \"YES\" response if ALL of the features match."
++ "\n"
++ "\nClick the \"CARD INFO\" button to learn which features a certain character has."
++ "\nLeft-click to select a character and right-click to turn them over.";
 
 public static Logger logger;
 public static Trial trial;
@@ -29,9 +41,6 @@ public static Trial trial;
         try{
         //adds game objects to game window
         Background background = new Background(gameFrame.getWidth(), gameFrame.getHeight());
-        BorderLayout g = new BorderLayout();
-        background.setLayout(g);
-        background.init();
         gameFrame.add(background);
         gameFrame.setVisible(true);
 
@@ -45,14 +54,7 @@ public static Trial trial;
 
             if (!b){
                 //rules dialog
-                JOptionPane.showMessageDialog (null,
-                "Guess the character the computer chose by asking questions about the character's features using the bar at the left and the \"ASK\" button."
-                + "\nEach time you ask, 10 points will be deducted from your score and if you guess the correct character, your current score will be added to a running total."
-                + "\nYou get bonus points for using clever strategies to come up with the answer in only a few guesses."
-                + "\nYou can ask about more than one feature at a time, but you will only be given a \"YES\" response if ALL of the features match."
-                + "\nClick the \"CARD INFO\" button to learn which features a certain character has."
-                + "\nLeft-click to select a character and right-click to turn them over."
-                );
+                JOptionPane.showMessageDialog (null, startInfo);
                 b = true;
             }
         } while(b);//exit flag

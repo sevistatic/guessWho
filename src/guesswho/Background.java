@@ -23,6 +23,9 @@ class Background extends JLayeredPane {
     mHandler = new MouseHandler();
     optionsBar = new OptionsBar(h, w, this);
     playArea = new PlayArea(mt,this);
+		BorderLayout g = new BorderLayout();
+		setLayout(g);
+		init();
   }
 
   public void init() {
