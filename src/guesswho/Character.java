@@ -109,3 +109,5 @@ class Character {
       return Background.randomizer.nextInt(rangeTop) + rangeBottom;
     }
 }
+//TODO fix scope of this class so that it calls out to the portrait generator
+//for any specific information about the features of a portrait
