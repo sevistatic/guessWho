@@ -63,9 +63,9 @@ public static Trial trial;
      * Pauses the game for a specific amount of time (in ms)
      * @param ms the number of milliseconds to pause the game
      */
-    public static void pause (int ms) {
+    public static void pause (int milliseconds) {
         try {
-           Thread.sleep (ms);
+           Thread.sleep (milliseconds);
         } catch (Exception e) {
             e.printStackTrace ();
         }
