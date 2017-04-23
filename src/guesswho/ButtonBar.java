@@ -5,7 +5,6 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 
 class ButtonBar extends JPanel{
-
   private InstructionButton instructions;
   private FinalGuessButton finalGuess;
   private AskButton ask;
@@ -36,7 +35,6 @@ class ButtonBar extends JPanel{
     answer.setBorder(new LineBorder(Color.BLACK, BORDER_SIZE));
     answer.setHorizontalAlignment(SwingConstants.CENTER);
     answer.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-    answer.setForeground(FOREGROUND_TEXT_COLOR);
 
     add(ask);
     add(answer);
@@ -54,16 +52,12 @@ class ButtonBar extends JPanel{
     giveUp.addMouseListener(handler);
   }
 
-  public void setAnswer(int i) {
-    answer.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-    if (i == 1) {
+  public void setAnswer(String text) {
+    if (text == "Yes") {
       answer.setForeground(new Color(0, 100, 0));
-      answer.setText("Yes");
-    } else if (i == 0) {
+    } else if (text == "No") {
       answer.setForeground(new Color(100, 0, 0));
-      answer.setText("No");
-    } else {
-      answer.setText("");
     }
+    answer.setText(text);
   }
 }

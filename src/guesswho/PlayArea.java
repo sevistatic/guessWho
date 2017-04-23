@@ -15,18 +15,14 @@ class PlayArea extends JPanel{
   public MouseHandler mouseHandler;
   private final int CARDS_PER_ROW = 6;
   private final int CARDS_PER_COLUMN = 3;
-  private int deckSize;
 
 	public PlayArea(MersenneTwister randomizer, Background background){
 		super();
     this.randomizer = randomizer;
     this.background = background;
-    this.mouseHandler = new MouseHandler();
-    this.deckSize = CARDS_PER_COLUMN * CARDS_PER_ROW;
+    mouseHandler = new MouseHandler();
     deck = new ArrayList<Card>();
-    GridLayout grid = new GridLayout(CARDS_PER_COLUMN, CARDS_PER_ROW);
-    setLayout(grid);
-
+    setLayout(new GridLayout(CARDS_PER_COLUMN, CARDS_PER_ROW));
     resetPlayArea();
 	}
 
@@ -52,7 +48,7 @@ class PlayArea extends JPanel{
     while (!deck.isEmpty()) {
         deck.remove(0);
     }
-    for (int card = 0; card < deckSize; card++){
+    for (int card = 0; card < (CARDS_PER_COLUMN * CARDS_PER_ROW); card++){
       deck.add(new Card(background));
       add(deck.get(card));
     }

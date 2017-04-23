@@ -383,12 +383,12 @@ class AskButton extends JButton implements GuessObject{
         int correct = areAllCorrect();
         if (correct == 1) {
             GuessWho.trial.deductTrialPoints(1);
-            background.optionsBar.buttonBar.setAnswer(1);
+            background.optionsBar.buttonBar.setAnswer("Yes");
         } else if (correct == 0) {
             GuessWho.trial.deductTrialPoints(1);
-            background.optionsBar.buttonBar.setAnswer(0);
+            background.optionsBar.buttonBar.setAnswer("No");
         } else {
-            background.optionsBar.buttonBar.setAnswer(-1);
+            background.optionsBar.buttonBar.setAnswer("");
         }
           background.optionsBar.payoutBar.trialPayoutLabel.setText(String.format("%d Guesses", GuessWho.trial.getTrialPoints()));
         for (int i = 0; i < background.optionsBar.featuresBar.jListList.size(); i++) {
