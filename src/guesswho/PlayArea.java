@@ -33,11 +33,11 @@ class PlayArea extends JPanel{
   }
 
   public void resetPlayArea(){
-      selectedCard = null;
-      removeAll();
-      shuffle();
-      newTarget();
-      addMouseListener(mouseHandler);
+    selectedCard = null;
+    removeAll();
+    shuffle();
+    newTarget();
+    addMouseListener(mouseHandler);
   }
 
   public void newTarget() {

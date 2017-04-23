@@ -10,24 +10,46 @@ import names.Names;
 class Character {
     private String name;
     private int[] features;
-    RandomPortrait rp;
-    ImageIcon[] iArray;
+    RandomPortrait portraitRandomizer;
+    ImageIcon[] portraitParts;
+
+    private final int NUM_OF_FEATURES = 14;
+
+    private final int SKIN_COLOR = 0;
+    private final int EYE_COLOR = 1;
+    private final int SEX = 2;
+      private int MALE = 1;
+    private final int MOUTH_SHAPE = 3;
+    private final int LIP_SIZE = 4;
+    private final int HAIR_COLOR = 5;
+    private final int BEARD = 6;
+      private final int NO_BEARD = 2;
+    private final int MUSTACHE = 7;
+      private final int NO_MUSTACHE = 2;
+    private final int NOSE_TYPE = 8;
+    private final int SHIRT = 9;
+    private final int HAT = 10;
+      private final int HAS_HAT = 1;
+    private final int HAT_STYLE = 11;
+      private int NO_HAT_STYLE = 4;
+    private final int GLASSES = 12;
+      private final int HAS_GLASSES = 1;
+    private final int GLASSES_STYLE = 13;
+      private final int NO_GLASSES_STYLE = 5;
 
     Character() {
-        features = newFeatures();
-        if (features[2] == 1){
+        features = randomizeFeatures();
+        if (features[SEX] == MALE){
         	name = Names.randomMaleName();
         } else {
         	name = Names.randomFemaleName();
         }
-        //name = randomName(features[2]);//gives male or female name, needs sex info
-        rp = new RandomPortrait(features);
-        iArray = rp.getImages();
-
+        portraitRandomizer = new RandomPortrait(features);
+        portraitParts = portraitRandomizer.getImages();
     }
 
-    public String[] getFeatures() {
-        return rp.describeFeatures(features);
+    public String[] getFeaturesDescriptions() {
+        return portraitRandomizer.describeFeatures(features);
     }
 
     public String getName() {
@@ -40,7 +62,7 @@ class Character {
      * @return an ordered set of semi-transparent images.
      */
     public ImageIcon[] getPortrait(){
-    	return iArray;
+    	return portraitParts;
     }
 
     /**
@@ -48,37 +70,38 @@ class Character {
      * For instance, girls are rarely bald, and rarely have beards or mustaches.
      * @return an ordered list of the features a character has.
      */
-    private int[] newFeatures(){
-    	int[] randF;
-    	randF = new int[14];
-        randF[0] = Background.randomizer.nextInt(2) + 1;//1 to 2
-        randF[1] = Background.randomizer.nextInt(5) + 1;
-        randF[2] = Background.randomizer.nextInt(2) + 1;
-        randF[3] = Background.randomizer.nextInt(2) + 1;
-        randF[4] = Background.randomizer.nextInt(2) + 1;
-        if (randF[2] == 1){//boy
-        	randF[5] = Background.randomizer.nextInt(6) + 1;//are sometimes bald
-        	randF[6] = Background.randomizer.nextInt(2) + 1;
-        } else {//girl, none for beard and mustache
-            randF[5] = Background.randomizer.nextInt(5) + 1;//not usually bald
-        	randF[6] = 2;
-        	randF[7] = 2;
-
+    private int[] randomizeFeatures(){
+    	int[] features = new int[NUM_OF_FEATURES];
+        features[SKIN_COLOR]     =   randomNumInRange(1,2);
+        features[EYE_COLOR]      =   randomNumInRange(1,5);
+        features[SEX]            =   randomNumInRange(1,2);
+        features[MOUTH_SHAPE]    =   randomNumInRange(1,2);
+        features[LIP_SIZE]       =   randomNumInRange(1,2);
+        if (features[SEX] == MALE){
+        	features[HAIR_COLOR]   =   randomNumInRange(1,6);//includes bald
+        	features[BEARD]        =   randomNumInRange(1,2);
+        } else {
+            features[HAIR_COLOR] =   randomNumInRange(1,5);//does not include bald
+        	features[BEARD] = NO_BEARD;
+        	features[MUSTACHE] = NO_MUSTACHE;
         }
-        randF[8] = Background.randomizer.nextInt(3) + 1;
-        randF[9] = Background.randomizer.nextInt(/*10*/6) + 1;
-        randF[10] = Background.randomizer.nextInt(2) + 1;
-        if (randF[10] == 1)//hat
-        	randF[11] = Background.randomizer.nextInt(3) + 1;
-        else //no hat, none for hat style
-        	randF[11] = 4;
-        randF[12] = Background.randomizer.nextInt(2) + 1;
-        if (randF[12] == 1)//glasses
-        	randF[13] = Background.randomizer.nextInt(4) + 1;
-        else //no glasses, none for glasses style
-        	randF[13] = 5;
+        features[NOSE_TYPE]       =  randomNumInRange(1,3);
+        features[SHIRT]           =  randomNumInRange(1,/*10*/6);//extra shirt types
+        features[HAT]             =  randomNumInRange(1,2);
+        if (features[HAT] == HAS_HAT)
+        	features[HAT_STYLE]     =  randomNumInRange(1,3);
+        else
+        	features[HAT_STYLE] = NO_HAT_STYLE;
+        features[GLASSES]         =  randomNumInRange(1,2);
+        if (features[GLASSES] == HAS_GLASSES)
+        	features[GLASSES_STYLE] =  randomNumInRange(1,4);
+        else
+        	features[GLASSES_STYLE] = NO_GLASSES_STYLE;
+      return features;
+    }
 
-        return randF;
+    public int randomNumInRange(int rangeBottom, int rangeTop){
+      return Background.randomizer.nextInt(rangeTop) + rangeBottom;
     }
 
 }
