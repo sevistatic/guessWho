@@ -2,6 +2,8 @@ package guesswho;
 
 import javax.swing.ImageIcon;
 import names.Names;
+import mersennetwister.*;
+import randomportrait.RandomPortrait;
 
 /**
  *

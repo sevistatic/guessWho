@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package guesswho;
+package randomportrait;
 import javax.swing.ImageIcon;
+import mersennetwister.*;
 
 /**
  *
@@ -13,6 +14,8 @@ public class RandomPortrait {
 	String foldername = "images/random/";
     private ImageIcon[] iconArray;
     private boolean done;
+
+		private MersenneTwister randomizer;
     /**
      * constructor to make a portrait with random features
      */
@@ -28,6 +31,7 @@ public class RandomPortrait {
      * @param feat a legal list of feature ints
      */
     public RandomPortrait(int[] feat){
+			randomizer = new MersenneTwister();
     	done = false;
     	iconArray = new ImageIcon[10];
     	iconArray = forciblyGeneratePictures(feat);
@@ -128,8 +132,6 @@ public class RandomPortrait {
         iconArray[2] = getSex(sex);
         iconArray[3] = getSmile(f[3], f[4]);
         int haircolor = f[5];
-
-				System.out.println("Mustache number: " + f[7]);
         iconArray[4] = getFacialHair(sex, f[6], f[7], haircolor);
         iconArray[5] = getNose(f[8]);
         iconArray[6] = getShirt(f[9]);
@@ -232,12 +234,10 @@ public class RandomPortrait {
     	case 4: return "green shirt";
     	case 5: return "orange shirt";
     	case 6: return "yellow shirt";
-    	/*
     	case 7: return "purple shirt";
     	case 8: return "white shirt";
     	case 9: return "leopard shirt";
     	case 10: return "warning shirt";
-    	*/
     	default: return "shirt error";
     	}
     }
@@ -286,7 +286,7 @@ public class RandomPortrait {
     //GETS THE IMAGE FILES FOR EACH RESPECTIVE FEATURE NUMBER IN THE ARRAY
     //--------------------------------------------------------
     private ImageIcon getSkinColor(int i) {
-    	int kind = Background.randomizer.nextInt(3) + 1;
+    	int kind = randomizer.nextInt(3) + 1;
         if (i == 1) {
         	switch (kind){
         	case 0: return new ImageIcon(foldername + "lightskin1.png");
@@ -329,7 +329,7 @@ public class RandomPortrait {
     }
 
     private ImageIcon getSex(int i) {
-    	int kind = Background.randomizer.nextInt(2) + 1;
+    	int kind = randomizer.nextInt(2) + 1;
         if (i == 1) {
         	switch (kind){
         	case 1: return new ImageIcon(foldername + "boy.png");
@@ -361,7 +361,6 @@ public class RandomPortrait {
     }
 
     private ImageIcon getFacialHair(int sex, int beard, int mustache, int k) {
-			System.out.println("Sex: " + sex + ", has beard: " + beard + ", has mustache: " + mustache + ", hair color: " + k);
 			final int MALE = 1;
 			final int HAS_BEARD = 1;
 			final int HAS_MUSTACHE = 1;

@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.io.*;
 import javax.swing.border.LineBorder;
+import mersennetwister.*;
 
 /**
  * @author Spencer
