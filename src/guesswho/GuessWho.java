@@ -44,20 +44,16 @@ public static Trial trial;
         gameFrame.add(background);
         gameFrame.setVisible(true);
 
-        //exit flag
-        boolean b = false;
-
+        boolean dialogOpen = true;
         //main game loop
         do{
             pause(40);
             background.repaint();
-
-            if (!b){
-                //rules dialog
+            if (dialogOpen){
                 JOptionPane.showMessageDialog (null, startInfo);
-                b = true;
+                dialogOpen = false;
             }
-        } while(b);//exit flag
+        } while(true);//exit flag
         } catch (Exception e){
             System.err.println(e.getMessage());
         }
