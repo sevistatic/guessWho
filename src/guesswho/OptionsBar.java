@@ -36,6 +36,10 @@ class OptionsBar extends JPanel{
 
     featuresSet = new ArrayList<Feature>();
     jListList = new ArrayList<JList>();
+
+    buildFeatures();
+    initFeaturesBar();
+		add(buttonBar, BorderLayout.SOUTH);
 	}
 
 	public void buildFeatures() {
@@ -53,12 +57,6 @@ class OptionsBar extends JPanel{
 		featuresSet.add(new Feature("Headwear", new String[]{"hat", "no hat"}));
 		featuresSet.add(new Feature("Eyewear", new String[]{"glasses", "no glasses"}));
 	}
-
-	public void initOptionsBar() {
-    buildFeatures();
-    initFeaturesBar();
-		add(buttonBar, BorderLayout.SOUTH);
-  }
 
 	public void initFeaturesBar() {
 		featuresBar.setLayout(new GridLayout(4, 2));

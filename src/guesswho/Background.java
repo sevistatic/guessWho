@@ -40,7 +40,6 @@ class Background extends JLayeredPane {
 
 	public void initializeOptionsBar() {
     optionsBar = new OptionsBar(height, width, this);
-    optionsBar.initOptionsBar();
     this.add(optionsBar, BorderLayout.WEST);
 		optionsBar.addMouseListener(mouseHandler);
   }
