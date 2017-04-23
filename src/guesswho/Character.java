@@ -86,7 +86,7 @@ class Character {
         	features[MUSTACHE] = NO_MUSTACHE;
         }
         features[NOSE_TYPE]       =  randomNumInRange(1,3);
-        features[SHIRT]           =  randomNumInRange(1,/*10*/6);//extra shirt types
+        features[SHIRT]           =  randomNumInRange(1,10);
         features[HAT]             =  randomNumInRange(1,2);
         if (features[HAT] == HAS_HAT)
         	features[HAT_STYLE]     =  randomNumInRange(1,3);

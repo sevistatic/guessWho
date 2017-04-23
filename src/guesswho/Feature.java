@@ -77,7 +77,7 @@ class NoseFeature extends Feature {
 class ShirtFeature extends Feature{
   ShirtFeature(){
     super("Shirt", new String[]{"blue shirt", "black shirt", "red shirt", "green shirt", "orange shirt",
-									"yellow shirt", "purple shirt"/*, "white shirt", "leopard shirt", "warning shirt"*/});
+              "yellow shirt", "purple shirt", "white shirt", "leopard shirt", "warning shirt"});
   }
 }
 class HatFeature extends Feature {
