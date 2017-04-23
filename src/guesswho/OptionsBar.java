@@ -14,8 +14,6 @@ class OptionsBar extends JPanel{
 
   private final int WIDTH_RATIO = 3;
   private final int BORDER_SIZE = 3;
-  private int height;
-  private int width;
 
 	public OptionsBar(int height, int width, Background background){
 		super();
