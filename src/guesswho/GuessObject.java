@@ -185,6 +185,7 @@ class GuessList extends JList implements GuessObject{
     GuessList(Feature feature){
         super(feature.getOptions());
         this.name = feature.getName();
+  			setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
 
   public String toString(){

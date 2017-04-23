@@ -36,6 +36,6 @@ class OptionsBar extends JPanel{
   public void resetOptionsBar(){
 		buttonBar.setAnswer("");
 		payoutBar.resetPointsLabel();
-    featuresBar.clearFeatures();
+    featuresBar.clearFeatureSelectors();
 	}
 }

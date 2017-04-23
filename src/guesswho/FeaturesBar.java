@@ -22,7 +22,7 @@ class FeaturesBar extends JPanel{
 		buildFeatures();
 		setLayout(new GridLayout(NUM_OF_FEATURE_ROWS, NUM_OF_FEATURE_COLS));
 		setBorder(new LineBorder(Color.black, BORDER_SIZE));
-		initFeaturesBar();
+		addFeatureSelectors();
 	}
 
 	public void addMouseListener(MouseHandler mouseHandler){
@@ -44,22 +44,21 @@ class FeaturesBar extends JPanel{
 		featuresSet.add(new EyewearFeature());
 	}
 
-	public void initFeaturesBar() {
-		for (int feature = 0; feature < featuresSet.size(); feature++) {
-			JPanel panel = new JPanel();
+	public void addFeatureSelectors() {
+    for(Feature feature : featuresSet){
+      JPanel panel = new JPanel();
 			panel.setLayout(new GridLayout(1, 1));
 
-			GuessList featureSelector = new GuessList(featuresSet.get(feature));
-			featureSelector.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-
-			selectorList.add(featureSelector);
+      GuessList featureSelector = new GuessList(feature);
+      selectorList.add(featureSelector);
 			featureSelector.addMouseListener(mouseHandler);
+
 			panel.add(featureSelector);
 			add(panel);
-		}
+    }
 	}
 
-	public void clearFeatures(){
+	public void clearFeatureSelectors(){
     for (int selector = 0; selector < selectorList.size(); selector++) {
       selectorList.get(selector).setSelectedIndex(0);
       selectorList.get(selector).clearSelection();
