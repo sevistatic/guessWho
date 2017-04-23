@@ -23,6 +23,17 @@ class PlayArea extends JPanel{
     this.background = background;
     deck = new ArrayList<Card>();
     selected = null;
+    GridLayout grid = new GridLayout(CARDS_PER_COLUMN, CARDS_PER_ROW);
+    setLayout(grid);
+    //prints CARDS_PER ROW cards in a single row * CARDS_PER_COLUMN columns
+    for (int a = 0; a < CARDS_PER_ROW; a++) {
+      for (int b = 0; b < CARDS_PER_COLUMN; b++) {
+        deck.add(new Card(background));
+      }
+    }
+    removeAll();
+    shuffle(deck);
+    newTarget();
 	}
 
   public void addMouseListener(MouseHandler mouseHandler){
@@ -38,20 +49,6 @@ class PlayArea extends JPanel{
       shuffle(deck);
       newTarget();
       addMouseListener(mouseHandler);
-  }
-
-  public void initPlayArea() {
-    GridLayout grid = new GridLayout(CARDS_PER_COLUMN, CARDS_PER_ROW);
-    setLayout(grid);
-    //prints CARDS_PER ROW cards in a single row * CARDS_PER_COLUMN columns
-    for (int a = 0; a < CARDS_PER_ROW; a++) {
-      for (int b = 0; b < CARDS_PER_COLUMN; b++) {
-        deck.add(new Card(background));
-      }
-    }
-    removeAll();
-    shuffle(deck);
-    newTarget();
   }
 
   public void newTarget() {

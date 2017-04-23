@@ -34,7 +34,6 @@ class Background extends JLayeredPane {
 
   public void initializePlayArea() {
     playArea = new PlayArea(randomizer,this);
-    playArea.initPlayArea();
 		this.add(playArea, BorderLayout.CENTER);
 		playArea.addMouseListener(mouseHandler);
 	}
@@ -53,4 +52,4 @@ class Background extends JLayeredPane {
 		optionsBar.resetOptionsBar();
 		GuessWho.logger.newTrial();
   }
-}//end class Background
+}
