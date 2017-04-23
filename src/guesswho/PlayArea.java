@@ -8,64 +8,53 @@ import java.util.ArrayList;
 class PlayArea extends JPanel{
 
   public static ArrayList<Card> deck;
-  public static Card target;
-  static Card selected;
+  public static Card targetCard;
+  static Card selectedCard;
   public MersenneTwister randomizer;
   public Background background;
   public MouseHandler mouseHandler;
-
   private final int CARDS_PER_ROW = 6;
   private final int CARDS_PER_COLUMN = 3;
+  private int deckSize;
 
 	public PlayArea(MersenneTwister randomizer, Background background){
 		super();
     this.randomizer = randomizer;
     this.background = background;
+    this.mouseHandler = new MouseHandler();
+    this.deckSize = CARDS_PER_COLUMN * CARDS_PER_ROW;
     deck = new ArrayList<Card>();
-    selected = null;
     GridLayout grid = new GridLayout(CARDS_PER_COLUMN, CARDS_PER_ROW);
     setLayout(grid);
-    //prints CARDS_PER ROW cards in a single row * CARDS_PER_COLUMN columns
-    for (int a = 0; a < CARDS_PER_ROW; a++) {
-      for (int b = 0; b < CARDS_PER_COLUMN; b++) {
-        deck.add(new Card(background));
-      }
-    }
-    removeAll();
-    shuffle(deck);
-    newTarget();
+
+    resetPlayArea();
 	}
 
   public void addMouseListener(MouseHandler mouseHandler){
-    this.mouseHandler = mouseHandler;
-    for (int i = 0; i < deck.size(); i++){
-      deck.get(i).addMouseListener(mouseHandler);
+    for (int card = 0; card < deck.size(); card++){
+      deck.get(card).addMouseListener(mouseHandler);
     }
   }
 
   public void resetPlayArea(){
-      selected = null;
+      selectedCard = null;
       removeAll();
-      shuffle(deck);
+      shuffle();
       newTarget();
       addMouseListener(mouseHandler);
   }
 
   public void newTarget() {
-    int r = randomizer.nextInt(deck.size());
-    target = deck.get(r);
+    targetCard = deck.get(randomizer.nextInt(deck.size()));
   }
 
-  public void shuffle(ArrayList<Card> d) {
-    ArrayList<Card> newDeck = new ArrayList<Card>();
-    int sz = d.size();
-    while (!d.isEmpty()) {
-        d.remove(0);
+  public void shuffle() {
+    while (!deck.isEmpty()) {
+        deck.remove(0);
     }
-    for (int i = 0; i < sz; i++){
-      newDeck.add(new Card(background));
-      add(newDeck.get(i));
+    for (int card = 0; card < deckSize; card++){
+      deck.add(new Card(background));
+      add(deck.get(card));
     }
-    deck = newDeck;
-    }
+  }
 }

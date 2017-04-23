@@ -20,6 +20,7 @@ class OptionsBar extends JPanel{
     setLayout(new BorderLayout());
     setPreferredSize(new Dimension(width / WIDTH_RATIO, height));
     setBorder(new LineBorder(Color.black, BORDER_SIZE));
+    mouseHandler = new MouseHandler();
 
 		payoutBar = new PayoutBar();
     add(payoutBar, BorderLayout.NORTH);
@@ -28,12 +29,8 @@ class OptionsBar extends JPanel{
   	add(featuresBar, BorderLayout.CENTER);
 
 		buttonBar = new ButtonBar(background);
-		add(buttonBar, BorderLayout.SOUTH);
-	}
-
-	public void addMouseListener(MouseHandler mouseHandler){
-		this.mouseHandler = mouseHandler;
     buttonBar.addMouseListener(mouseHandler);
+		add(buttonBar, BorderLayout.SOUTH);
 	}
 
   public void resetOptionsBar(){

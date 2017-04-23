@@ -26,11 +26,9 @@ class Background extends JLayeredPane {
 
 		playArea = new PlayArea(randomizer,this);
 		add(playArea, BorderLayout.CENTER);
-		playArea.addMouseListener(mouseHandler);
 
 		optionsBar = new OptionsBar(height, width, this);
 		add(optionsBar, BorderLayout.WEST);
-		optionsBar.addMouseListener(mouseHandler);
   }
 
   public void reset() {
