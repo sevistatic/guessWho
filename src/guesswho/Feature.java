@@ -10,10 +10,10 @@ class Feature {
   private String name;//name: beard
   private int parity;//parity: 2
   private String[] options;//options = {yes, no}
-  Feature(String n, String[] o){
-      parity = o.length;
-      name = n;
-      options = o;
+  Feature(String name, String[] options){
+      parity = options.length;
+      this.name = name;
+      this.options = options;
   }
 
   public String getName() {
