@@ -51,30 +51,30 @@ class Character {
     private int[] newFeatures(){
     	int[] randF;
     	randF = new int[14];
-        randF[0] = Background.mt.nextInt(2) + 1;//1 to 2
-        randF[1] = Background.mt.nextInt(5) + 1;
-        randF[2] = Background.mt.nextInt(2) + 1;
-        randF[3] = Background.mt.nextInt(2) + 1;
-        randF[4] = Background.mt.nextInt(2) + 1;
+        randF[0] = Background.randomizer.nextInt(2) + 1;//1 to 2
+        randF[1] = Background.randomizer.nextInt(5) + 1;
+        randF[2] = Background.randomizer.nextInt(2) + 1;
+        randF[3] = Background.randomizer.nextInt(2) + 1;
+        randF[4] = Background.randomizer.nextInt(2) + 1;
         if (randF[2] == 1){//boy
-        	randF[5] = Background.mt.nextInt(6) + 1;//are sometimes bald
-        	randF[6] = Background.mt.nextInt(2) + 1;
+        	randF[5] = Background.randomizer.nextInt(6) + 1;//are sometimes bald
+        	randF[6] = Background.randomizer.nextInt(2) + 1;
         } else {//girl, none for beard and mustache
-            randF[5] = Background.mt.nextInt(5) + 1;//not usually bald
+            randF[5] = Background.randomizer.nextInt(5) + 1;//not usually bald
         	randF[6] = 2;
         	randF[7] = 2;
 
         }
-        randF[8] = Background.mt.nextInt(3) + 1;
-        randF[9] = Background.mt.nextInt(/*10*/6) + 1;
-        randF[10] = Background.mt.nextInt(2) + 1;
+        randF[8] = Background.randomizer.nextInt(3) + 1;
+        randF[9] = Background.randomizer.nextInt(/*10*/6) + 1;
+        randF[10] = Background.randomizer.nextInt(2) + 1;
         if (randF[10] == 1)//hat
-        	randF[11] = Background.mt.nextInt(3) + 1;
+        	randF[11] = Background.randomizer.nextInt(3) + 1;
         else //no hat, none for hat style
         	randF[11] = 4;
-        randF[12] = Background.mt.nextInt(2) + 1;
+        randF[12] = Background.randomizer.nextInt(2) + 1;
         if (randF[12] == 1)//glasses
-        	randF[13] = Background.mt.nextInt(4) + 1;
+        	randF[13] = Background.randomizer.nextInt(4) + 1;
         else //no glasses, none for glasses style
         	randF[13] = 5;
 

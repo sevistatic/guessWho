@@ -10,25 +10,25 @@ class PlayArea extends JPanel{
   public static ArrayList<Card> deck;
   public static Card target;
   static Card selected;
-  public MersenneTwister mt;
+  public MersenneTwister randomizer;
   public Background background;
-  public MouseHandler mHandler;
+  public MouseHandler mouseHandler;
 
   private final int CARDS_PER_ROW = 6;
   private final int CARDS_PER_COLUMN = 3;
 
-	public PlayArea(MersenneTwister mt, Background background){
+	public PlayArea(MersenneTwister randomizer, Background background){
 		super();
-    this.mt = mt;
+    this.randomizer = randomizer;
     this.background = background;
     deck = new ArrayList<Card>();
     selected = null;
 	}
 
-  public void addMouseListener(MouseHandler mHandler){
-    this.mHandler = mHandler;
+  public void addMouseListener(MouseHandler mouseHandler){
+    this.mouseHandler = mouseHandler;
     for (int i = 0; i < deck.size(); i++){
-      deck.get(i).addMouseListener(mHandler);
+      deck.get(i).addMouseListener(mouseHandler);
     }
   }
 
@@ -37,7 +37,7 @@ class PlayArea extends JPanel{
       removeAll();
       shuffle(deck);
       newTarget();
-      addMouseListener(mHandler);
+      addMouseListener(mouseHandler);
   }
 
   public void initPlayArea() {
@@ -55,7 +55,7 @@ class PlayArea extends JPanel{
   }
 
   public void newTarget() {
-    int r = mt.nextInt(deck.size());
+    int r = randomizer.nextInt(deck.size());
     target = deck.get(r);
   }
 

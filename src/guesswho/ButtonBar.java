@@ -13,7 +13,7 @@ class ButtonBar extends JPanel{
   private InfoButton info;
   public JLabel answer;
 
-  private static MouseHandler mHandler;
+  private static MouseHandler mouseHandler;
 
   private final int NUM_OF_OPTIONS_BUTTONS_DOWN = 3;
   private final int NUM_OF_OPTIONS_BUTTONS_ACROSS = 2;

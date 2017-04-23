@@ -12,7 +12,7 @@ class OptionsBar extends JPanel{
 
   public static ArrayList<JList> jListList;
   public ArrayList<Feature> featuresSet;
-	private static MouseHandler mHandler;
+	private static MouseHandler mouseHandler;
 
   private final int BORDER_SIZE = 2;
 	private final Color FOREGROUND_TEXT_COLOR = new Color(0,150,0);
@@ -70,16 +70,16 @@ class OptionsBar extends JPanel{
 			GuessList a = new GuessList(data, featuresSet.get(i).getName());
 			a.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 			jListList.add(a);
-			a.addMouseListener(mHandler);
+			a.addMouseListener(mouseHandler);
 			j.add(jListList.get(i));
 			featuresBar.add(j);
 		}
 		add(featuresBar, BorderLayout.CENTER);
 	}
 
-	public void addMouseListener(MouseHandler mHandler){
-		this.mHandler = mHandler;
-    buttonBar.addMouseListener(mHandler);
+	public void addMouseListener(MouseHandler mouseHandler){
+		this.mouseHandler = mouseHandler;
+    buttonBar.addMouseListener(mouseHandler);
 	}
 
   public void resetOptionsBar(){

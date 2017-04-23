@@ -12,30 +12,38 @@ import javax.swing.border.LineBorder;
 class Background extends JLayeredPane {
 	private static final long serialVersionUID = 1L;
 
-	private static MouseHandler mHandler;
+	private static MouseHandler mouseHandler;
   public OptionsBar optionsBar;
   public PlayArea playArea;
 
-  public static MersenneTwister mt;
+	private int height;
+	private int width;
 
-  public Background(int h, int w) throws IOException {
-    mt = new MersenneTwister();
-    mHandler = new MouseHandler();
-    optionsBar = new OptionsBar(h, w, this);
-    playArea = new PlayArea(mt,this);
-		BorderLayout g = new BorderLayout();
-		setLayout(g);
-		init();
+  public static MersenneTwister randomizer;
+
+  public Background(int height, int width) throws IOException {
+		this.height = height;
+		this.width = width;
+    randomizer = new MersenneTwister();
+    mouseHandler = new MouseHandler();
+		BorderLayout layout = new BorderLayout();
+		setLayout(layout);
+		initializePlayArea();
+		initializeOptionsBar();
   }
 
-  public void init() {
+  public void initializePlayArea() {
+    playArea = new PlayArea(randomizer,this);
     playArea.initPlayArea();
 		this.add(playArea, BorderLayout.CENTER);
-		playArea.addMouseListener(mHandler);
+		playArea.addMouseListener(mouseHandler);
+	}
 
+	public void initializeOptionsBar() {
+    optionsBar = new OptionsBar(height, width, this);
     optionsBar.initOptionsBar();
     this.add(optionsBar, BorderLayout.WEST);
-		optionsBar.addMouseListener(mHandler);
+		optionsBar.addMouseListener(mouseHandler);
   }
 
   public void reset() {
