@@ -13,7 +13,6 @@ class OptionsBar extends JPanel{
 	private static MouseHandler mouseHandler;
 
   private final int WIDTH_RATIO = 3;
-	private final Color FOREGROUND_TEXT_COLOR = new Color(0,150,0);
   private final int BORDER_SIZE = 3;
   private int height;
   private int width;
@@ -25,11 +24,12 @@ class OptionsBar extends JPanel{
     setBorder(new LineBorder(Color.black, BORDER_SIZE));
 
 		payoutBar = new PayoutBar();
-    featuresBar = new FeaturesBar();
-		buttonBar = new ButtonBar(background);
-
     add(payoutBar, BorderLayout.NORTH);
+
+    featuresBar = new FeaturesBar();
   	add(featuresBar, BorderLayout.CENTER);
+
+		buttonBar = new ButtonBar(background);
 		add(buttonBar, BorderLayout.SOUTH);
 	}
 

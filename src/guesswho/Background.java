@@ -16,25 +16,20 @@ class Background extends JLayeredPane {
   public OptionsBar optionsBar;
   public PlayArea playArea;
 
-	private int height;
-	private int width;
-
   public static MersenneTwister randomizer;
 
   public Background(int height, int width) throws IOException {
-		this.height = height;
-		this.width = width;
     randomizer = new MersenneTwister();
     mouseHandler = new MouseHandler();
 		BorderLayout layout = new BorderLayout();
 		setLayout(layout);
 
 		playArea = new PlayArea(randomizer,this);
-		this.add(playArea, BorderLayout.CENTER);
+		add(playArea, BorderLayout.CENTER);
 		playArea.addMouseListener(mouseHandler);
 
 		optionsBar = new OptionsBar(height, width, this);
-		this.add(optionsBar, BorderLayout.WEST);
+		add(optionsBar, BorderLayout.WEST);
 		optionsBar.addMouseListener(mouseHandler);
   }
 
