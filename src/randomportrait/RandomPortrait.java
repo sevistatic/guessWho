@@ -6,6 +6,7 @@ package randomportrait;
 import javax.swing.ImageIcon;
 import java.awt.*;
 import mersennetwister.*;
+import names.*;
 
 /**
  *
@@ -16,6 +17,10 @@ public class RandomPortrait {
     private ImageIcon[] iconArray;
     private boolean done;
     public int[] features;
+
+	  public CompoundIcon portrait;
+
+	  public String name;
 
 		private final int SCALED_HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 7/24;
 		private final int SCALED_WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 10;
@@ -65,9 +70,14 @@ public class RandomPortrait {
     	done = false;
     	iconArray = new ImageIcon[10];
       features = randomizeFeatures();
+			if (features[SEX] == MALE){
+      	name = Names.randomMaleName();
+      } else {
+      	name = Names.randomFemaleName();
+      }
     	iconArray = forciblyGeneratePictures();
-			//SCALED_HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 7/24;
-			//SCALED_WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 10;
+
+      portrait = new CompoundIcon(CompoundIcon.Axis.Z_AXIS, getImages());
     }
 
     //public accessor method for the array of ImageIcons
@@ -642,7 +652,12 @@ public class RandomPortrait {
 			return new ImageIcon(resizedImage);
     }
 
-		private int[] randomizeFeatures(){
+		/**
+		 * creates a new set of features from scratch based upon commonly found features in the real world.
+		 * For instance, girls are rarely bald, and rarely have beards or mustaches.
+		 * @return an ordered list of the features a character has.
+		 */
+		 private int[] randomizeFeatures(){
     	int[] features = new int[NUM_OF_FEATURES];
         features[SKIN_COLOR]     =   randomNumInRange(1,2);
         features[EYE_COLOR]      =   randomNumInRange(1,5);

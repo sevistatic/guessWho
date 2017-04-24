@@ -354,6 +354,7 @@ class Card extends JLabel implements GuessObject {
         g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
         g.drawString(character.getName(), 10, getTileHeight());
     } // end method paintComponent
+    //TODO The faded area is smaller than the front, which is smaller than the cardback
 }
 //------------------------------------------------------------------------------
 
