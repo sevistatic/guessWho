@@ -4,6 +4,7 @@
  */
 package randomportrait;
 import javax.swing.ImageIcon;
+import java.awt.*;
 import mersennetwister.*;
 
 /**
@@ -14,6 +15,9 @@ public class RandomPortrait {
 	String foldername = "images/random/";
     private ImageIcon[] iconArray;
     private boolean done;
+		private final int SCALED_HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 7/24;
+		private final int SCALED_WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 10;
+
 
 		private MersenneTwister randomizer;
     /**
@@ -35,6 +39,8 @@ public class RandomPortrait {
     	done = false;
     	iconArray = new ImageIcon[10];
     	iconArray = forciblyGeneratePictures(feat);
+			//SCALED_HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 7/24;
+			//SCALED_WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 10;
     }
 
     //public accessor method for the array of ImageIcons
@@ -287,204 +293,325 @@ public class RandomPortrait {
     //--------------------------------------------------------
     private ImageIcon getSkinColor(int i) {
     	int kind = randomizer.nextInt(3) + 1;
+			ImageIcon icon;
+			Image resizedImage;
         if (i == 1) {
         	switch (kind){
-        	case 0: return new ImageIcon(foldername + "lightskin1.png");
-        	case 1: return new ImageIcon(foldername + "lightskin2.png");
-        	default: return new ImageIcon(foldername + "lightskin3.png");
+        		case 0:
+							icon = new ImageIcon(foldername + "lightskin1.png");
+							break;
+        		case 1:
+							icon = new ImageIcon(foldername + "lightskin2.png");
+							break;
+        		default:
+							icon = new ImageIcon(foldername + "lightskin3.png");
         	}
         } else {
         	switch (kind){
-    	case 0: return new ImageIcon(foldername + "darkskin1.png");
-    	case 1: return new ImageIcon(foldername + "darkskin2.png");
-    	default: return new ImageIcon(foldername + "darkskin3.png");
-    	}
+    				case 0:
+						 	icon = new ImageIcon(foldername + "darkskin1.png");
+							break;
+    				case 1:
+						 	icon = new ImageIcon(foldername + "darkskin2.png");
+							break;
+    				default:
+						 	icon = new ImageIcon(foldername + "darkskin3.png");
+    			}
         }
+				resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
+				return new ImageIcon(resizedImage);
     }
 
     private ImageIcon getNose(int i) {
-        if (i == 1) {
-            return new ImageIcon(foldername + "bignose.png");
-        } else if (i == 2) {
-            return new ImageIcon(foldername + "shortnose.png");
-        } else {
-            return new ImageIcon(foldername + "thinnose.png");
-        }
+			ImageIcon icon;
+			Image resizedImage;
+				switch(i) {
+					case 1:
+						icon = new ImageIcon(foldername + "bignose.png");
+						break;
+					case 2:
+						icon = new ImageIcon(foldername + "shortnose.png");
+						break;
+					default:
+						icon = new ImageIcon(foldername + "thinnose.png");
+				}
+				resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
+				return new ImageIcon(resizedImage);
     }
 
     private ImageIcon getEyeColor(int i) {
+			ImageIcon icon;
+			Image resizedImage;
         switch (i) {
             case 1:
-                return new ImageIcon(foldername + "blueeyes.png");
+                icon = new ImageIcon(foldername + "blueeyes.png");
+								break;
             case 2:
-                return new ImageIcon(foldername + "blackeyes.png");
+                icon = new ImageIcon(foldername + "blackeyes.png");
+								break;
             case 3:
-                return new ImageIcon(foldername + "browneyes.png");
+                icon = new ImageIcon(foldername + "browneyes.png");
+								break;
             case 4:
-                return new ImageIcon(foldername + "greeneyes.png");
+                icon = new ImageIcon(foldername + "greeneyes.png");
+								break;
             case 5:
-                return new ImageIcon(foldername + "greyeyes.png");
+                icon = new ImageIcon(foldername + "greyeyes.png");
+								break;
+						default:
+		        	icon = new ImageIcon(foldername + "blank.png");
         }
-        return new ImageIcon(foldername + "blank.png");
+				resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
+				return new ImageIcon(resizedImage);
     }
 
     private ImageIcon getSex(int i) {
     	int kind = randomizer.nextInt(2) + 1;
+			ImageIcon icon;
+			Image resizedImage;
         if (i == 1) {
         	switch (kind){
-        	case 1: return new ImageIcon(foldername + "boy.png");
-        	default:return new ImageIcon(foldername + "boy2.png");
+        	case 1:
+						icon = new ImageIcon(foldername + "boy.png");
+						break;
+        	default:
+						icon = new ImageIcon(foldername + "boy2.png");
         	}
 
         } else {
         	switch (kind){
-        	case 1: return new ImageIcon(foldername + "girl.png");
-        	default: return new ImageIcon(foldername + "girl2.png");
+        	case 1:
+						icon = new ImageIcon(foldername + "girl.png");
+						break;
+        	default:
+						icon = new ImageIcon(foldername + "girl2.png");
         	}
         }
+				resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
+				return new ImageIcon(resizedImage);
     }
 
     private ImageIcon getSmile(int i, int j) {
+			ImageIcon icon;
+			Image resizedImage;
         if (i == 1) {
             if (j == 1) {
-                return new ImageIcon(foldername + "bigsmile.png");
+                icon = new ImageIcon(foldername + "bigsmile.png");
             } else {
-                return new ImageIcon(foldername + "smallsmile.png");
+                icon = new ImageIcon(foldername + "smallsmile.png");
             }
         } else {
             if (j == 1) {
-                return new ImageIcon(foldername + "bigfrown.png");
+                icon = new ImageIcon(foldername + "bigfrown.png");
             } else {
-                return new ImageIcon(foldername + "smallfrown.png");
+                icon = new ImageIcon(foldername + "smallfrown.png");
             }
         }
+				resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
+				return new ImageIcon(resizedImage);
     }
 
     private ImageIcon getFacialHair(int sex, int beard, int mustache, int k) {
+			ImageIcon icon;
+			Image resizedImage;
 			final int MALE = 1;
 			final int HAS_BEARD = 1;
 			final int HAS_MUSTACHE = 1;
-        if (sex == MALE){//only men have beards or mustaches, usually
-        	if (beard == HAS_BEARD) {
-            switch (k) {
-              case 1:
-                  return new ImageIcon(foldername + "blondebeard.png");
-              case 2:
-                  return new ImageIcon(foldername + "blackbeard.png");
-              case 3:
-                  return new ImageIcon(foldername + "brownbeard.png");
-              case 4:
-                  return new ImageIcon(foldername + "redbeard.png");
-              case 5:
-                  return new ImageIcon(foldername + "greybeard.png");
-            }
+      if (sex == MALE){//only men have beards or mustaches, usually
+      	if (beard == HAS_BEARD) {
+          switch (k) {
+	          case 1:
+	            icon = new ImageIcon(foldername + "blondebeard.png");
+							break;
+	          case 2:
+	            icon = new ImageIcon(foldername + "blackbeard.png");
+							break;
+	          case 3:
+	            icon = new ImageIcon(foldername + "brownbeard.png");
+							break;
+	          case 4:
+	            icon = new ImageIcon(foldername + "redbeard.png");
+							break;
+	          case 5:
+	            icon = new ImageIcon(foldername + "greybeard.png");
+							break;
+						default:
+							icon = new ImageIcon(foldername + "blank.png");
+          }
         } else if (mustache == HAS_MUSTACHE) {
           switch (k) {
             case 1:
-              return new ImageIcon(foldername + "blondemustache.png");
+              icon = new ImageIcon(foldername + "blondemustache.png");
+							break;
             case 2:
-              return new ImageIcon(foldername + "blackmustache.png");
+              icon = new ImageIcon(foldername + "blackmustache.png");
+							break;
             case 3:
-              return new ImageIcon(foldername + "brownmustache.png");
+              icon = new ImageIcon(foldername + "brownmustache.png");
+							break;
             case 4:
-              return new ImageIcon(foldername + "redmustache.png");
+              icon = new ImageIcon(foldername + "redmustache.png");
+							break;
             case 5:
-              return new ImageIcon(foldername + "greymustache.png");
+              icon = new ImageIcon(foldername + "greymustache.png");
+							break;
+						default:
+							icon = new ImageIcon(foldername + "blank.png");
           }
-        }
+        } else {
+					icon = new ImageIcon(foldername + "blank.png");
+				}
       }
-      return new ImageIcon(foldername + "blank.png");
+			else{
+				icon = new ImageIcon(foldername + "blank.png");
+			}
+			resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
+			return new ImageIcon(resizedImage);
     }
 
     private ImageIcon getShirt(int shirt) {
+			ImageIcon icon;
+			Image resizedImage;
         switch (shirt) {
             case 1:
-                return new ImageIcon(foldername + "blueshirt.png");
+                icon = new ImageIcon(foldername + "blueshirt.png");
+								break;
             case 2:
-                return new ImageIcon(foldername + "blackshirt.png");
+                icon = new ImageIcon(foldername + "blackshirt.png");
+								break;
             case 3:
-                return new ImageIcon(foldername + "redshirt.png");
+                icon = new ImageIcon(foldername + "redshirt.png");
+								break;
             case 4:
-                return new ImageIcon(foldername + "greenshirt.png");
+                icon = new ImageIcon(foldername + "greenshirt.png");
+								break;
             case 5:
-                return new ImageIcon(foldername + "orangeshirt.png");
+                icon = new ImageIcon(foldername + "orangeshirt.png");
+								break;
             case 6:
-                return new ImageIcon(foldername + "yellowshirt.png");
+                icon = new ImageIcon(foldername + "yellowshirt.png");
+								break;
             case 7:
-                return new ImageIcon(foldername + "purpleshirt.png");
+                icon = new ImageIcon(foldername + "purpleshirt.png");
+								break;
             case 8:
-                return new ImageIcon(foldername + "whiteshirt.png");
+                icon = new ImageIcon(foldername + "whiteshirt.png");
+								break;
             case 9:
-                return new ImageIcon(foldername + "leopardshirt.png");
+                icon = new ImageIcon(foldername + "leopardshirt.png");
+								break;
             case 10:
-                return new ImageIcon(foldername + "warningshirt.png");
+                icon = new ImageIcon(foldername + "warningshirt.png");
+								break;
+						default:
+								icon = new ImageIcon(foldername + "blank.png");
         }
-        return new ImageIcon(foldername + "blank.png");
+				resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
+				return new ImageIcon(resizedImage);
     }
 
     private ImageIcon getHair(int constraint, int hairColor) {
+			ImageIcon icon;
+			Image resizedImage;
 				final int MALE = 1;
         if (constraint == MALE) {
             switch (hairColor) {
                 case 1:
-                    return new ImageIcon(foldername + "blondehairboy.png");
+                    icon = new ImageIcon(foldername + "blondehairboy.png");
+										break;
                 case 2:
-                    return new ImageIcon(foldername + "blackhairboy.png");
+                    icon = new ImageIcon(foldername + "blackhairboy.png");
+										break;
                 case 3:
-                    return new ImageIcon(foldername + "brownhairboy.png");
+                    icon = new ImageIcon(foldername + "brownhairboy.png");
+										break;
                 case 4:
-                    return new ImageIcon(foldername + "redhairboy.png");
+                    icon = new ImageIcon(foldername + "redhairboy.png");
+										break;
                 case 5:
-                    return new ImageIcon(foldername + "greyhairboy.png");
+                    icon = new ImageIcon(foldername + "greyhairboy.png");
+										break;
                 case 6:
-                	return new ImageIcon(foldername + "blank.png");
+                	icon = new ImageIcon(foldername + "blank.png");
+									break;
+								default:
+					        icon = new ImageIcon(foldername + "blank.png");
             }
         } else {
             switch (hairColor) {
                 case 1:
-                    return new ImageIcon(foldername + "blondehairgirl.png");
+                    icon = new ImageIcon(foldername + "blondehairgirl.png");
+										break;
                 case 2:
-                    return new ImageIcon(foldername + "blackhairgirl.png");
+                    icon = new ImageIcon(foldername + "blackhairgirl.png");
+										break;
                 case 3:
-                    return new ImageIcon(foldername + "brownhairgirl.png");
+                    icon = new ImageIcon(foldername + "brownhairgirl.png");
+										break;
                 case 4:
-                    return new ImageIcon(foldername + "redhairgirl.png");
+                    icon = new ImageIcon(foldername + "redhairgirl.png");
+										break;
                 case 5:
-                    return new ImageIcon(foldername + "greyhairgirl.png");
+                    icon = new ImageIcon(foldername + "greyhairgirl.png");
+										break;
+								default:
+						        icon = new ImageIcon(foldername + "blank.png");
             }
         }
-        return new ImageIcon(foldername + "blank.png");
+			resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
+			return new ImageIcon(resizedImage);
     }
 
     private ImageIcon getHat(int constraint, int hatType) {
+			ImageIcon icon;
+			Image resizedImage;
 			final int HAS_HAT = 1;
-        if (constraint == HAS_HAT) {
-            switch (hatType) {
-                case 1:
-                    return new ImageIcon(foldername + "baseballcap.png");
-                case 2:
-                    return new ImageIcon(foldername + "cowboyhat.png");
-                case 3:
-                    return new ImageIcon(foldername + "beret.png");
-            }
+      if (constraint == HAS_HAT) {
+        switch (hatType) {
+          case 1:
+            icon = new ImageIcon(foldername + "baseballcap.png");
+						break;
+          case 2:
+            icon = new ImageIcon(foldername + "cowboyhat.png");
+						break;
+          case 3:
+            icon = new ImageIcon(foldername + "beret.png");
+						break;
+					default:
+						icon = new ImageIcon(foldername + "blank.png");
         }
-        return new ImageIcon(foldername + "blank.png");
+      } else {
+        icon = new ImageIcon(foldername + "blank.png");
+			}
+			resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
+			return new ImageIcon(resizedImage);
     }
 
     private ImageIcon getEyewear(int constraint, int eyewearType) {
+			ImageIcon icon;
+			Image resizedImage;
 			final int HAS_EYEWEAR = 1;
-        if (constraint == HAS_EYEWEAR) {
-            switch (eyewearType) {
-                case 1:
-                    return new ImageIcon(foldername + "thinglasses.png");
-                case 2:
-                    return new ImageIcon(foldername + "thickglasses.png");
-                case 3:
-                    return new ImageIcon(foldername + "eyepatch.png");
-                case 4:
-                    return new ImageIcon(foldername + "monocle.png");
-            }
+      if (constraint == HAS_EYEWEAR) {
+        switch (eyewearType) {
+          case 1:
+            icon = new ImageIcon(foldername + "thinglasses.png");
+						break;
+          case 2:
+            icon = new ImageIcon(foldername + "thickglasses.png");
+						break;
+          case 3:
+            icon = new ImageIcon(foldername + "eyepatch.png");
+						break;
+          case 4:
+            icon = new ImageIcon(foldername + "monocle.png");
+						break;
+					default:
+		        icon = new ImageIcon(foldername + "blank.png");
         }
-        return new ImageIcon(foldername + "blank.png");
+      } else {
+        icon = new ImageIcon(foldername + "blank.png");
+			}
+			resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
+			return new ImageIcon(resizedImage);
     }
 }

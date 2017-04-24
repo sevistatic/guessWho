@@ -208,9 +208,9 @@ class Card extends JLabel implements GuessObject {
 	private int tileHeight;
     private int tileWidth;
     private float alpha;
-    private ImageIcon[] cardback;
-    private ImageIcon[] cardfront;
-    private ImageIcon[] showingFace;
+    private CompoundIcon cardback;
+    private CompoundIcon cardfront;
+    private CompoundIcon showingFace;
     private Character character;
     private Color rectColor;
     private boolean marked;
@@ -223,11 +223,11 @@ class Card extends JLabel implements GuessObject {
         return character;
     }
 
-    public ImageIcon[] getCardFace() {
+    public Icon getCardFace() {
         return showingFace;
     }
 
-    public void setCardfront(ImageIcon[] cardfront) {
+    public void setCardfront(CompoundIcon cardfront) {
         this.cardfront = cardfront;
     }
 
@@ -263,9 +263,9 @@ class Card extends JLabel implements GuessObject {
         tileHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 7/24;
         tileWidth = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 10;
         folderName = "images/";
-        cardfront = character.getPortrait();
-        cardback = new ImageIcon[1];
-        cardback[0] = new ImageIcon(folderName + "cardback.jpg");
+        cardfront = new CompoundIcon(CompoundIcon.Axis.Z_AXIS, character.getPortrait());
+        cardback = new CompoundIcon();
+        cardback = new CompoundIcon(new ImageIcon(folderName + "cardback.jpg"));
         showingFace = cardfront;
         rectColor = Color.green;
         marked = false;
@@ -341,9 +341,11 @@ class Card extends JLabel implements GuessObject {
         }
         g.fillRect(0, 0, getTileWidth() + 10, getTileHeight() + 10);
 
-        for (int i = 0; i < showingFace.length; i++) {
-            g.drawImage(showingFace[i].getImage(), 5, 5, getTileWidth(), getTileHeight() * 7 / 8, null);
-        }
+        //for (int i = 0; i < showingFace.length; i++) {
+        //    g.drawImage(showingFace[i].getImage(), 5, 5, getTileWidth(), getTileHeight() * 7 / 8, null);
+        //}
+        showingFace.paintIcon(null, g, 5, 5);
+        //g.paintIcon(showingFace, 5, 5, getTileWidth(), getTileHeight() * 7 / 8, null);
         if (isFaded()){
             g.setColor(new Color(0.0f, 0.0f, 0.0f, 0.5f));
             g.fillRect(5, 5, getTileWidth(), getTileHeight() * 7 / 8);

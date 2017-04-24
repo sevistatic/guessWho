@@ -1,16 +1,20 @@
 package guesswho;
 
-import javax.swing.ImageIcon;
-import names.Names;
+import javax.swing.*;
+import names.*;
 import mersennetwister.*;
-import randomportrait.RandomPortrait;
+import randomportrait.*;
 
 /**
  *
  * @author Spencer
  */
 class Character {
-    private String name;
+  private String name;
+  private CompoundIcon portrait;
+  private String[] featureDescriptions;
+
+
     private int[] features;
     RandomPortrait portraitRandomizer;
     ImageIcon[] portraitParts;
@@ -48,6 +52,8 @@ class Character {
         }
         portraitRandomizer = new RandomPortrait(features);
         portraitParts = portraitRandomizer.getImages();
+
+        portrait = new CompoundIcon(CompoundIcon.Axis.Z_AXIS, portraitParts);
     }
 
     public String[] getFeaturesDescriptions() {
@@ -63,8 +69,8 @@ class Character {
      * when displayed in this order will form a coherent portrait.
      * @return an ordered set of semi-transparent images.
      */
-    public ImageIcon[] getPortrait(){
-    	return portraitParts;
+    public CompoundIcon getPortrait(){
+    	return portrait;
     }
 
     /**
