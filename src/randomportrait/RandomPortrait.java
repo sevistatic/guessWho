@@ -15,8 +15,34 @@ public class RandomPortrait {
 	String foldername = "images/random/";
     private ImageIcon[] iconArray;
     private boolean done;
+    public int[] features;
+
 		private final int SCALED_HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 7/24;
 		private final int SCALED_WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 10;
+
+		private final int NUM_OF_FEATURES = 14;
+
+		public static final int SKIN_COLOR = 0;
+		public static final int EYE_COLOR = 1;
+		public static final int SEX = 2;
+			public static final int MALE = 1;
+		public static final int MOUTH_SHAPE = 3;
+		public static final int LIP_SIZE = 4;
+		public static final int HAIR_COLOR = 5;
+		public static final int BEARD = 6;
+			public static final int NO_BEARD = 2;
+		public static final int MUSTACHE = 7;
+			public static final int NO_MUSTACHE = 2;
+		public static final int NOSE_TYPE = 8;
+		public static final int SHIRT = 9;
+		public static final int HAT = 10;
+			public static final int HAS_HAT = 1;
+		public static final int HAT_STYLE = 11;
+			public static final int NO_HAT_STYLE = 4;
+		public static final int GLASSES = 12;
+			public static final int HAS_GLASSES = 1;
+		public static final int GLASSES_STYLE = 13;
+			public static final int NO_GLASSES_STYLE = 5;
 
 
 		private MersenneTwister randomizer;
@@ -34,11 +60,12 @@ public class RandomPortrait {
      * constructor to make a portrait with specific features
      * @param feat a legal list of feature ints
      */
-    public RandomPortrait(int[] feat){
+    public RandomPortrait(){
 			randomizer = new MersenneTwister();
     	done = false;
     	iconArray = new ImageIcon[10];
-    	iconArray = forciblyGeneratePictures(feat);
+      features = randomizeFeatures();
+    	iconArray = forciblyGeneratePictures();
 			//SCALED_HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 7/24;
 			//SCALED_WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 10;
     }
@@ -60,23 +87,23 @@ public class RandomPortrait {
      * @param f an int array containing legal feature numbers, beginning at 1, and usually ending in 2, 3, 5, or 10, depending on the feature
      * @return an array of descriptive strings about the corresponding features, arranged in the same order
      */
-    public String[] describeFeatures(int[] f){
-    	String[] features = new String[14];
-    	features[0] = describeSkin(f[0]);
-    	features[1] = describeEyes(f[1]);
-    	features[2] = describeSex(f[2]);
-    	features[3] = describeSmile(f[3]);
-    	features[4] = describeLips(f[4]);
-    	features[5] = describeHair(f[5]);
-    	features[6] = describeBeard(f[6]);
-    	features[7] = describeMustache(f[7]);
-    	features[8] = describeNose(f[8]);
-    	features[9] = describeShirt(f[9]);
-    	features[10] = describeHat(f[10]);
-    	//features[11] = describeHatStyle(f[11]);
-    	features[11] = describeGlasses(f[12]);
-    	//features[13] = describeGlassesStyle(f[13]);
-    	return features;
+    public String[] describeFeatures(){
+    	String[] featureDescriptions = new String[14];
+    	featureDescriptions[0] = describeSkin(features[0]);
+    	featureDescriptions[1] = describeEyes(features[1]);
+    	featureDescriptions[2] = describeSex(features[2]);
+    	featureDescriptions[3] = describeSmile(features[3]);
+    	featureDescriptions[4] = describeLips(features[4]);
+    	featureDescriptions[5] = describeHair(features[5]);
+    	featureDescriptions[6] = describeBeard(features[6]);
+    	featureDescriptions[7] = describeMustache(features[7]);
+    	featureDescriptions[8] = describeNose(features[8]);
+    	featureDescriptions[9] = describeShirt(features[9]);
+    	featureDescriptions[10] = describeHat(features[10]);
+    	//featureDescriptions[11] = describeHatStyle(features[11]);
+    	featureDescriptions[11] = describeGlasses(features[12]);
+    	//featureDescriptions[13] = describeGlassesStyle(features[13]);
+    	return featureDescriptions;
     }
 
     //POSSIBLY UNNECESSARY
@@ -131,19 +158,19 @@ public class RandomPortrait {
      * @param f an array of integers of proper parity corresponding to desired features
      * @return an ordered array of ImagIcons corresponding to a single portrait.
      */
-    private ImageIcon[] forciblyGeneratePictures(int[] f) {
-        iconArray[0] = getSkinColor(f[0]);
-        iconArray[1] = getEyeColor(f[1]);
-        int sex = f[2];
+    private ImageIcon[] forciblyGeneratePictures() {
+        iconArray[0] = getSkinColor(features[0]);
+        iconArray[1] = getEyeColor(features[1]);
+        int sex = features[2];
         iconArray[2] = getSex(sex);
-        iconArray[3] = getSmile(f[3], f[4]);
-        int haircolor = f[5];
-        iconArray[4] = getFacialHair(sex, f[6], f[7], haircolor);
-        iconArray[5] = getNose(f[8]);
-        iconArray[6] = getShirt(f[9]);
+        iconArray[3] = getSmile(features[3], features[4]);
+        int haircolor = features[5];
+        iconArray[4] = getFacialHair(sex, features[6], features[7], haircolor);
+        iconArray[5] = getNose(features[8]);
+        iconArray[6] = getShirt(features[9]);
         iconArray[7] = getHair(sex, haircolor);
-        iconArray[8] = getHat(f[10], f[11]);
-        iconArray[9] = getEyewear(f[12], f[13]);
+        iconArray[8] = getHat(features[10], features[11]);
+        iconArray[9] = getEyewear(features[12], features[13]);
         done = true;
         return iconArray;
     }
@@ -613,5 +640,44 @@ public class RandomPortrait {
 			}
 			resizedImage = icon.getImage().getScaledInstance(SCALED_WIDTH, SCALED_HEIGHT, Image.SCALE_SMOOTH);
 			return new ImageIcon(resizedImage);
+    }
+
+		private int[] randomizeFeatures(){
+    	int[] features = new int[NUM_OF_FEATURES];
+        features[SKIN_COLOR]     =   randomNumInRange(1,2);
+        features[EYE_COLOR]      =   randomNumInRange(1,5);
+        features[SEX]            =   randomNumInRange(1,2);
+        features[MOUTH_SHAPE]    =   randomNumInRange(1,2);
+        features[LIP_SIZE]       =   randomNumInRange(1,2);
+        if (features[SEX] == MALE){
+        	features[HAIR_COLOR]   =   randomNumInRange(1,6);//includes bald
+        	features[BEARD]        =   randomNumInRange(1,2);
+          if (features[BEARD] == NO_BEARD){
+            features[MUSTACHE]   =   randomNumInRange(1,2);
+          } else {
+						features[MUSTACHE]	 =	 1;
+					}
+        } else {
+            features[HAIR_COLOR] =   randomNumInRange(1,5);//does not include bald
+        	features[BEARD] = NO_BEARD;
+        	features[MUSTACHE] = NO_MUSTACHE;
+        }
+        features[NOSE_TYPE]       =  randomNumInRange(1,3);
+        features[SHIRT]           =  randomNumInRange(1,10);
+        features[HAT]             =  randomNumInRange(1,2);
+        if (features[HAT] == HAS_HAT)
+        	features[HAT_STYLE]     =  randomNumInRange(1,3);
+        else
+        	features[HAT_STYLE] = NO_HAT_STYLE;
+        features[GLASSES]         =  randomNumInRange(1,2);
+        if (features[GLASSES] == HAS_GLASSES)
+        	features[GLASSES_STYLE] =  randomNumInRange(1,4);
+        else
+        	features[GLASSES_STYLE] = NO_GLASSES_STYLE;
+      return features;
+    }
+
+    public int randomNumInRange(int rangeBottom, int rangeTop){
+      return randomizer.nextInt(rangeTop) + rangeBottom;
     }
 }
