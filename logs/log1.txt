@@ -1,0 +1,282 @@
+Begin Logging
+
+Participant Start Time: 0.613
+Trial Start Time: 79.897
+Trial Number: 1
+-------------------------
+Event: Mouse Clicked
+Time: 85.442
+Cursor Location: (218, 661)
+Object Clicked: Sex - girl
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 86.225
+Cursor Location: (98, 813)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for girl
+-------------------------
+Event: Mouse Clicked
+Time: 88.779
+Cursor Location: (212, 642)
+Object Clicked: Sex - boy
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 89.772
+Cursor Location: (91, 816)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for boy
+-------------------------
+Event: Mouse Clicked
+Time: 94.343
+Cursor Location: (128, 659)
+Object Clicked: Skin Color - dark skin
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 95.192
+Cursor Location: (103, 811)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for dark skin
+-------------------------
+Event: Mouse Clicked
+Time: 95.989
+Cursor Location: (134, 643)
+Object Clicked: Skin Color - light skin
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 96.823
+Cursor Location: (98, 815)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for light skin
+-------------------------
+Event: Mouse Clicked
+Time: 97.735
+Cursor Location: (51, 708)
+Object Clicked: Shirt - orange shirt
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 98.483
+Cursor Location: (85, 816)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for orange shirt
+-------------------------
+Event: Mouse Clicked
+Time: 99.133
+Cursor Location: (61, 731)
+Object Clicked: Shirt - yellow shirt
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 100.069
+Cursor Location: (68, 818)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for yellow shirt
+-------------------------
+Event: Mouse Clicked
+Time: 100.707
+Cursor Location: (54, 745)
+Object Clicked: Shirt - purple shirt
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 101.331
+Cursor Location: (77, 825)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for purple shirt
+-------------------------
+Event: Mouse Clicked
+Time: 102.212
+Cursor Location: (54, 714)
+Object Clicked: Shirt - orange shirt
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 102.983
+Cursor Location: (64, 814)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for orange shirt
+-------------------------
+Event: Mouse Clicked
+Time: 103.797
+Cursor Location: (47, 691)
+Object Clicked: Shirt - green shirt
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 104.619
+Cursor Location: (77, 813)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for green shirt
+-------------------------
+Event: Mouse Clicked
+Time: 105.411
+Cursor Location: (50, 674)
+Object Clicked: Shirt - red shirt
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 106.137
+Cursor Location: (98, 816)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for red shirt
+-------------------------
+Event: Mouse Clicked
+Time: 107.397
+Cursor Location: (46, 633)
+Object Clicked: Shirt - blue shirt
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 108.422
+Cursor Location: (96, 816)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+Match for blue shirt
+Selected Characteristics Match
+-------------------------
+Event: Mouse Clicked
+Time: 119.422
+Cursor Location: (91, 844)
+Object Clicked: Button: Guess
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+Guess, Player Answer: None Selected
+Correct answer: ozzy
+-------------------------
+Event: Mouse Clicked
+Time: 125.073
+Cursor Location: (103, 850)
+Object Clicked: Button: Guess
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click
+Guess, Player Answer: None Selected
+Correct answer: ozzy
+-------------------------
+Event: Mouse Clicked
+Time: 129.450
+Cursor Location: (94, 871)
+Object Clicked: Button: Give Up - Answer: ozzy
+Button Used: 1
+Current Trial: 1
+Current Trial Score: 0
+Current Total Score: 0
+Event Type: Single Click

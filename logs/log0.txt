@@ -1,0 +1,386 @@
+Begin Logging
+Participant Start Time: 0.613
+Trial Start Time: 0.613
+Trial Number: 0
+----------------------------------------
+Event: Mouse Clicked
+Time: 1.969
+Cursor Location: (599, 261)
+Object Clicked: tammy
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 2.617
+Cursor Location: (599, 261)
+Object Clicked: tammy
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 3.217
+Cursor Location: (773, 239)
+Object Clicked: evan
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 3.566
+Cursor Location: (773, 239)
+Object Clicked: evan
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Double Click
+-------------------------
+Event: Mouse Clicked
+Time: 4.309
+Cursor Location: (773, 239)
+Object Clicked: evan
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 5.964
+Cursor Location: (773, 239)
+Object Clicked: evan
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 6.137
+Cursor Location: (773, 239)
+Object Clicked: evan
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Double Click
+-------------------------
+Event: Mouse Clicked
+Time: 6.874
+Cursor Location: (773, 239)
+Object Clicked: evan
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 10.946
+Cursor Location: (145, 142)
+Object Clicked: Hair - blonde hair
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 11.991
+Cursor Location: (100, 815)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for blonde hair
+-------------------------
+Event: Mouse Clicked
+Time: 13.928
+Cursor Location: (635, 436)
+Object Clicked: lizzy
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 15.504
+Cursor Location: (1128, 703)
+Object Clicked: bobbie
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 16.370
+Cursor Location: (1323, 713)
+Object Clicked: bruce
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 19.745
+Cursor Location: (136, 328)
+Object Clicked: Nose - short nose
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 21.094
+Cursor Location: (93, 817)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for short nose
+-------------------------
+Event: Mouse Clicked
+Time: 22.726
+Cursor Location: (393, 731)
+Object Clicked: wade
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 25.746
+Cursor Location: (1313, 450)
+Object Clicked: maggie
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 29.130
+Cursor Location: (404, 202)
+Object Clicked: ozzy
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 31.096
+Cursor Location: (1339, 204)
+Object Clicked: pammy
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 42.500
+Cursor Location: (212, 147)
+Object Clicked: Eyewear - glasses
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 43.954
+Cursor Location: (79, 814)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for glasses
+-------------------------
+Event: Mouse Clicked
+Time: 45.313
+Cursor Location: (555, 744)
+Object Clicked: duff
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 45.991
+Cursor Location: (740, 743)
+Object Clicked: dean
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 46.755
+Cursor Location: (946, 734)
+Object Clicked: stephie
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 48.015
+Cursor Location: (597, 245)
+Object Clicked: tammy
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 48.723
+Cursor Location: (762, 238)
+Object Clicked: evan
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 49.565
+Cursor Location: (1134, 191)
+Object Clicked: ajax
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 55.661
+Cursor Location: (30, 163)
+Object Clicked: Headwear - no hat
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 56.801
+Cursor Location: (125, 814)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for no hat
+-------------------------
+Event: Mouse Clicked
+Time: 59.330
+Cursor Location: (918, 454)
+Object Clicked: slash
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 60.063
+Cursor Location: (1141, 461)
+Object Clicked: janny
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 60.940
+Cursor Location: (936, 160)
+Object Clicked: cammie
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 64.827
+Cursor Location: (214, 642)
+Object Clicked: Sex - boy
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 65.794
+Cursor Location: (109, 819)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 2
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for boy
+-------------------------
+Event: Mouse Clicked
+Time: 67.302
+Cursor Location: (743, 490)
+Object Clicked: tony
+Button Used: 3
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 68.000
+Cursor Location: (395, 497)
+Object Clicked: jamie
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 76.943
+Cursor Location: (97, 843)
+Object Clicked: Button: Guess
+Button Used: 1
+Current Trial: 0
+Current Trial Score: 1
+Current Total Score: 0
+Event Type: Single Click
+Final Guess, Player Answer: jamie
+Correct answer: evan

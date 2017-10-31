@@ -1,0 +1,85 @@
+Begin Logging
+
+Participant Start Time: 0.613
+Trial Start Time: 131.551
+Trial Number: 2
+-------------------------
+Event: Mouse Clicked
+Time: 137.300
+Cursor Location: (215, 644)
+Object Clicked: Sex - boy
+Button Used: 1
+Current Trial: 2
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 138.229
+Cursor Location: (86, 813)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 2
+Current Trial Score: 6
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for boy
+-------------------------
+Event: Mouse Clicked
+Time: 139.282
+Cursor Location: (205, 659)
+Object Clicked: Sex - girl
+Button Used: 1
+Current Trial: 2
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 141.504
+Cursor Location: (97, 818)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 2
+Current Trial Score: 5
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+No Match for girl
+-------------------------
+Event: Mouse Clicked
+Time: 142.634
+Cursor Location: (50, 644)
+Object Clicked: Shirt - blue shirt
+Button Used: 1
+Current Trial: 2
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+-------------------------
+Event: Mouse Clicked
+Time: 143.725
+Cursor Location: (84, 812)
+Object Clicked: Button: Query
+Button Used: 1
+Current Trial: 2
+Current Trial Score: 4
+Current Total Score: 0
+Event Type: Single Click
+Query submitted:
+Match for blue shirt
+Selected Characteristics Match
+-------------------------
+Event: Mouse Clicked
+Time: 154.611
+Cursor Location: (101, 844)
+Object Clicked: Button: Guess
+Button Used: 1
+Current Trial: 2
+Current Trial Score: 3
+Current Total Score: 0
+Event Type: Single Click
+Guess, Player Answer: None Selected
+Correct answer: sally
+-------------------------
