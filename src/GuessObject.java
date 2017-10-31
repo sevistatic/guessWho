@@ -14,43 +14,30 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-
-/** @author Spencer */
-abstract interface GuessObject
-{
+/** @author Spencer Bryant*/
+abstract interface GuessObject{
   public abstract void pressButton(int x, int y, int button);
-
 
   public abstract String toString();
 }
-
-
-
 // ------------------------------------------------------------------------------
 
 @SuppressWarnings("serial")
-class InfoButton extends JButton implements GuessObject
-{
+class InfoButton extends JButton implements GuessObject{
   Character selected;
+  final String log = "Button: Info";
 
-
-  InfoButton(String message, Character c)
-  {
+  InfoButton(String message, Character c){
     super(message);
     selected = c;
   }
 
-
-  public void setSelected(Character ch)
-  {
+  public void setSelected(Character ch){
     selected = ch;
   }
 
-
-  public void pressButton(int x, int y, int Button)
-  {
-    if (selected != null)
-    {
+  public void pressButton(int x, int y, int Button){
+    if (selected != null){
       Background.outFile.println("Request Info, Character: " + selected.getName());
       JFrame infoWindow = new JFrame("Info");
       JPanel infoBG = new JPanel();
@@ -66,32 +53,23 @@ class InfoButton extends JButton implements GuessObject
     }
   }
 
-
-  public String toString()
-  {
-    return "Button: Info";
+  public String toString(){
+    return log;
   }
 }
 
-
-
 // ------------------------------------------------------------------------------
-class InstructionButton extends JButton implements GuessObject
-{
-
+class InstructionButton extends JButton implements GuessObject{
   private static final long serialVersionUID = 1L;
   JFrame instructionsWindow;
   JPanel messageLabel;
+  final String log = "Button: Instructions";
 
-
-  InstructionButton(String message)
-  {
+  InstructionButton(String message){
     super(message);
   }
 
-
-  public void pressButton(int x, int y, int button)
-  {
+  public void pressButton(int x, int y, int button){
     instructionsWindow = new JFrame("Instructions");
     messageLabel = new JPanel();
     messageLabel.setLayout(new GridLayout(4, 1));
@@ -107,84 +85,60 @@ class InstructionButton extends JButton implements GuessObject
     instructionsWindow.setVisible(true);
   }
 
-
-  public String toString()
-  {
-    return "Button: Instructions";
+  public String toString(){
+    return log;
   }
 }
 
-
-
-@SuppressWarnings("serial")
 // ------------------------------------------------------------------------------
+@SuppressWarnings("serial")
+class GiveUpButton extends JButton implements GuessObject{
+  final String log = "Button: Give Up - Answer: ";
 
-class GiveUpButton extends JButton implements GuessObject
-{
-
-  GiveUpButton(String message)
-  {
+  GiveUpButton(String message){
     super(message);
   }
 
-
-  public void pressButton(int x, int y, int Button)
-  {
-    if (JOptionPane.showConfirmDialog(null, "Are you sure?") == JOptionPane.OK_OPTION)
-    {
+  public void pressButton(int x, int y, int Button){
+    if (JOptionPane.showConfirmDialog(null, "Are you sure?") == JOptionPane.OK_OPTION){
       JOptionPane.showMessageDialog(null, "The answer was " + Background.card.getCharacter().getName());
       Background.reset();
     }
   }
 
-
-  public String toString()
-  {
-    return "Button: Give Up - Answer: " + Background.card.getCharacter().getName();
+  public String toString(){
+    return log + Background.card.getCharacter().getName();
   }
 }
 
-
-
 // ------------------------------------------------------------------------------
-class FinalGuessButton extends JButton implements GuessObject
-{
-
+class FinalGuessButton extends JButton implements GuessObject{
   private static final long serialVersionUID = 1L;
   Character person;
+  final String log = "Button: Guess";
 
-
-  FinalGuessButton(String message, Character c)
-  {
+  FinalGuessButton(String message, Character c){
     super(message);
     person = c;
   }
 
-
-  public void pressButton(int x, int y, int Button)
-  {
-    if (JOptionPane.showConfirmDialog(null, "Are you sure?") == JOptionPane.YES_OPTION)
-    {
-      if (Background.selected != null)
-      {
+  public void pressButton(int x, int y, int Button){
+    if (JOptionPane.showConfirmDialog(null, "Are you sure?") == JOptionPane.YES_OPTION){
+      if (Background.selected != null){
         Background.outFile.println("Final Guess, Player Answer: " + Background.selected.getCharacter().getName());
-        if (Background.selected.getCharacter() == person)
-        {
+        if (Background.selected.getCharacter() == person){
           JOptionPane.showMessageDialog(null, "Correct!! The answer was " + person.getName());
           Background.outFile.println("Correct Answer: " + Background.card.getCharacter().getName());
           Background.increaseTotalPoints(Background.getTrialPoints());
           if (Background.getTrialPoints() >= 20)
             Background.increaseTotalPoints(Background.getTrialPoints() * .5);
           Background.reset();
-        } else
-        {
+        } else{
           JOptionPane.showMessageDialog(null, "Wrong!! The answer was " + person.getName());
           Background.outFile.println("Correct answer: " + Background.card.getCharacter().getName());
           Background.reset();
         }
-      } else
-      {
-
+      } else{
         Background.outFile.println("Guess, Player Answer: None Selected");
         JOptionPane.showMessageDialog(null, "Wrong!! The answer was " + person.getName());
         Background.outFile.println("Correct answer: " + Background.card.getCharacter().getName());
@@ -194,22 +148,17 @@ class FinalGuessButton extends JButton implements GuessObject
   }
 
 
-  public String toString()
-  {
-    return "Button: Guess";
+  public String toString(){
+    return log;
   }
 }
-
-
 
 @SuppressWarnings({ "rawtypes", "serial" })
 // ------------------------------------------------------------------------------
 
-class GuessList extends JList implements GuessObject
-{
+class GuessList extends JList implements GuessObject{
   private int selectedIndex;
   private String name;
-
 
   GuessList()
   {
@@ -217,44 +166,29 @@ class GuessList extends JList implements GuessObject
     selectedIndex = 10;
   }
 
-
-  GuessList(String[] s, String n)
-  {
+  GuessList(String[] s, String n){
     super(s);
     name = n;
   }
 
-
-  public String toString()
-  {
-    String n = this.name;
-    String s = (String) this.getSelectedValue();
-    return n + " - " + s;
+  public String toString(){
+    return this.name + " - " + (String) this.getSelectedValue()s;
   }
 
-
-  public void pressButton(int x, int y, int button)
-  {
-    if (button == 3)
-    {
-      if (this.getSelectedIndex() == selectedIndex)
-      {
+  public void pressButton(int x, int y, int button){
+    if (button == 3){
+      if (this.getSelectedIndex() == selectedIndex){
         clearSelection();
-      } else
-      {
+      } else{
         selectedIndex = this.getSelectedIndex();
       }
     }
-
   }
 }
 // ------------------------------------------------------------------------------
 
-
-
 @SuppressWarnings("serial")
-class Card extends JLabel implements GuessObject
-{
+class Card extends JLabel implements GuessObject{
   private int tileHeight;
   private int tileWidth;
   private float alpha;
@@ -267,9 +201,7 @@ class Card extends JLabel implements GuessObject
   private boolean faded;
   private String folderName;
 
-
-  public Card()
-  {
+  public Card(){
     super();
     character = new Character();
     faded = false;
@@ -287,70 +219,58 @@ class Card extends JLabel implements GuessObject
   }
 
 
-  public Character getCharacter()
-  {
+  public Character getCharacter(){
     return character;
   }
 
 
-  public ImageIcon[] getCardFace()
-  {
+  public ImageIcon[] getCardFace(){
     return showingFace;
   }
 
 
-  public void setCardfront(ImageIcon[] cardfront)
-  {
+  public void setCardfront(ImageIcon[] cardfront){
     this.cardfront = cardfront;
   }
 
 
-  public void setTileHeight(int height)
-  {
+  public void setTileHeight(int height){
     tileHeight = height;
   }
 
 
-  public void setTileWidth(int width)
-  {
+  public void setTileWidth(int width){
     tileWidth = width;
   }
 
 
-  public int getTileHeight()
-  {
+  public int getTileHeight(){
     return tileHeight;
   }
 
 
-  public int getTileWidth()
-  {
+  public int getTileWidth(){
     return tileWidth;
   }
 
 
-  public Color getBorderColor()
-  {
+  public Color getBorderColor(){
     return rectColor;
   }
 
 
-  public boolean isMarked()
-  {
+  public boolean isMarked(){
     return marked;
   }
 
 
-  public boolean isFaded() // bruh
-  {
+  public boolean isFaded(){
     return faded;
   }
 
 
-  public void pressButton(int x, int y, int button)
-  {
-    switch (button)
-    {
+  public void pressButton(int x, int y, int button){
+    switch (button){
     case -1:
       fade();
       break;
@@ -359,10 +279,9 @@ class Card extends JLabel implements GuessObject
       unmark();
       break;
     case 1:
-      for (int i = 0; i < Background.deck.size(); i++)
-      {// un-click others
-        if (Background.deck.get(i) != this)
-        {
+      for (int i = 0; i < Background.deck.size(); i++){
+        if (Background.deck.get(i) != this){
+          // un-click others
           Background.deck.get(i).unfade();
         }
       }
@@ -372,72 +291,52 @@ class Card extends JLabel implements GuessObject
     }
   }
 
-
-  public void flip()
-  {
+  public void flip(){
     showingFace = (showingFace.equals(cardfront)) ? cardback : cardfront;
   }
 
-
-  public void unflip()
-  {
+  public void unflip(){
     showingFace = cardfront;
   }
 
-
-  public void fade()
-  {
+  public void fade(){
     marked = false;
     alpha = (faded == false) ? 0.0f : 1.0f;
     faded = (faded == false) ? true : false;
     Background.selected = this;
   }
 
-
-  public void mark()
-  {
+  public void mark(){
     marked = (marked == false) ? true : false;
     Background.info.setSelected(this.getCharacter());
   }
 
-
-  public void unmark()
-  {
+  public void unmark(){
     marked = false;
   }
 
-
-  public void unfade()
-  {
+  public void unfade(){
     alpha = 0.0f;
     faded = false;
   }
 
-
-  public String toString()
-  {
+  public String toString(){
     return this.getCharacter().getName();
   }
 
-
   @Override
-  public void paintComponent(Graphics g)
-  {
-    if (isMarked())
-    {
+  public void paintComponent(Graphics g){
+    if (isMarked()){
       g.setColor(Color.black);
-    } else
-    {
+    } else{
       g.setColor(new Color(200, 200, 0));
     }
     g.fillRect(0, 0, getTileWidth() + 10, getTileHeight() + 10);
 
-    for (int i = 0; i < showingFace.length; i++)
-    {
+    for (int i = 0; i < showingFace.length; i++){
       g.drawImage(showingFace[i].getImage(), 5, 5, getTileWidth(), getTileHeight() * 7 / 8, null);
     }
-    if (isFaded())
-    {
+    if (isFaded()){
       g.setColor(new Color(0.0f, 0.0f, 0.0f, 0.5f));
       g.fillRect(5, 5, getTileWidth(), getTileHeight() * 7 / 8);
     }
@@ -448,83 +347,61 @@ class Card extends JLabel implements GuessObject
 }
 // ------------------------------------------------------------------------------
 
-
-
-class AskButton extends JButton implements GuessObject
-{
+class AskButton extends JButton implements GuessObject{
 
   private static final long serialVersionUID = 1L;
   ArrayList<JList> listList;
+  final String log = "Button: Query";
 
-
-  AskButton(String message, ArrayList<JList> ll)
-  {
+  AskButton(String message, ArrayList<JList> ll){
     super(message);
     listList = ll;
   }
 
-
-  public void pressButton(int x, int y, int button)
-  {
+  public void pressButton(int x, int y, int button){
     // actually input the guess
     Background.outFile.println("Query submitted:");
     int correct = areAllCorrect();
-    if (correct == 1)
-    {
+    if (correct == 1){
       Background.deductTrialPoints(1);
       Background.setAnswer(1);
-    } else if (correct == 0)
-    {
+    } else if (correct == 0){
       Background.deductTrialPoints(1);
       Background.setAnswer(0);
-    } else
-    {
+    } else{
       Background.setAnswer(-1);
     }
-    for (int i = 0; i < Background.jListList.size(); i++)
-    {
+    for (int i = 0; i < Background.jListList.size(); i++){
       Background.jListList.get(i).clearSelection();
     }
   }
 
-
-  public int areAllCorrect()
-  {
+  public int areAllCorrect(){
     int unchanged = 0;
-    for (int i = 0; i < Background.jListList.size(); i++)
-    {
-      if (!Background.jListList.get(i).isSelectionEmpty())
-      {
-        // if it was changed
-        if (!Background.jListList.get(i).getSelectedValue().toString()
-            .equals(Background.card.getCharacter().getFeatures()[i]))
-        {
-          // is it wrong?
+    for (int i = 0; i < Background.jListList.size(); i++){
+      if (!Background.jListList.get(i).isSelectionEmpty()){// if it was changed
+        String selectedValue = Background.jListList.get(i).getSelectedValue().toString();
+        String correspondingFeature = Background.card.getCharacter().getFeatures()[i]);
+        if (!selectedValue.equals(correspondingFeature){
           Background.outFile.println("No Match for " + Background.jListList.get(i).getSelectedValue().toString());
           return 0;
-        } else
-        {
-          // must be a match for this one feature at least
+        } else{
           Background.outFile.println("Match for " + Background.jListList.get(i).getSelectedValue().toString());
         }
-      } else
-      {
+      } else{
         unchanged++;
       }
     }
-    if (unchanged == Background.jListList.size())
-    {
+    if (unchanged == Background.jListList.size()){
       Background.outFile.println("Nothing Selected");
       return -2;
     }
-    // must be entirely correct
     Background.outFile.println("Selected Characteristics Match");
     return 1;
   }
 
 
-  public String toString()
-  {
-    return "Button: Query";
+  public String toString(){
+    return log;
   }
 }
